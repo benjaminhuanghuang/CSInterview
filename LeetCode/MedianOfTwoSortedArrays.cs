@@ -22,7 +22,8 @@ using System.Linq;
 
 public class Solution004 {
     // O(NlogN)
-    public double FindMedianSortedArrays_Naive(int[] nums1, int[] nums2) {
+    public double FindMedianSortedArrays_Naive(int[] nums1, int[] nums2) 
+    {
         double answer = 0;
         // Contact in Linq
         int[] combined = nums1.Concat(nums2).ToArray();
@@ -38,10 +39,12 @@ public class Solution004 {
         }
         return answer;
     }
+
     // find (length A + length B) / 2 and (length A + length B) / 2 + 1 if it is even, or 
     // just  (length A + length B) / 2 + 1 if it is odd. 
     // the key question is how to find kth small element in two sorted arrays. 
-    public double FindMedianSortedArrays(int[] nums1, int[] nums2) {
+    public double FindMedianSortedArrays(int[] nums1, int[] nums2) 
+    {
         int length = nums1.Length + nums2.Length;
         if (length %2 == 1)
         {
@@ -78,7 +81,8 @@ public class Solution004 {
         {
             return this.GetKthNum(nums1, keyPos1+1, nums2, start2, k - k/2);
         }
-        else{
+        else
+        {
             return this.GetKthNum(nums1, start1, nums2, keyPos2+1, k - k/2);    
         }
     }
