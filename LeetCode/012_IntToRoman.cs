@@ -28,8 +28,8 @@ public class Solution012 {
     // http://www.cnblogs.com/grandyang/p/4123374.html
     string intToRoman(int num) {
         string res = "";
-        string[] roman = new string[] {"M", "D", "C", "L", "X", "V", "I"};
-        int[] value = new int[]{1000, 500, 100, 50, 10, 5, 1};
+        string[] roman = {"M", "D", "C", "L", "X", "V", "I"};
+        int[] value = {1000, 500, 100, 50, 10, 5, 1};
         
         for (int n = 0; n < 7; n += 2) {
             int x = num / value[n];
