@@ -75,6 +75,8 @@ public class Solution010 {
     {
         var dp = new bool[s.Length + 1, p.Length + 1];
         dp[0, 0] = true;
+
+        // For case "aab", "c*a*b" or "", "c*c*"
         for (int i = 1; i < p.Length + 1; i++)
         {
             if (p[i - 1] == '*' && i >= 2) 
@@ -94,7 +96,7 @@ public class Solution010 {
                 else if(p[j-1] == '*')
                 {
                     dp[i, j] = dp[i, j - 1] || dp[i, j - 2] || 
-                                       (dp[i-1, j] && (s[i-1] == p[j - 2] || p[j - 2] == '.'));
+                             (dp[i-1, j] && (s[i-1] == p[j - 2] || p[j - 2] == '.'));
                 }
                 else{
                     dp[i, j] = dp[i-1, j-1] && (s[i-1] == p[j-1]);
