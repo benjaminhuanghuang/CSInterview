@@ -8,6 +8,8 @@ Example2: x = -123, return -321
 
 */
 
+using System;
+
 public class Solution007 {
     public int Reverse(int x) {
         bool positive = x > 0;

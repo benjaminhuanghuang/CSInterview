@@ -17,6 +17,6 @@ convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 
 public class Solution006 {
     public string Convert(string s, int numRows) {
-        
+        return "";
     }
 }
