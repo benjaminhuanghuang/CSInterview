@@ -28,9 +28,47 @@ public class Solution024 {
 
         while (head !=null && head.next != null)
         {
+            var nextStart = head.next.next;
+            tail.next = head.next;
+            tail.next.next = head;
+            head.next = newStart;
 
+            tail = tail.next.next;
+            head = nextStart;
         }
+        if(head != null)
+        {
+            tail.next = head;
+        }
+
         return dummyhead.next;
+    }
+    // Easy to understand!
+    public ListNode SwapPairs_1(ListNode head)
+    {
+        var fakeHead = new ListNode(-1) { next = head };
+        var start = fakeHead;
+        while (start != null && start.next != null && start.next.next != null)
+        {
+            var end = start.next.next;
+            start.next.next = end.next;
+            end.next = start.next;
+            start.next = end;
+
+            start = start.next.next;
+        }
+
+        return fakeHead.next;
+    }
+
+    public ListNode SwapPairs2(ListNode head)
+    {
+        if (head == null || head.next == null) return head;
+
+        var newhead = head.next;
+        head.next = SwapPairs2(head.next.next);
+        newhead.next = head;
+        return newhead;
     }
 }
 
