@@ -14,14 +14,18 @@ For example, given n = 3, a solution set is:
   "()()()"
 ]
 */
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
-public class Solution {
+public class Solution022 {
     public IList<string> GenerateParenthesis(int n) {
         var res = new List<string>();
         if (n <=0 )
             return res;
         
-        this.GenerateParenthesisHelper(n, n, "", res)
+        this.GenerateParenthesisHelper(n, n, "", res);
+        return res;
     }
 
     private void GenerateParenthesisHelper(int left, int right, string item, IList<string> res)
@@ -44,14 +48,15 @@ public class Solution {
     } 
 
     // Iteration method
+    // https://miafish.wordpress.com/2014/12/23/get-all-combinations-of-balanced-parentheses/
     // https://discuss.leetcode.com/topic/3474/an-iterative-method
     //f(n) = (f(0))f(n-1) + (f(1))f(n-2) + … + (f(n-2))f(1) + (f(n-1))f(0)
     public IList<string> GenerateParenthesis2(int n)
     {
-        var res = new List<List>{new List(){""}};
+        var res = new List<List<string>>{new List<string>{""}};
         for (int i = 1; i <= n; i++)
         {
-            res.Add(new List());
+            res.Add(new List<string>());
             for (int j = 0; j < i; j++)
             {
                 var left = res[j];

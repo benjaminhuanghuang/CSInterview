@@ -6,10 +6,11 @@ determine if the input string is valid.
 
 The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
 */
-
+using System.Collections;
 using System.Collections.Generic;
+using  System.Linq;
 
-public class Solution {
+public class Solution020 {
     public bool IsValid(string s) {
         Stack<char> stack = new Stack<char>();
 
@@ -33,6 +34,6 @@ public class Solution {
                     return false;
             }
         }
-        return !stack.Any();
+        return !stack.Any<char>();
     }
 }

@@ -18,44 +18,45 @@ A solution set is:
 ]
 */
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
 public class Solution018 {
-    public IList<IList<int>> FourSum_Wrong(int[] nums, int target) {
-        var res = new List<IList <int>>();
-        Array.Sort(nums);
-        var dic = new Dictionary<int, HashSet<int>>();
-        for (int i = 0; i < nums.Length; i++)
-        {
-            for (int j = i +1; j < nums.Length; j++)
-            {
-                int sum = nums[i] + nums[j];
-                if (dic.ContainsKey(target - sum))
-                {
-                    foreach(var entry in dic[target - sum])
-                    {
-                        List<int> l = new List<int>(entry); 
-                        l.Add(nums[i]);
-                        l.Add(nums[j]);
-                        res.Add(l);
-                    } 
-                }
-            }
-            for (int j = 0; j < i; j++)
-            {
-                int half = nums[i] + nums[j]; 
-                if (!dic.ContainsKey(half))
-                {
-                    dic[half] = new HashSet<List<int>>();   
-                }
+    // public IList<IList<int>> FourSum_Wrong(int[] nums, int target) {
+    //     var res = new List<IList<IList<int>>>();
+    //     Array.Sort(nums);
+    //     var dic = new Dictionary<int, HashSet<int>>();
+    //     for (int i = 0; i < nums.Length; i++)
+    //     {
+    //         for (int j = i +1; j < nums.Length; j++)
+    //         {
+    //             int sum = nums[i] + nums[j];
+    //             if (dic.ContainsKey(target - sum))
+    //             {
+    //                 foreach(var entry in dic[target - sum])
+    //                 {
+    //                     List<int> l = new List<int>(entry); 
+    //                     l.Add(nums[i]);
+    //                     l.Add(nums[j]);
+    //                     res.Add(l);
+    //                 } 
+    //             }
+    //         }
+    //         for (int j = 0; j < i; j++)
+    //         {
+    //             int half = nums[i] + nums[j]; 
+    //             if (!dic.ContainsKey(half))
+    //             {
+    //                 dic[half] = new HashSet<List<int>>();   
+    //             }
                 
-                dic[half].Add(new List<int>{nums[j], nums[i]});
-            }
-        }
+    //             dic[half].Add(new List<int>{nums[j], nums[i]});
+    //         }
+    //     }
 
-        return res;
-    }
+    //     return res;
+    // }
 
     public IList<IList<int>> FourSum(int[] nums, int target)   
     {  
@@ -64,7 +65,8 @@ public class Solution018 {
         }  
           
         var dic = new Dictionary<string, List<int>>();  
-        var list = nums.OrderBy(x=>x).ToList();  
+        Array.Sort(nums);
+        var list = new List<int>(nums);  
           
         var len = list.Count;  
         for(var j = 0;j < len ; j++)  
