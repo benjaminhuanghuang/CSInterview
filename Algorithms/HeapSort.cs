@@ -7,6 +7,7 @@ public class HeapSorter
         for (int i = (sortArray.Length - 1); i > 0; i--)  
         {  
             Swap(ref sortArray[0], ref sortArray[i]); // 将堆顶元素和无序区的最后一个元素交换  
+            // put this biggest one to the tail of the array.
             MaxHeapify(sortArray, 0, i); // 将新的无序区调整为堆，无序区在变小              
         }  
         return sortArray;  
