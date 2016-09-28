@@ -31,7 +31,7 @@ public class Solution024 {
             var nextStart = head.next.next;
             tail.next = head.next;
             tail.next.next = head;
-            head.next = newStart;
+            head.next = nextStart;
 
             tail = tail.next.next;
             head = nextStart;
