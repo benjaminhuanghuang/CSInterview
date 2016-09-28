@@ -7,7 +7,10 @@ public class LeetTest {
     public static void Main(string[] args)
     {   
         var s = new Solution022();
-        var res = s.GenerateParenthesis2(3);
-        Console.WriteLine(res);
+        var res = s.GenerateParenthesis2(3);     
+        foreach (var i in res){
+            Console.WriteLine(i);
+        }
+        
     }
 }

@@ -50,10 +50,21 @@ public class Solution022 {
     // Iteration method
     // https://miafish.wordpress.com/2014/12/23/get-all-combinations-of-balanced-parentheses/
     // https://discuss.leetcode.com/topic/3474/an-iterative-method
+    // f(n) will be put an extra () pair to f(n-1). 
+    // Let the "(" always at the first position, to produce a valid result, we can only put ")" 
+    // in a way that there will be i pairs () inside the extra () and n - 1 - i pairs () outside 
+    // the extra pair.
     //f(n) = (f(0))f(n-1) + (f(1))f(n-2) + … + (f(n-2))f(1) + (f(n-1))f(0)
     public IList<string> GenerateParenthesis2(int n)
     {
+        // res[0] is [""]
+        // res[1] is ["()"]
+        // res[2] is ["()(),(())"]
+        // based on res[2][0] get ["()()(),(())(),(()())"]
+        //       on res[2][1] get ["()(())),()(())"]
         var res = new List<List<string>>{new List<string>{""}};
+
+        // start from res[1]
         for (int i = 1; i <= n; i++)
         {
             res.Add(new List<string>());
