@@ -2,14 +2,21 @@ LeetCode C# Implementation
 =====================================
 
 **To be review**:
-- 004. Median of Two Sorted Arrays              : Binary search, Kth number
-- 010. Regular Expression Matching              : DP and Recursion
 - 011. Container With Most Water                : Smart
 - 012. Integer to Roman                         : Roman Number
 - 017. Letter Combination                       : Backtracking
+
+**Binary Search and Divide and conquer**:
+- 004. Median of Two Sorted Arrays              : Binary search, Kth number
+
+
+**LinkedList Operation**:
 - 019. Remove Nth Node From End of List         : Linked list dummy header
 - 023. Merge k Sorted Lists                     : Min heap and Divide and conquer!
 - 024. Swap Node in Pairs                       : ListNode operation
+
+**DP**:
+- 010. Regular Expression Matching              : DP and Recursion           
 
 
 **Problem number gap** (407 - 390)

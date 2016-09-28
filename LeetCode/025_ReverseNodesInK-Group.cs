@@ -61,4 +61,16 @@ public class Solution025 {
 
         return prev.next;
     }
+
+    public ListNode ReverseList_Recursive(ListNode head) {
+        if (head == null || head.next == null) 
+            return head;
+        var rest = ReverseList(head.next);
+
+        head.next.next = head;
+        head.next = null;
+
+        return rest;    
+    }
+
 }
