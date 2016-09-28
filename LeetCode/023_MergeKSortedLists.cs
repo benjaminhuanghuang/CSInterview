@@ -57,14 +57,18 @@ public class Solution023 {
     // 这样下去一共会进行logk次merge，最后merge成为一个链表。总的时间复杂度是nlogk
     public ListNode MergeKLists(ListNode[] lists) {
         int len = lists.Length;
-        if (n == 1)
-            return list[0];
-        if (n == 2)
-            return this.MergeTwoLists(list[0], list[1]);
+        if (len ==0 )
+            return null;
+        if (len == 1)
+            return lists[0];
+        if (len == 2)
+            return this.MergeTwoLists(lists[0], lists[1]);
         
         int mid = len / 2;
-        var left = this.MergeTwoLists()
-        return null;
+        var left = this.MergeTwoListsHelper(lists, 0 , mid);
+        var right = this.MergeTwoListsHelper(lists, mid +1 , len -1);
+
+        return this.MergeTwoLists(left, right);
     }
 
     private ListNode MergeTwoListsHelper(ListNode[] lists, int left, int right)
@@ -78,7 +82,7 @@ public class Solution023 {
         var leftLists = MergeTwoListsHelper(lists, left, mid);
         var rightLists = MergeTwoListsHelper(lists, mid + 1, right);  
 
-        return this.MergeTwoList(left, right);
+        return this.MergeTwoLists(leftLists, rightLists);
     }
     
 
@@ -86,7 +90,7 @@ public class Solution023 {
     {
         var dummyhead = new ListNode(-1);
         var curr = dummyhead;
-        while (l1 != null and l2!=null)
+        while (l1 != null && l2!=null)
         {
             if (l1.val < l2.val)
             {
