@@ -6,6 +6,7 @@ LeetCode C# Implementation
 - 010. Regular Expression Matching : DP and Recursion
 - 011. Container With Most Water   : Smart
 - 012. Integer to Roman            : Roman Number
+- 017. Letter Combination          : Backtracking
 
 **Problem number gap** (407 - 390)
     
