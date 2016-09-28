@@ -75,7 +75,7 @@ public class Solution023 {
     {
         if (left > right)
             return null;
-        if (left == right) 
+        if (left == right)
             return lists[left];
 
         var mid = (right - left) / 2 + left;
