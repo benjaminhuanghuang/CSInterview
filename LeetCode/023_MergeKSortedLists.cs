@@ -45,9 +45,65 @@ public class Solution023 {
 
     //         return fakehead.next; 
     // }
-    public ListNode MergeKLists(ListNode[] lists) {
-        var dummyhead = new ListNode(-1);
 
+    // 最简单的办法就是扫一遍k个链表的开头，哪个最小就把它移除，加入到结果链表中。这样时间复杂度是kn
+    public ListNode MergeKLists_Naive(ListNode[] lists) {
+        var dummyhead = new ListNode(-1);
+        
         return null;
+    }
+
+    // 将k个链表分为两个一组，组内进行merge。形成一个新的链表集合，大小为(k + 1)/2。继续两个一组merge，
+    // 这样下去一共会进行logk次merge，最后merge成为一个链表。总的时间复杂度是nlogk
+    public ListNode MergeKLists(ListNode[] lists) {
+        int len = lists.Length;
+        if (n == 1)
+            return list[0];
+        if (n == 2)
+            return this.MergeTwoLists(list[0], list[1]);
+        
+        int mid = len / 2;
+        var left = this.MergeTwoLists()
+        return null;
+    }
+
+    private ListNode MergeTwoListsHelper(ListNode[] lists, int left, int right)
+    {
+        if (left > right)
+            return null;
+        if (left == right) 
+            return lists[left];
+
+        var mid = (right - left) / 2 + left;
+        var leftLists = MergeTwoListsHelper(lists, left, mid);
+        var rightLists = MergeTwoListsHelper(lists, mid + 1, right);  
+
+        return this.MergeTwoList(left, right);
+    }
+    
+
+    private ListNode MergeTwoLists(ListNode l1, ListNode l2)
+    {
+        var dummyhead = new ListNode(-1);
+        var curr = dummyhead;
+        while (l1 != null and l2!=null)
+        {
+            if (l1.val < l2.val)
+            {
+                curr.next = l1;
+                l1 = l1.next;
+            }
+            else
+            {
+                curr.next = l2;
+                l2 = l2.next;
+            }
+            curr = curr.next;
+        }
+        if (l1 != null)
+            curr.next = l1;
+        if (l2 != null)
+            curr.next = l2;
+        return dummyhead.next;
     }
 }

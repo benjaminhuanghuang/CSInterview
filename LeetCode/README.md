@@ -8,7 +8,7 @@ LeetCode C# Implementation
 - 012. Integer to Roman                         : Roman Number
 - 017. Letter Combination                       : Backtracking
 - 019. Remove Nth Node From End of List         : Linked list dummy header
-- 023. Merge k Sorted Lists                     : Min heap and Binary Search
+- 023. Merge k Sorted Lists                     : Min heap and Divide and conquer!
 
 **Problem number gap** (407 - 390)
     
