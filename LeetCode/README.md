@@ -5,6 +5,8 @@ LeetCode C# Implementation
 - 011. Container With Most Water                : Smart
 - 012. Integer to Roman                         : Roman Number
 - 017. Letter Combination                       : Backtracking
+- 029. Divide Two Integers                      : Time optimize , data type.
+- 030. Substring with Concatenation of All Words
 
 **Array Operation**:
 - 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
@@ -39,3 +41,5 @@ Update history
 
     09-26   10/390
     09-27   22/390
+    09-28   26/390
+    09-29   26/390
