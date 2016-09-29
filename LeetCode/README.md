@@ -6,6 +6,10 @@ LeetCode C# Implementation
 - 012. Integer to Roman                         : Roman Number
 - 017. Letter Combination                       : Backtracking
 
+**Array Operation**:
+- 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
+
+
 **Binary Search and Divide and conquer**:
 - 004. Median of Two Sorted Arrays              : Binary search, Kth number
 
