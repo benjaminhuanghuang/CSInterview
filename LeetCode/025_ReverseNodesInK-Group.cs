@@ -30,7 +30,22 @@ For k = 3, you should return: 3->2->1->4->5
  */
 public class Solution025 {
     public ListNode ReverseKGroup(ListNode head, int k) {
-        
+        if (head == null)
+            return null;
+
+        ListNode start = head;
+        ListNode end = head;
+        int i = 0;
+        while (start != null)
+        {
+            while (i < k)
+            {
+                end = end.next;
+                if (end == null)
+                    break;
+            }
+        }
+
     }
 
     public ListNode ReverseListNode(ListNode start, ListNode end)
@@ -47,30 +62,6 @@ public class Solution025 {
 
     public ListNode ReverseList(ListNode head)
     {
-        var prev = new ListNode(-1);
-
-        while (head != null)
-        {
-            var next = head.next;
-
-            head.next = prev.next;
-            prev.next = head;
-
-            head = next;
-        }
-
-        return prev.next;
+        
     }
-
-    public ListNode ReverseList_Recursive(ListNode head) {
-        if (head == null || head.next == null) 
-            return head;
-        var rest = ReverseList(head.next);
-
-        head.next.next = head;
-        head.next = null;
-
-        return rest;    
-    }
-
 }

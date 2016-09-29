@@ -11,9 +11,14 @@ LeetCode C# Implementation
 
 
 **LinkedList Operation**:
+- 206. Reverse Linked List                      : Iteratively or recursively
+- 024. Swap Node in Pairs                       : Iteratively or recursively
 - 019. Remove Nth Node From End of List         : Linked list dummy header
 - 023. Merge k Sorted Lists                     : Min heap and Divide and conquer!
-- 024. Swap Node in Pairs                       : ListNode operation
+
+**Tree Operation**:
+- 156. Binary Tree Upside Down                  : Iteratively or recursively
+
 
 **DP**:
 - 010. Regular Expression Matching              : DP and Recursion           

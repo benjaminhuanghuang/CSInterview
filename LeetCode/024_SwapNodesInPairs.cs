@@ -61,12 +61,12 @@ public class Solution024 {
         return fakeHead.next;
     }
 
-    public ListNode SwapPairs2(ListNode head)
+    public ListNode SwapPairs_Recursively(ListNode head)
     {
         if (head == null || head.next == null) return head;
 
         var newhead = head.next;
-        head.next = SwapPairs2(head.next.next);
+        head.next = SwapPairs_Recursively(head.next.next);
         newhead.next = head;
         return newhead;
     }
