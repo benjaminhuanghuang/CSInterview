@@ -18,8 +18,6 @@ For k = 3, you should return: 3->2->1->4->5
 
 */
 
-
-
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -30,38 +28,38 @@ For k = 3, you should return: 3->2->1->4->5
  */
 public class Solution025 {
     public ListNode ReverseKGroup(ListNode head, int k) {
-        if (head == null)
-            return null;
+        if(head == null || k == 1) 
+            return head;
 
-        ListNode start = head;
-        ListNode end = head;
-        int i = 0;
-        while (start != null)
-        {
-            while (i < k)
+        var newHead = new ListNode(0){next = head};
+        var start = newHead;
+        while(start.next != null){
+            var end = start;
+            for (int i = 0; i < k-1; i++)
             {
                 end = end.next;
-                if (end == null)
-                    break;
+                if (end.next == null)
+                {
+                    return newHead.next;
+                }
             }
+            var endBk = end.next;
+            var startBk = start.next;
+            this.Reverse(start.next, end.next);
+            start.next = endBk;
+            start = startBk;
         }
-
+        return newHead.next;
     }
-
-    public ListNode ReverseListNode(ListNode start, ListNode end)
+    private void Reverse(ListNode start, ListNode end)
     {
-        ListNode prev = new ListNode(-1){next = start};
-        while (prev.next != end)
+        var newHead = new ListNode(0){next = start};
+        while( newHead.next != end)
         {
-            var tmp = start.next;
-            start.next = tmp.next;
-            tmp.next = prev.next;
-            prev.next = tmp;
+            var temp = start.next;
+            start.next = temp.next;
+            temp.next = newHead.next;
+            newHead.next = temp;
         }
-    }
-
-    public ListNode ReverseList(ListNode head)
-    {
-        
     }
 }

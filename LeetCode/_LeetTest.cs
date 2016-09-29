@@ -6,9 +6,13 @@ using System.IO;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var s = new Solution023();
-        ListNode[] a = new ListNode[0];
-        var res = s.MergeKLists(a);     
+        ListNode l1 = new ListNode(1);
+        l1.next = new ListNode(2);
+        l1.next.next = new ListNode(3);
+        l1.next.next.next = new ListNode(4);
+        
+        var s = new Solution025();
+        var res = s.ReverseKGroup(l1,3);     
     
     }
 }
