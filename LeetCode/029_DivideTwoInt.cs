@@ -58,8 +58,8 @@ public class Solution029 {
    
         while (dividend >= divisor)
         {
-            long cur = 1;
-            long start = divisor;
+            int cur = 1;
+            int start = divisor;
             while ((start << 1) <= dividend)
             {
                 start <<= 1;

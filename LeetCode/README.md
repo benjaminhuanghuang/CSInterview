@@ -30,6 +30,9 @@ LeetCode C# Implementation
 - 010. Regular Expression Matching              : DP and Recursion           
 
 
+**Hashtable**:
+- 030. Substring with Concatenation of All Words      : 
+
 **Problem number gap** (407 - 390)
     
     174 to 178 (4)
