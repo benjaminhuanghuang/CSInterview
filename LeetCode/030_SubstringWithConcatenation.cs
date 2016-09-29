@@ -46,12 +46,12 @@ public class Solution030 {
 
         for (int i = 0; i < s.Length - subStrLen + 1; i++)
         {
-            if (hashtable.ContainsKey(s.Substring(i, wordLen)))
+            if (hashtable.ContainsKey(s.Substring(i, wordLen))) // if find any word in words
             {
                 var newHashTable = new Dictionary<string, int>(hashtable);
                 for (int j = i; j < i + subStrLen; j += wordLen)
                 {                         
-                    var str = s.Substring(j, wordLen);
+                    var str = s.Substring(j, wordLen); // pick one word
                     if (!newHashTable.ContainsKey(str))
                     {                             
                         break;                         
