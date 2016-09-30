@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 
 
-public class Solution40 {
+public class Solution040 {
     public IList<IList<int>> CombinationSum2(int[] candidates, int target) {
         Array.Sort(candidates);
         var res = new List<IList<int>>();
@@ -47,6 +47,7 @@ public class Solution40 {
         for (int j = index; j < candidates.Length; j++)         
         {             
             // candidates is sorted
+            // j > index will skip the same combination, no combination
             if (j > index && candidates[j] == candidates[j - 1]) 
                 continue;
             combination.Add(candidates[j]);
