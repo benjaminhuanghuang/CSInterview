@@ -30,7 +30,7 @@ public class Solution032 {
                 {
                     stack.Pop();
                     // whenever stack pop, compare its length to the global max length.
-                    int newLen = i - (stack.Any() ? stack.Peek() : -1)
+                    int newLen = i - (stack.Any() ? stack.Peek() : -1);
                     res = Math.Max(res, newLen);
                 }
                 else

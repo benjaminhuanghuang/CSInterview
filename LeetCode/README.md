@@ -11,10 +11,11 @@ LeetCode C# Implementation
 **Array Operation**:
 - 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
 
-
 **Binary Search and Divide and conquer**:
 - 004. Median of Two Sorted Arrays              : Binary search, Kth number
-
+- 033. Search in Rotated Sorted Array
+- 034. Search for a Range
+- 035. Search Insert Position
 
 **LinkedList Operation**:
 - 206. Reverse Linked List                      : Iteratively or recursively
@@ -25,6 +26,8 @@ LeetCode C# Implementation
 **Tree Operation**:
 - 156. Binary Tree Upside Down                  : Iteratively or recursively
 
+**Recursion and back tracing**:
+- 037. Sudoku Solver
 
 **DP**:
 - 010. Regular Expression Matching              : DP and Recursion           
