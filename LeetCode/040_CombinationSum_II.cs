@@ -47,9 +47,14 @@ public class Solution040 {
         for (int j = index; j < candidates.Length; j++)         
         {             
             // candidates is sorted
-            // j > index will skip the same combination, no combination
+            // 因为给定数组元素出现重复，如果当前递归符合要求，紧接的递归会再次出现同样的结果
+            Console.WriteLine(string.Join(",", combination));
             if (j > index && candidates[j] == candidates[j - 1]) 
+            {
+                Console.WriteLine(string.Join(",", combination));
+            
                 continue;
+            }
             combination.Add(candidates[j]);
             CombinationSumHelper(candidates, target - candidates[j] , j + 1, combination, res);
             combination.RemoveAt(combination.Count - 1);
