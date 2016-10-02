@@ -36,6 +36,10 @@ LeetCode C# Implementation
 **Hashtable**:
 - 030. Substring with Concatenation of All Words      : 
 
+**Basic**:
+- 006. ZigZag Conversion
+- 048. Rotate Image
+
 **Problem number gap** (407 - 390)
     
     174 to 178 (4)
