@@ -8,8 +8,16 @@ LeetCode C# Implementation
 - 029. Divide Two Integers                      : Time optimize , data type.
 - 030. Substring with Concatenation of All Words
 
+**String**:
+- 058. Length of Last Word                      : 
+
 **Array Operation**:
 - 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
+
+**Permutation**
+- 031. Next Permutation
+- 060. Permutation Sequence
+
 
 **Binary Search and Divide and conquer**:
 - 004. Median of Two Sorted Arrays              : Binary search, Kth number
@@ -30,7 +38,8 @@ LeetCode C# Implementation
 - 037. Sudoku Solver
 
 **DP**:
-- 010. Regular Expression Matching              : DP and Recursion           
+- 010. Regular Expression Matching              : DP and Recursion  
+- 053. Maximum Subarray         
 
 
 **Hashtable**:
@@ -39,6 +48,7 @@ LeetCode C# Implementation
 **Basic**:
 - 006. ZigZag Conversion
 - 048. Rotate Image
+- 054. Spiral Matrix
 
 **Problem number gap** (407 - 390)
     
@@ -54,3 +64,5 @@ Update history
     09-28   26/390
     09-29   26/390
     10-01   50/390
+    10-02   60/390
+    
