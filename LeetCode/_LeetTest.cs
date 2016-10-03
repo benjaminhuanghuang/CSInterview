@@ -8,6 +8,6 @@ public class LeetTest {
     {   
         int[,] input = new int[,]{ {8, 30} };
         var s = new Solution060();
-        Console.WriteLine(s.GetPermutation(8, 20));         
+        Console.WriteLine(s.GetPermutation(8, 400));         
     }
 }
