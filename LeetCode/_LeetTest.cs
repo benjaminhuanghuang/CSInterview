@@ -6,8 +6,8 @@ using System.Collections;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        int[,] input = new int[,]{ {8, 30} };
-        var s = new Solution060();
-        Console.WriteLine(s.GetPermutation(8, 400));         
+        ListNode head = ListNode.BuildList(new int[]{1,2});
+        var s = new Solution061();
+        Console.WriteLine(s.RotateRight(head, 1));         
     }
 }

@@ -30,6 +30,7 @@ LeetCode C# Implementation
 - 024. Swap Node in Pairs                       : Iteratively or recursively
 - 019. Remove Nth Node From End of List         : Linked list dummy header
 - 023. Merge k Sorted Lists                     : Min heap and Divide and conquer!
+- 061. Rotate List
 
 **Tree Operation**:
 - 156. Binary Tree Upside Down                  : Iteratively or recursively
