@@ -6,8 +6,8 @@ using System.Collections;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        ListNode head = ListNode.BuildList(new int[]{1,2});
-        var s = new Solution061();
-        Console.WriteLine(s.RotateRight(head, 1));         
+        var input = "abccccdd";
+        var s = new Solution409();
+        Console.WriteLine(s.LongestPalindrome(input));         
     }
 }

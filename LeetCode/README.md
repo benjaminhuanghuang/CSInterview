@@ -41,6 +41,9 @@ LeetCode C# Implementation
 **DP**:
 - 010. Regular Expression Matching              : DP and Recursion  
 - 053. Maximum Subarray         
+- 062. Unique Paths
+- 063. Unique Paths II
+- 064. Minimum Path Sum
 
 
 **Hashtable**:
@@ -66,4 +69,5 @@ Update history
     09-29   26/390
     10-01   50/390
     10-02   60/390
+    10-03   68/394 
     
