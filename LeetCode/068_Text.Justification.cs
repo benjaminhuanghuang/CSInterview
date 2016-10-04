@@ -33,13 +33,13 @@ public class Solution068 {
     public IList<string> FullJustify(string[] words, int maxWidth) {
         var res = new List< string>();
         var oneline = new List< string>();
-        var count = 0;
+        var charsCountInLine = 0;
         for (int i = 0; i < words.Length; i++)             
         {                 
-            if (count + oneline.Count + words[i].Length > maxWidth)
+            if (charsCountInLine + oneline.Count + words[i].Length > maxWidth)
             {
                 var stringbuilder = new StringBuilder();
-                var leftSpaces = maxWidth - count;
+                var leftSpaces = maxWidth - charsCountInLine;
                 for (int j = 0; j < oneline.Count; j++)                     
                 {                         
                     stringbuilder.Append(oneline[j]);                         
@@ -54,11 +54,11 @@ public class Solution068 {
 
                 res.Add(stringbuilder.ToString().PadRight(maxWidth));
 
-                count = 0;
+                charsCountInLine = 0;
                 oneline.Clear();
             }
 
-            count += words[i].Length;
+            charsCountInLine += words[i].Length;
             oneline.Add(words[i]);
         }
 
