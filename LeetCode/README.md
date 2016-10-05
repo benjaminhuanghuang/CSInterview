@@ -25,6 +25,7 @@ LeetCode C# Implementation
 - 034. Search for a Range
 - 035. Search Insert Position
 - 069. Sqrt(x)
+- 074. Search a 2D Matrix
 
 **LinkedList Operation**:
 - 206. Reverse Linked List                      : Iteratively or recursively

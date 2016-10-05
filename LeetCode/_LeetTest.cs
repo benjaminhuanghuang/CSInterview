@@ -6,8 +6,12 @@ using System.Collections;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var input = "/...";
-        var s = new Solution071();
-        Console.WriteLine(s.SimplifyPath(input));         
+        string S = "AAADOBECODEBANC";
+        string T = "ABB";
+
+        var s = new Solution076();
+        var res = s.MinWindow(S, T);
+
+        Console.WriteLine(res);   
     }
 }
