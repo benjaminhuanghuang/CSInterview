@@ -24,6 +24,7 @@ LeetCode C# Implementation
 - 033. Search in Rotated Sorted Array
 - 034. Search for a Range
 - 035. Search Insert Position
+- 069. Sqrt(x)
 
 **LinkedList Operation**:
 - 206. Reverse Linked List                      : Iteratively or recursively
@@ -44,6 +45,7 @@ LeetCode C# Implementation
 - 062. Unique Paths
 - 063. Unique Paths II
 - 064. Minimum Path Sum
+- 072. Edit Distance
 
 
 **Hashtable**:
