@@ -6,11 +6,9 @@ using System.Collections;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        string S = "AAADOBECODEBANC";
-        string T = "ABB";
-
-        var s = new Solution076();
-        var res = s.MinWindow(S, T);
+        int[] input = new int[]{1,2,3};
+        var s = new Solution078();
+        var res = s.Subsets(input);
 
         Console.WriteLine(res);   
     }

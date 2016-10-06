@@ -17,6 +17,7 @@ LeetCode C# Implementation
 **Permutation**
 - 031. Next Permutation
 - 060. Permutation Sequence
+- 077. Combinations
 
 
 **Binary Search and Divide and conquer**:
