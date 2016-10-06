@@ -23,17 +23,21 @@ LeetCode C# Implementation
 **Binary Search and Divide and conquer**:
 - 004. Median of Two Sorted Arrays              : Binary search, Kth number
 - 033. Search in Rotated Sorted Array
+- 081. Search in Rotated Sorted Array II
 - 034. Search for a Range
 - 035. Search Insert Position
 - 069. Sqrt(x)
 - 074. Search a 2D Matrix
 
-**LinkedList Operation**:
+**LinkedList **:
 - 206. Reverse Linked List                      : Iteratively or recursively
 - 024. Swap Node in Pairs                       : Iteratively or recursively
 - 019. Remove Nth Node From End of List         : Linked list dummy header
 - 023. Merge k Sorted Lists                     : Min heap and Divide and conquer!
 - 061. Rotate List
+- 083. Remove Duplicates from Sorted List
+- 082. Remove Duplicates from Sorted List II
+- 086. Partition List                           : Easy
 
 **Tree Operation**:
 - 156. Binary Tree Upside Down                  : Iteratively or recursively

@@ -6,9 +6,8 @@ using System.Collections;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        int[] input = new int[]{1,2,3};
-        var s = new Solution078();
-        var res = s.Subsets(input);
+        var s = new Solution086();
+        var res = s.Partition(new ListNode(1), 0);
 
         Console.WriteLine(res);   
     }

@@ -21,55 +21,6 @@ public class Solution033 {
         if (nums == null || nums.Length < 1)
             return -1;
 
-        return this.SearchInRotatedArrayRecursion(nums, 0, nums.Length -1, target);
-    }
-
-    private int SearchInRotatedArrayRecursion(int[] array, int low, int high, int x)
-    {          
-        if (low > high)
-        {
-            return -1;
-        }
-        var mid = (high - low) / 2 + low;
-        if (array[mid] == x)
-            return mid;
-      
-        // left part is increasing
-        if (array[mid] > array[low])
-        {
-            if (x >= array[low] && x < array[mid])
-            {
-                return this.SearchInRotatedArrayRecursion(array, low, mid - 1, x);
-            }
-            else
-            {
-                return this.SearchInRotatedArrayRecursion(array, mid + 1, high, x);
-            }
-        }
-        // right part is increasing
-        else if (array[mid] < array[low])             
-        {                 
-            if (x > array[mid] && x <= array[high])
-            {
-                return this.SearchInRotatedArrayRecursion(array, mid + 1, high, x);
-            }
-            else
-            {
-                return this.SearchInRotatedArrayRecursion(array, low, mid - 1, x);
-            }
-        }
-        // left part are all same, just increase low by 1
-        else
-        {
-            return this.SearchInRotatedArrayRecursion(array, low + 1, high, x);
-        }
-    }
-
-
-    public int Search_better(int[] nums, int target) {
-        if (nums == null || nums.Length < 1)
-            return -1;
-
         int left = 0;
         int right = nums.Length -1;
 
