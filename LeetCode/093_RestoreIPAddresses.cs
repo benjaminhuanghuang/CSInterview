@@ -15,19 +15,20 @@ return ["255.255.11.135", "255.255.111.35"]. (Order does not matter)
 using System.Collections.Generic;
 
 public class Solution093 {
-    private List<string> resstr = new List<string>(); 
+    private List<string> ipCollection = new List<string>(); 
     public IList<string> RestoreIpAddresses(string s)
     {
         RestoreIpAddressesHelper(s, 0, 0, new List<string>());
-        return resstr;
+        return ipCollection;
     }
-    private void RestoreIpAddressesHelper(string s, int i, int segcount, List<string> result)
+    private void RestoreIpAddressesHelper(string s, int i, int segcount, List<string> sections)
     {
         if (i >= s.Length)
         {
             if (segcount == 4)
             {
-                resstr.Add(string.Join(".", result));
+                var ip = string.Join(".", sections);
+                ipCollection.Add(ip);
             }
 
             return;
@@ -39,9 +40,9 @@ public class Solution093 {
         {                 
             if (!IsValid(s, i, len)) 
                 continue;                 
-            result.Add(s.Substring(i, len));                 
-            RestoreIpAddressesHelper(s, i + len, segcount + 1, result);                 
-            result.RemoveAt(result.Count - 1);             
+            sections.Add(s.Substring(i, len));                 
+            RestoreIpAddressesHelper(s, i + len, segcount + 1, sections);                 
+            sections.RemoveAt(sections.Count - 1);             
         }         
     }         
 

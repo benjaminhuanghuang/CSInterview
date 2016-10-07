@@ -19,6 +19,7 @@ LeetCode C# Implementation
 - 060. Permutation Sequence
 - 077. Combinations
 - 090. Subsets II
+- 093. Restore IP Addresses
 
 
 **Binary Search and Divide and conquer**:
@@ -82,4 +83,5 @@ Update history
     10-02   60/390
     10-03   68/394
     10-05   80/394
+    10-06   93/394
     
