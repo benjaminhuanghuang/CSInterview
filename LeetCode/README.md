@@ -18,6 +18,7 @@ LeetCode C# Implementation
 - 031. Next Permutation
 - 060. Permutation Sequence
 - 077. Combinations
+- 090. Subsets II
 
 
 **Binary Search and Divide and conquer**:
@@ -38,6 +39,7 @@ LeetCode C# Implementation
 - 083. Remove Duplicates from Sorted List
 - 082. Remove Duplicates from Sorted List II
 - 086. Partition List                           : Easy
+- 092. Reverse Linked List II
 
 **Tree Operation**:
 - 156. Binary Tree Upside Down                  : Iteratively or recursively
@@ -52,6 +54,7 @@ LeetCode C# Implementation
 - 063. Unique Paths II
 - 064. Minimum Path Sum
 - 072. Edit Distance
+- 091. Decode Ways
 
 
 **Hashtable**:
