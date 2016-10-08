@@ -43,7 +43,9 @@ LeetCode C# Implementation
 - 092. Reverse Linked List II
 
 **Tree Operation**:
+- 094. Binary Tree Inorder Traversal
 - 156. Binary Tree Upside Down                  : Iteratively or recursively
+
 
 **Recursion and back tracing**:
 - 037. Sudoku Solver
