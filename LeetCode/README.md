@@ -22,7 +22,7 @@ LeetCode C# Implementation
 - 093. Restore IP Addresses
 
 
-**Binary Search and Divide and conquer**:
+**Binary Search**:
 - 004. Median of Two Sorted Arrays              : Binary search, Kth number
 - 033. Search in Rotated Sorted Array
 - 081. Search in Rotated Sorted Array II
@@ -30,6 +30,9 @@ LeetCode C# Implementation
 - 035. Search Insert Position
 - 069. Sqrt(x)
 - 074. Search a 2D Matrix
+
+**Divide and conquer**:
+- 095. Unique Binary Search Trees II
 
 **LinkedList **:
 - 206. Reverse Linked List                      : Iteratively or recursively
@@ -58,7 +61,7 @@ LeetCode C# Implementation
 - 064. Minimum Path Sum
 - 072. Edit Distance
 - 091. Decode Ways
-
+- 096. Unique Binary Search Trees
 
 **Hashtable**:
 - 030. Substring with Concatenation of All Words      : 
