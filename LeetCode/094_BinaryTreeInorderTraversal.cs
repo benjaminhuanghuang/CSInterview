@@ -13,6 +13,8 @@ Given binary tree [1,null,2,3],
 return [1,3,2].
 
 Note: Recursive solution is trivial, could you do it iteratively?
+
+Reference : http://www.java2blog.com/2014/07/binary-tree-inorder-traversal-in-java.html
 */
 
 /**
@@ -72,5 +74,57 @@ public class Solution094 {
             mystack.Push(root);
             root = root.left;
         }
+    }
+    public IList<int> InorderTraversal_Iteratively(TreeNode root)
+    {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        var result = new List<int>();
+        TreeNode curt = root;
+        while (curt != null || stack.Count>0) {
+            while (curt != null) {
+                stack.Push(curt);
+                curt = curt.left;
+            }
+            curt = stack.Pop();
+            result.Add(curt.val);
+            curt = curt.right;
+        }
+        return result;
+    }
+    //http://blog.csdn.net/linhuanmars/article/details/20187257
+    public IList<int> InorderTraversal_Morris(TreeNode root)
+    {
+        var res = new List<int>();
+        while (root != null)
+        {
+            if (root.left == null)
+            {
+                res.Add(root.val);
+                root = root.right;
+            }
+            else
+            {
+                var pre = root.left;
+                while (pre.right != null && pre.right != root)
+                {
+                    pre = pre.right;
+                }
+
+                if (pre.right == null)
+                {
+                    pre.right = root;
+                    root = root.left;
+                }
+                else
+                {
+                    pre.right = null;
+                    res.Add(root.val);
+                    root = root.right;
+                }
+            }
+
+        }
+
+        return res;
     }
 }
