@@ -8,17 +8,21 @@ the farthest leaf node.
 
 
 */
+using System;
+using System.Linq;
+using System.Collections.Generic;
 
-public class Solution {
+public class Solution104 {
     // DFS
     public int MaxDepth(TreeNode root) {
         if (root == null) return 0;
         return Math.Max(this.MaxDepth(root.left), this.MaxDepth(root.right)) + 1;
     }
 
-     public int MaxDepth_BFS(TreeNode root) {
+    public int MaxDepth_BFS(TreeNode root) 
+    {
         var res = 0;
-        var queue = new Queue();
+        var queue = new Queue<TreeNode>();
         if(root != null) queue.Enqueue(root);
 
         while (queue.Any())

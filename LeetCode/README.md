@@ -47,6 +47,8 @@ LeetCode C# Implementation
 
 **Tree Operation**:
 - 094. Binary Tree Inorder Traversal
+- 105. Construct Binary Tree from Preorder and Inorder Traversal
+- 106. Construct Binary Tree from Inorder and Postorder Traversal  
 - 156. Binary Tree Upside Down                  : Iteratively or recursively
 
 
