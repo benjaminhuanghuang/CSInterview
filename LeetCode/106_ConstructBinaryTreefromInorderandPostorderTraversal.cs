@@ -6,7 +6,7 @@ Given inorder and postorder traversal of a tree, construct the binary tree.
 using System;
 
 public class Solution106 {
-    public TreeNode buildTree(int[] inorder, int[] postorder)
+    public TreeNode BuildTree(int[] inorder, int[] postorder)
     {
         if (inorder.Length == 0 || postorder.Length == 0) return null;
 

@@ -11,6 +11,14 @@ For example, given the following triangle
    [6,5,7],
   [4,1,8,3]
 ]
+
+[
+ [2],
+ [3,4],
+ [6,5,7],
+ [4,1,8,3]
+]
+
 The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
 
 Note:
@@ -18,10 +26,32 @@ Bonus point if you are able to do this using only O(n) extra space, where n is t
 
 
 */
+using System;
+using System.Linq;
 using System.Collections.Generic;
 
 public class Solution120 {
-    public int MinimumTotal(IList<IList<int>> triangle) {
+
+    // dp[j] = min(dp[j+1], dp[j]) + triangle[i][j].
+    public int MinimumTotal(IList<IList<int>> triangle) 
+    {   
+        if (triangle.Count == 0)
+        {
+            return 0;
+        }
+        var dp = triangle[triangle.Count-1].ToArray();
+        
+        for (int row = triangle.Count - 2; row >0 ; row--)
+        {   for (int col = 0; col <= row; col++)
+            {
+                dp[col] = Math.Min(dp[col], dp[col+1]) + triangle[row][col];
+            }
+        }
+        return dp[0];
+    }
+    // dp[i][j] = min(dp[i – 1][j], dp[i][j]) + triangle[i][j].
+    public int MinimumTotal_2(IList<IList<int>> triangle) 
+    {
         if (triangle.Count == 0)
         {
             return 0;
@@ -34,15 +64,17 @@ public class Solution120 {
         }
 
         dp[0] = triangle[0][0];
-        for (int j = 1; j >= 0; j--)
-        {
-            if (j == 0)
+        for (int row = 1; row < triangle.Count; row++)
+        {   for (int col = 0; col <= row; col++)
             {
-                dp[j] = dp[j] + triangle[i][j];
-            }
-            else
-            {
-                dp[j] = Math.Min(dp[j - 1], dp[j]) + triangle[i][j];
+                if (col == 0)
+                {
+                    dp[col] = dp[col] + triangle[row][col];
+                }
+                else
+                {
+                    dp[col] = Math.Min(dp[col - 1], dp[col]) + triangle[row][col];
+                }
             }
         }
         
@@ -56,5 +88,37 @@ public class Solution120 {
         }
 
         return mimimumPath;
+    }
+
+    //  Brute force solution use recursion.
+    private int minimumPath = int.MaxValue;
+    public int minimumTotal(List<List<int>> triangle)
+    {
+        this.minimumTotalRecursion(triangle, 0, 0, 0);
+
+        return minimumPath;
+    }
+
+    public void minimumTotalRecursion(List<List<int>> triangle, int layer, int index, int currentSum)
+    {
+        if (layer == triangle.Count)
+        {
+            if (currentSum < minimumPath)
+            {
+                minimumPath = currentSum;
+            }
+
+            return;
+        }
+
+        if (layer == 0)
+        {
+            this.minimumTotalRecursion(triangle, layer + 1, index, currentSum + triangle[layer][index]);
+        }
+        else
+        {
+            this.minimumTotalRecursion(triangle, layer + 1, index, currentSum + triangle[layer][index]);
+            this.minimumTotalRecursion(triangle, layer + 1, index + 1, currentSum + triangle[layer][index + 1]);
+        }
     }
 }
