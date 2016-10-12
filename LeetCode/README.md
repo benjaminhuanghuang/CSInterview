@@ -65,6 +65,7 @@ LeetCode C# Implementation
 - 091. Decode Ways
 - 096. Unique Binary Search Trees
 - 097. Interleaving String
+- 120. Triangle
 
 **Hashtable**:
 - 030. Substring with Concatenation of All Words      : 
