@@ -18,48 +18,60 @@ X X X X
 X O X X
 */
 public class Solution {
+    // 1. find that all O at edge of board will definitely not surrounded by ‘X’. 
+    // 2. then for each ‘O’, find its adjacent ‘O’ by BFS and add to its white list 
+    //    (list of ‘O’ that is not surrounded by ‘X’).
     public void Solve(char[,] board) {
         var rows = board.GetLength(0);
-            var columns = board.GetLength(1);
+        var columns = board.GetLength(1);
 
-            var curQueues = new Queue<Tuple<int, int>>();
-            var cur = new HashSet<Tuple<int, int>>();
+        var curQueues = new Queue<Tuple<int, int>>();
+        var cur = new HashSet<Tuple<int, int>>();
 
-            for (int i = 0; i < rows; i++)
+        // Step 1. find that all O at edge of board
+        for (int i = 0; i < rows; i++)
+        {
+            if (board[i, 0] == 'O') 
+                curQueues.Enqueue(new Tuple<int, int>(i, 0));
+            if (board[i, columns - 1] == 'O') 
+                curQueues.Enqueue(new Tuple<int, int>(i, columns - 1));
+        }
+
+        for (int j = 1; j < columns - 1; j++)
+        {
+            if (board[0, j] == 'O') 
+                curQueues.Enqueue(new Tuple<int, int>(0, j));
+            if (board[rows - 1, j] == 'O') 
+                curQueues.Enqueue(new Tuple<int, int>(rows - 1, j));
+        }
+        // Step2. find its adjacent ‘O’ by BFS
+        while (curQueues.Any())
+        {
+                var top = curQueues.Dequeue();
+
+                if(cur.Contains(top)) continue;
+                cur.Add(top);
+
+                if(top.Item1 - 1 >= 0 && board[top.Item1 - 1, top.Item2] == 'O') 
+                    curQueues.Enqueue(new Tuple<int, int>(top.Item1 - 1, top.Item2));
+                if (top.Item1 + 1 < rows  && board[top.Item1 + 1, top.Item2] == 'O') 
+                    curQueues.Enqueue(new Tuple<int, int>(top.Item1 + 1, top.Item2));
+                if (top.Item2 - 1 >= 0 && board[top.Item1, top.Item2 - 1] == 'O') 
+                    curQueues.Enqueue(new Tuple<int, int>(top.Item1, top.Item2 - 1));
+                if (top.Item2 + 1 < columns && board[top.Item1, top.Item2 + 1] == 'O') 
+                    curQueues.Enqueue(new Tuple<int, int>(top.Item1, top.Item2 + 1));
+        }
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
             {
-                if (board[i, 0] == 'O') curQueues.Enqueue(new Tuple<int, int>(i, 0));
-                if (board[i, columns - 1] == 'O') curQueues.Enqueue(new Tuple<int, int>(i, columns - 1));
-            }
-
-            for (int j = 1; j < columns - 1; j++)
-            {
-                if (board[0, j] == 'O') curQueues.Enqueue(new Tuple<int, int>(0, j));
-                if (board[rows - 1, j] == 'O') curQueues.Enqueue(new Tuple<int, int>(rows - 1, j));
-            }
-
-            while (curQueues.Any())
-            {
-                    var top = curQueues.Dequeue();
-
-                    if(cur.Contains(top)) continue;
-                    cur.Add(top);
-
-                    if(top.Item1 - 1 >= 0 && board[top.Item1 - 1, top.Item2] == 'O') curQueues.Enqueue(new Tuple<int, int>(top.Item1 - 1, top.Item2));
-                    if (top.Item1 + 1 < rows  && board[top.Item1 + 1, top.Item2] == 'O') curQueues.Enqueue(new Tuple<int, int>(top.Item1 + 1, top.Item2));
-                    if (top.Item2 - 1 >= 0 && board[top.Item1, top.Item2 - 1] == 'O') curQueues.Enqueue(new Tuple<int, int>(top.Item1, top.Item2 - 1));
-                    if (top.Item2 + 1 < columns && board[top.Item1, top.Item2 + 1] == 'O') curQueues.Enqueue(new Tuple<int, int>(top.Item1, top.Item2 + 1));
-            }
-
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < columns; j++)
+                if (!cur.Contains(new Tuple<int, int>(i, j)))
                 {
-                    if (!cur.Contains(new Tuple<int, int>(i, j)))
-                    {
-                        board[i, j] = 'X';
-                    }
+                    board[i, j] = 'X';
                 }
             }
+        }
     }
 
 //DFS solution. Find all the ‘O’ connect to edge and change them to ‘#’. Then, change all the ‘O’ to ‘X’ and all the ‘#’ to ‘O’.
