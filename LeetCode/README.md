@@ -82,6 +82,7 @@ LeetCode C# Implementation
 - 097. Interleaving String
 - 120. Triangle
 - 139. Word Break
+- 152. Maximum Product Subarray
 
 **Hashtable**:
 - 030. Substring with Concatenation of All Words      : 
