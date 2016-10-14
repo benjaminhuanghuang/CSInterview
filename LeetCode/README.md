@@ -21,7 +21,8 @@ LeetCode C# Implementation
 - 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
 
 **Sorting**
-- 147. Insertion Sort List
+- 147. Insertion Sort List                      :
+- 148. Sort List                                : Merge Sort O(n log n) and Merge List
 
 **Permutation**
 - 031. Next Permutation
