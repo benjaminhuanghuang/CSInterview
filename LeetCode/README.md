@@ -11,13 +11,17 @@ LeetCode C# Implementation
 
 
 **Bitwise Operation**
-136. Single Number
+- 136. Single Number
+- 137. Single Number II
 
 **String**:
 - 058. Length of Last Word                      : 
 
 **Array Operation**:
 - 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
+
+**Sorting**
+- 147. Insertion Sort List
 
 **Permutation**
 - 031. Next Permutation
@@ -40,7 +44,6 @@ LeetCode C# Implementation
 - 095. Unique Binary Search Trees II
 
 **LinkedList **:
-- 206. Reverse Linked List                      : Iteratively or recursively
 - 024. Swap Node in Pairs                       : Iteratively or recursively
 - 019. Remove Nth Node From End of List         : Linked list dummy header
 - 023. Merge k Sorted Lists                     : Min heap and Divide and conquer!
@@ -50,11 +53,15 @@ LeetCode C# Implementation
 - 086. Partition List                           : Easy
 - 092. Reverse Linked List II
 - 141. Linked List Cycle
+- 143. Reorder List                             : Compare with #206
+- 206. Reverse Linked List                      : Iteratively or recursively
+- 147. Insertion Sort List
 
 **Tree Operation**:
-- 094. Binary Tree Inorder Traversal
+- 094. Binary Tree Inorder Traversal            : Iteratively or recursively or Morris
 - 105. Construct Binary Tree from Preorder and Inorder Traversal
 - 106. Construct Binary Tree from Inorder and Postorder Traversal  
+- 144. Binary Tree Preorder Traversal           : Iteratively or recursively or Morris
 - 156. Binary Tree Upside Down                  : Iteratively or recursively
 
 
@@ -82,6 +89,9 @@ LeetCode C# Implementation
 - 006. ZigZag Conversion
 - 048. Rotate Image
 - 054. Spiral Matrix
+
+**Function Design**
+- 146. LRU Cache
 
 **Problem number gap** (407 - 390)
     
