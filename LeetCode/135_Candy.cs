@@ -10,6 +10,8 @@ Children with a higher rating get more candies than their neighbors.
 What is the minimum candies you must give?
 
 */
+using System;
+using System.Linq;
 
 public class Solution135 {
     public int Candy(int[] ratings) {

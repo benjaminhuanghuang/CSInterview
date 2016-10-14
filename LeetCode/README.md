@@ -4,9 +4,14 @@ LeetCode C# Implementation
 **To be review**:
 - 011. Container With Most Water                : Smart
 - 012. Integer to Roman                         : Roman Number
-- 017. Letter Combination                       : Backtracking
 - 029. Divide Two Integers                      : Time optimize , data type.
 - 030. Substring with Concatenation of All Words
+- 131. Palindrome Partitioning
+- 139. Word Break II
+
+
+**Bitwise Operation**
+136. Single Number
 
 **String**:
 - 058. Length of Last Word                      : 
@@ -31,7 +36,7 @@ LeetCode C# Implementation
 - 069. Sqrt(x)
 - 074. Search a 2D Matrix
 
-**Divide and conquer**:
+**Divide and Conquer**:
 - 095. Unique Binary Search Trees II
 
 **LinkedList **:
@@ -44,6 +49,7 @@ LeetCode C# Implementation
 - 082. Remove Duplicates from Sorted List II
 - 086. Partition List                           : Easy
 - 092. Reverse Linked List II
+- 141. Linked List Cycle
 
 **Tree Operation**:
 - 094. Binary Tree Inorder Traversal
@@ -53,6 +59,7 @@ LeetCode C# Implementation
 
 
 **Recursion and back tracing**:
+- 017. Letter Combination                       : Backtracking
 - 037. Sudoku Solver
 
 **DP**:
@@ -66,6 +73,7 @@ LeetCode C# Implementation
 - 096. Unique Binary Search Trees
 - 097. Interleaving String
 - 120. Triangle
+- 139. Word Break
 
 **Hashtable**:
 - 030. Substring with Concatenation of All Words      : 

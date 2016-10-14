@@ -17,17 +17,19 @@ Return
 using System.Collections.Generic;
 
 public class Solution131 {
+    //https://miafish.wordpress.com/2015/01/31/leetcode-oj-c-palindrome-partitioning/
     public IList<IList<string>> Partition(string s) {
-         var res = new List<IList<string>>();
-         return PartitionRecursion(res, s, 0);
-         return res;
+         return PartitionRecursion(s, 0);
     }
 
-    private IList<IList<string>> PartitionRecursion(List<IList<string>> res, string s, int index)
+    private IList<IList<string>> PartitionRecursion(string s, int index)
     {
+        var res = new List<IList<string>>();
+
         if (index >= s.Length)
         {
-            return;
+            res.Add(new List<string>{});
+            return res;
         }
 
         for (int i = index; i < s.Length; i++)
@@ -35,7 +37,7 @@ public class Solution131 {
             var str = s.Substring(index, i - index + 1);
             if (isPartition(str))
             {
-                PartitionRecursion(s, i + 1);
+                var restPartitions = PartitionRecursion(s, i + 1);
 
                 foreach (var restPartition in restPartitions)
                 {

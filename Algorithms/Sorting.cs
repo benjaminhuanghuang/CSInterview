@@ -4,8 +4,8 @@
      Select Sort（o(n2)），
      Insert Sort（o(n2)），
      Heap Sort（o(nlogn)），
-     归并排序（o(nlogn)），
-     快速排序（o(nlogn)）
+     Merge排序（o(nlogn)），
+     Quick排序（o(nlogn)）
 */
 
 public class Sorting{
@@ -65,7 +65,7 @@ public class Sorting{
         return arrayToSort;
 
     }
-
+    //o(n2)
     public static void BubbleSort(IList<int> data)
     {
         for (int i = data.Count - 1; i > 0; i--)
@@ -78,19 +78,19 @@ public class Sorting{
         }
     }
 
-    // 找出参与排序的数组最大值，放到末尾（或找到最小值放到开头）
+    // 找出参与排序的数组最大值，放到末尾（或找到最小值放到开头）o(n2)
     public static void SelectSort(IList<int> data)
     {
         for (int i = 0; i < data.Count - 1; i++)
         {
             int minIndex = i;
-            int temp = data[i];
+            int minVal = data[i];
             for (int j = i + 1; j < data.Count; j++)
             {
                 if (data[j] < temp)
                 {
-                    min = j;
-                    temp = data[j];
+                    minIndex = j;
+                    minValue = data[j];
                 }
             }
             if (minIndex != i)
@@ -98,7 +98,7 @@ public class Sorting{
         }
     }
 
-    // 通过构建有序数列，将未排序的数从后向前比较，找到合适位置并插入。
+    // 通过构建有序数列，将未排序的数从后向前比较，找到合适位置并插入。o(n2)
     public static void InsertSort(IList<int> data)
     {
         int temp;
@@ -174,10 +174,10 @@ public class Sorting{
         {
             if (leftData[i] < rightData[j])
             {
-                mergeData[i + j] = leftData[i++]; //不能使用Add,Array Length不可变
+                mergeData[i + j] = leftData[i++]; 
                 if (i == leftData.Count)
                 {
-                    int rightLeft = rightData.Count - j;
+                    int rightLeft = rightData.Count - j;  // how many data left in right part
                     for (int m = 0; m < rightLeft; m++)
                     {
                         mergeData[i + j] = rightData[j++];
@@ -190,7 +190,7 @@ public class Sorting{
                 mergeData[i + j] = rightData[j++];
                 if (j == rightData.Count)
                 {
-                    int leftleft = leftData.Count - i;
+                    int leftleft = leftData.Count - i;   // how many data left in left part
                     for (int n = 0; n < leftleft; n++)
                     {
                         mergeData[i + j] = leftData[i++];

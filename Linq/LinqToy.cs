@@ -13,4 +13,12 @@ public class LinqToy
         var dict = new Dictionary<string, List<string>>();
         List<string> strList = dict.Select(one => one.Value).Cast<IList<string>>().ToList();
     }
+
+    var dictionary = num.ToDictionary(i => i, i => false);
+    
+    private static bool IsOnlyOneCharDifferent(string str1, string str2)
+    {
+        // all string have same length
+        return str1.Where((t, i) => !t.Equals(str2[i])).Count() == 1;
+    }
 }
