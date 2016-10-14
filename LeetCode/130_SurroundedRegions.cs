@@ -17,7 +17,11 @@ X X X X
 X X X X
 X O X X
 */
-public class Solution {
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+public class Solution130 {
     // 1. find that all O at edge of board will definitely not surrounded by ‘X’. 
     // 2. then for each ‘O’, find its adjacent ‘O’ by BFS and add to its white list 
     //    (list of ‘O’ that is not surrounded by ‘X’).

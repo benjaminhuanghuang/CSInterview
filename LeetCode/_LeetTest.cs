@@ -7,8 +7,8 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var s = new Solution120();
-        var res = s.MinimumTotal(new List<IList<int>>(){new List<int>(){1},new List<int>(){2,3}});
+        var s = new Solution131();
+        var res = s.Partition("aab");
 
         Console.WriteLine(res);   
     }

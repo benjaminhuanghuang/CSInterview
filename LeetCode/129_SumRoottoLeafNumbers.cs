@@ -16,8 +16,10 @@ The root-to-leaf path 1->3 represents the number 13.
 
 Return the sum = 12 + 13 = 25.
 */
+using System.Linq;
+using System.Collections.Generic;
 
-public class Solution {
+public class Solution129 {
     public int SumNumbers(TreeNode root) {
         if(root == null)
         {
@@ -28,17 +30,17 @@ public class Solution {
 
         return listOfString.Sum(item => int.Parse(item));
     }
-    private List SumNumbersRecursion(TreeNode root)
+    private List<string> SumNumbersRecursion(TreeNode root)
     {
-        var res = new List();
+        var res = new List<string>();
         if (root.left == null && root.right == null)
         {
             res.Add(root.val.ToString());
             return res;
         }
 
-        var left = root.left != null ? SumNumbersRecursion(root.left) : new List();
-        var right = root.right != null ? SumNumbersRecursion(root.right) : new List();
+        var left = root.left != null ? SumNumbersRecursion(root.left) : new List<string>();
+        var right = root.right != null ? SumNumbersRecursion(root.right) : new List<string>();
 
         res.AddRange(left.Select(item => root.val + item));
 

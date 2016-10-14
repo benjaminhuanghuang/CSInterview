@@ -9,6 +9,8 @@ For example, given s = "aab",
 Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 cut.
 */
 using System;
+using System.Linq;
+using System.Collections;
 
 public class Solution132 {
     // use one dimension array, dp[i] indicates up to ith the minimum number of cut. 

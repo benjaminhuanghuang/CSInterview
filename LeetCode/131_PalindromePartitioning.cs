@@ -18,17 +18,16 @@ using System.Collections.Generic;
 
 public class Solution131 {
     public IList<IList<string>> Partition(string s) {
-         return PartitionRecursion(s, 0);
+         var res = new List<IList<string>>();
+         return PartitionRecursion(res, s, 0);
+         return res;
     }
 
-    private IList<IList> PartitionRecursion(string s, int index)
+    private IList<IList<string>> PartitionRecursion(List<IList<string>> res, string s, int index)
     {
-        var res = new List<IList>();
-
         if (index >= s.Length)
         {
-            res.Add(new List{});
-            return res;
+            return;
         }
 
         for (int i = index; i < s.Length; i++)
@@ -36,11 +35,11 @@ public class Solution131 {
             var str = s.Substring(index, i - index + 1);
             if (isPartition(str))
             {
-                var restPartitions = PartitionRecursion(s, i + 1);
+                PartitionRecursion(s, i + 1);
 
                 foreach (var restPartition in restPartitions)
                 {
-                    var newPartition = new List {str};
+                    var newPartition = new List<string> {str};
                     newPartition.AddRange(restPartition);
                     res.Add(newPartition);
                 }

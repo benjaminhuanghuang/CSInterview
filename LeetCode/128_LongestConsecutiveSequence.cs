@@ -10,12 +10,13 @@ The longest consecutive elements sequence is [1, 2, 3, 4]. Return its length: 4.
 Your algorithm should run in O(n) complexity.
 */
 using System.Linq;
+using System.Collections.Generic;
 
 public class Solution128 {
     public int LongestConsecutive(int[] nums) {
         var longestconsecutive = 0;
         var dictionary = new Dictionary<int, bool>();
-        for (var i in nums)
+        foreach (var i in nums)
         {
             if (!dictionary.ContainsKey(i))
             {
