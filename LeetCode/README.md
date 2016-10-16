@@ -13,16 +13,19 @@ LeetCode C# Implementation
 **Bitwise Operation**
 - 136. Single Number
 - 137. Single Number II
+- 190. Reverse Bits
 
 **String**:
 - 058. Length of Last Word                      : 
 
 **Array Operation**:
 - 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
+- 189. Rotate Array 
 
 **Sorting**
 - 147. Insertion Sort List                      :
 - 148. Sort List                                : Merge Sort O(n log n) and Merge List
+- 173. Binary Search Tree Iterator
 
 **Permutation**
 - 031. Next Permutation
@@ -40,6 +43,9 @@ LeetCode C# Implementation
 - 035. Search Insert Position
 - 069. Sqrt(x)
 - 074. Search a 2D Matrix
+- 153. Find Minimum in Rotated Sorted Array
+- 154. Find Minimum in Rotated Sorted Array II  : Duplicates are allowed.
+- 162. Find Peak Element
 
 **Divide and Conquer**:
 - 095. Unique Binary Search Trees II
@@ -57,6 +63,7 @@ LeetCode C# Implementation
 - 143. Reorder List                             : Compare with #206
 - 206. Reverse Linked List                      : Iteratively or recursively
 - 147. Insertion Sort List
+- 160. Intersection of Two Linked Lists
 
 **Tree Operation**:
 - 094. Binary Tree Inorder Traversal            : Iteratively or recursively or Morris
@@ -94,6 +101,7 @@ LeetCode C# Implementation
 
 **Function Design**
 - 146. LRU Cache
+- 155. Min Stack
 
 **Problem number gap** (407 - 390)
     
@@ -117,3 +125,6 @@ Update history
     10-11   120/398
     10-12   130/398
     10-13   135/398
+    10-14   160/398
+    10-15   198/398
+    

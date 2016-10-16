@@ -21,7 +21,7 @@ public class Solution151 {
     public string ReverseWords_2(string s) {
         var sb = new StringBuilder();
         int end = s.Length -1; 
-        for(int i = s.Length; i >=0; i--)
+        for(int i = s.Length-1; i >=0; i--)
         {
             if (s[i] == ' ')
                 end = i -1;
