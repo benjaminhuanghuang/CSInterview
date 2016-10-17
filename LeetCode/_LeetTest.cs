@@ -7,8 +7,9 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var s = new Solution131();
-        var res = s.Partition("aab");
+        var input = new int[]{2,2,2};
+        var s = new Solution414();
+        var res = s.ThirdMax(input);
 
         Console.WriteLine(res);   
     }
