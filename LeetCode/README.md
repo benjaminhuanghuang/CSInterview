@@ -14,6 +14,7 @@ LeetCode C# Implementation
 - 136. Single Number
 - 137. Single Number II
 - 190. Reverse Bits
+- 201. Bitwise AND of Numbers Range
 
 **String**:
 - 058. Length of Last Word                      : 
@@ -128,4 +129,5 @@ Update history
     10-14   160/398
     10-15   198/398
     10-16   201/398
+    10-17   202/405
     
