@@ -34,6 +34,7 @@ LeetCode C# Implementation
 - 077. Combinations
 - 090. Subsets II
 - 093. Restore IP Addresses
+- 401. Binary Watch
 
 
 **Binary Search**:

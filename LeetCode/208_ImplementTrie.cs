@@ -28,13 +28,13 @@ public class Trie {
 
     // Returns if the word is in the trie.
     public bool Search(string word) {
-        
+        return false;
     }
 
     // Returns if there is any word in the trie
     // that starts with the given prefix.
     public bool StartsWith(string word) {
-        
+        return false;
     }
 }
 

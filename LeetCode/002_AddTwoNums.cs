@@ -7,6 +7,8 @@ Add the two numbers and return it as a linked list.
 
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
+
+refer to #415. Add Strings
 */
 
 /**
@@ -21,6 +23,7 @@ Output: 7 -> 0 -> 8
 public class Solution002 {
     public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(-1);
+        var curr = head; 
         int carry = 0;
         while (l1 != null || l2 != null)
         {
@@ -38,11 +41,12 @@ public class Solution002 {
             }
             int sum = a + b + carry;
             carry = sum / 10;
-            head.next = new ListNode(sum % 10);
+            curr.next = new ListNode(sum % 10);
+            curr = curr.next;
         }
         if (carry > 0)
         {
-            head.next = new ListNode(carry);
+            curr.next = new ListNode(carry);
         }
 
         return head.next;

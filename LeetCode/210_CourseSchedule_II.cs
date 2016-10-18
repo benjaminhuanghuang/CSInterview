@@ -34,7 +34,7 @@ public class Solution210 {
         {
             if (!visited[i])
             {
-                var returns = FindOrderDFS(numCourses, prerequisites, i, new List());
+                var returns = FindOrderDFS(numCourses, prerequisites, i, new List<int>());
                 if(returns == null) return null;
                 res.AddRange(returns);
             }
@@ -44,9 +44,9 @@ public class Solution210 {
         return res.ToArray();
     }
 
-    private int[] FindOrderDFS(int numCourses, int[,] prerequisites, int start, List parents)
+    private int[] FindOrderDFS(int numCourses, int[,] prerequisites, int start, List<int> parents)
     {
-        var res = new List();
+        var res = new List<int>();
 
         int rows = prerequisites.GetLength(0);
         int columns = prerequisites.GetLength(1);

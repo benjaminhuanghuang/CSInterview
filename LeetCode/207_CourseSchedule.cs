@@ -22,24 +22,25 @@ using System.Collections.Generic;
 public class Solution207 {
     private bool[] visited;
     public bool CanFinish(int numCourses, int[,] prerequisites) {
-        visited = new bool[numCourses];
-        var res = new List();
+        // visited = new bool[numCourses];
+        // var res = new List<int>();
 
-        for (int i = 0; i < numCourses; i++)
-        {
-            if (!visited[i])
-            {
-                var returns = FindOrderDFS(numCourses, prerequisites, i, new List());
-                if(returns == null) return null;
-                res.AddRange(returns);
-            }
-        }
+        // for (int i = 0; i < numCourses; i++)
+        // {
+        //     if (!visited[i])
+        //     {
+        //         var returns = FindOrderDFS(numCourses, prerequisites, i, new List<int>());
+        //         if(returns == null) return false;
+        //         res.AddRange(returns);
+        //     }
+        // }
 
-        res.Reverse();
-        return res.ToArray();
+        // res.Reverse();
+        // return res.ToArray();
+        return false;
     }
 
-    private int[] FindOrderDFS(int numCourses, int[,] prerequisites, int start, List parents)
+    private int[] FindOrderDFS(int numCourses, int[,] prerequisites, int start, List<int> parents)
     {
         var res = new List<int>();
 

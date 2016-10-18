@@ -22,7 +22,7 @@ public class Solution383 {
             cnt[magazine[i] - 'a']++;
         }
         for (int i = 0; i < ransomNote.Length; i++) {
-            if(--cnt[ransomNote[i]-'a'] < 0) {
+            if(cnt[ransomNote[i]-'a'] -- < 0) {
                 return false;
             }
         }

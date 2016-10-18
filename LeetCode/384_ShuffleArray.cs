@@ -30,7 +30,7 @@ public class Solution384 {
     }
     public int[] Reset()
     {
-        Array.Copy(this.nums, this.backup);
+        Array.Copy(this.nums, this.backup, this.nums.Length );
         return this.nums; 
     }
 
@@ -44,5 +44,6 @@ public class Solution384 {
             this.nums[j] = this.nums[i];
             this.nums[i] = tmp;
         }
+        return this.nums;
     } 
 }
