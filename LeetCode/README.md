@@ -110,6 +110,9 @@ LeetCode C# Implementation
     180 to 185 (6) 
     192 to 197 (6)
     262        (1)
+    420        (1)
+    421        (1)
+    414        (1)
 
 Update history
 
