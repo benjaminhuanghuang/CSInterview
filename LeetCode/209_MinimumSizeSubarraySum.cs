@@ -12,13 +12,14 @@ the subarray [4,3] has the minimal length under the problem constraint.
     # if total < s, extend right
     # if total >=s, extend left
 */
+using System;
 
 public class Solution209 {
     // Slid window 
     public int MinSubArrayLen(int s, int[] nums) {
         var minLength = int.MaxValue;
         var total = 0;
-        for(int start = 0, end = 0; end < nums.Count(); end++)             
+        for(int start = 0, end = 0; end < nums.Length; end++)             
         {                 
             total += nums[end];                 
             while(total >= s && start <= end)
@@ -37,7 +38,7 @@ public class Solution209 {
         int left =0, right=0, total = 0;
         int result = len +1;
         while (right < len){
-            while(rigth < n && total < s)
+            while(right < len && total < s)
             {
                 total += nums[right];
                 right ++;

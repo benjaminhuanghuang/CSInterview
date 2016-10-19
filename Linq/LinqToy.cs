@@ -21,4 +21,8 @@ public class LinqToy
         // all string have same length
         return str1.Where((t, i) => !t.Equals(str2[i])).Count() == 1;
     }
+    private void Sort(int[] nums)
+    {
+        Array.Sort(nums, (i, j) => String.Compare(j.ToString() + i.ToString(), i.ToString() + j.ToString(), StringComparison.Ordinal));
+    }
 }

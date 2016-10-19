@@ -9,8 +9,10 @@ You may assume that all inputs are consist of lowercase letters a-z.
 // Each node in Trie would be like node in directly graph. 
 // node with data and its neighbors. Use dictionary to store all its neighbors would 
 // save lots of time for searching. And we need a Boolean to indicate it is the terminate of word or not.
+
+using System.Collections.Generic;
+
 class TrieNode {
-    // Initialize your data structure here.
     // Initialize your data structure here.
     public char Data;
     public bool IsEnd;
