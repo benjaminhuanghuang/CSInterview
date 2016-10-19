@@ -104,6 +104,11 @@ LeetCode C# Implementation
 **Function Design**
 - 146. LRU Cache
 - 155. Min Stack
+- 208. Implement Trie (Prefix Tree)
+
+**Graph**
+- 207. Course Schedule
+
 
 **Problem number gap** (407 - 390)
     
@@ -134,4 +139,4 @@ Update history
     10-15   198/398
     10-16   201/398
     10-17   202/405
-    
+    10-19   209/405

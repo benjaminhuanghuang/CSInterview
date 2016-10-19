@@ -15,59 +15,95 @@ There are a total of 2 courses to take. To take course 1 you should have finishe
 2, [[1,0],[0,1]]
 There are a total of 2 courses to take. To take course 1 you should have finished course 0, and to take course 0 you should also 
 have finished course 1. So it is impossible.
+
+About Graph:
+https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs
+
+
+Anaswer:
+    http://blog.csdn.net/ljiabin/article/details/45846837
+    https://discuss.leetcode.com/topic/16763/a-dfs-c-solution-308ms [Good]
 */
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 public class Solution207 {
-    private bool[] visited;
+    // 此问题等价于判断有向图中是否有环,
+    // http://blog.csdn.net/ljiabin/article/details/45846837
+    // 在一个有向图中，每次找到一个没有前驱节点的节点（也就是入度为0的节点），然后把它指向其他节点的边都去掉，
+    // http://blog.welkinlan.com/2015/05/09/course-schedule-leetcode-java-dfs/
     public bool CanFinish(int numCourses, int[,] prerequisites) {
-        // visited = new bool[numCourses];
-        // var res = new List<int>();
-
-        // for (int i = 0; i < numCourses; i++)
-        // {
-        //     if (!visited[i])
-        //     {
-        //         var returns = FindOrderDFS(numCourses, prerequisites, i, new List<int>());
-        //         if(returns == null) return false;
-        //         res.AddRange(returns);
-        //     }
-        // }
-
-        // res.Reverse();
-        // return res.ToArray();
-        return false;
+        if (numCourses <=1)
+            return true;
+        
+        // init the adjacency list  //输入可能有重复的边，所以邻接表用HashSet存储。
+        List<HashSet<int>> posts = new List<HashSet<int>>();  
+        for (int i = 0; i < numCourses; i++) {  
+            posts.Add(new HashSet<int>());  
+        }  
+        // fill the adjacency list  
+        for (int i = 0; i < prerequisites.GetLength(0); i++) {  
+            posts[prerequisites[i,1]].Add(prerequisites[i,0]);  
+        }  
+          
+        // count the pre-courses  
+        int[] preNums = new int[numCourses];  
+        for (int i = 0; i < numCourses; i++) {  
+            HashSet<int> set = posts[i];  
+            foreach(var item in set) {  
+                preNums[item]++;   
+            }  
+        }  
+          
+        // remove a non-pre course each time  
+        for (int i = 0; i < numCourses; i++) {  
+            // find a non-pre course  
+            int j;  
+            for ( j =0  ; j < numCourses; j++) {  
+                if (preNums[j] == 0) break;  
+            }  
+              
+            // if not find a non-pre course  
+            if (j == numCourses) 
+                return false;  
+              
+            preNums[j] = -1;  
+              
+            // decrease courses that post the course  
+            HashSet<int> set = posts[j];  
+            foreach (int item in set) {  
+                preNums[item]--;  
+            }  
+        }  
+          
+        return true;  
     }
 
-    private int[] FindOrderDFS(int numCourses, int[,] prerequisites, int start, List<int> parents)
+    public bool CanFinish_2(int numCourses, int[,] prerequisites)
     {
-        var res = new List<int>();
+        List<int>[] depend = new List<int>[numCourses];
+        for (int i = 0; i < numCourses; i++)
+            depend[i] = new List<int>();
+        for (int i = 0; i < prerequisites.GetLength(0); i++)
+            depend[prerequisites[i, 0]].Add(prerequisites[i, 1]);
 
-        int rows = prerequisites.GetLength(0);
-        
-        for (int i = 0; i < rows; i++)
-        {
-            if (prerequisites[i, 1] == start && !visited[prerequisites[i, 0]])
-            {
-                if (parents.Contains(prerequisites[i, 0]))
-                {
-                    return null;
-                }
-                parents.Add(start);
-                var rest = FindOrderDFS(numCourses, prerequisites, prerequisites[i, 0], parents);
+        bool[] history = new bool[numCourses];
+        for (int i = 0; i < depend.Count(); i++)
+            if (!dfsFinish(history, i, depend)) 
+                return false;
+        return true;
+    }
 
-                if(rest == null)
-                {
-                    return null;
-                }
-                res.AddRange(rest);
-            }
-        }
-
-        res.Add(start);
-        visited[start] = true;
-
-        return res.ToArray();
+    private bool dfsFinish(bool[] history, int courseNo, List<int>[] depend)
+    {
+        if (history[courseNo]) 
+            return false;
+        history[courseNo] = true;
+        foreach (var d in depend[courseNo])
+            if (!dfsFinish(history, d, depend)) 
+                return false;
+        history[courseNo] = false;
+        return true;
     }
 }
