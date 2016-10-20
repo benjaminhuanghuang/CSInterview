@@ -7,8 +7,8 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var s = new Solution405();
-        var result = s.ToHex(-1);
+        var s = new Solution371();
+        var result = s.GetSum(-1, 2);
         Console.WriteLine(result);   
     }
 }
