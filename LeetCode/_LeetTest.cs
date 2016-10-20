@@ -7,8 +7,8 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var s = new Solution414();
-        var result = s.ThirdMax(new int[]{3,2,1});
+        var s = new Solution405();
+        var result = s.ToHex(-1);
         Console.WriteLine(result);   
     }
 }
