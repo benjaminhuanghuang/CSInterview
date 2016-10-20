@@ -25,6 +25,7 @@ Test case : "ccc"
 using System.Collections.Generic;
 
 public class Solution409 {
+    //用hashtable记录每个字符出现的次数，出现偶数次的字符和一个出现奇数次的字符可以构成Palindrome
     public int LongestPalindrome(string s) {
         Dictionary<char, int> dict = new Dictionary<char, int>();
 
