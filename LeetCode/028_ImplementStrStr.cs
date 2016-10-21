@@ -8,9 +8,13 @@ Returns the index of the first occurrence of needle in haystack, or -1 if needle
 
 public class Solution028 {
     public int StrStr(string haystack, string needle) {
+        if (string.IsNullOrEmpty(needle))
+        {
+            return 0;
+        }
         for (int i = 0 ; i <= haystack.Length - needle.Length; i++)
         {
-            for (int j = 0 ; i < needle.Length; i++)
+            for (int j = 0 ; j < needle.Length; j++)
             {
                 char h = haystack[i+j];
                 char n = needle[j];

@@ -36,7 +36,5 @@ public class Solution169 {
 
         return previous;
     }
-
-
 }
 

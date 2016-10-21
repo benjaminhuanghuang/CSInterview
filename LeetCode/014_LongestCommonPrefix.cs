@@ -6,7 +6,6 @@ Write a function to find the longest common prefix string amongst an array of st
 */
 
 public class Solution014 {
-    // Faild on case ["a"]
     public string LongestCommonPrefix(string[] strs) {
         if(strs == null || strs.Length == 0)  
         {  

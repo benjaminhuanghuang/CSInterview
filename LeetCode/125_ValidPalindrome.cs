@@ -31,7 +31,7 @@ public class Solution125 {
             {                     
                 left++;                 
             }                 
-            while (right > left && !Char.IsLetterOrDigit(s[left]))
+            while (right > left && !Char.IsLetterOrDigit(s[right]))
             {
                 right--;
             }
