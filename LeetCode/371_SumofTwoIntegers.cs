@@ -11,7 +11,7 @@ Special thanks to @fujiaozhu for adding this problem and creating all test cases
 
 public class Solution371 {
     public int GetSum(int a, int b) {
-        while ( b!=null ) {
+        while ( b!=0 ) {
             int carry = (a & b) << 1;
             a = a ^ b;
             b = carry;
