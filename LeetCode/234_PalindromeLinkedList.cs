@@ -7,18 +7,27 @@ Follow up:
 Could you do it in O(n) time and O(1) space?
 */
 
+using System;
 
-public class Solution {
+public class Solution234 {
     // Method space O(N)
     // put all values in a array, then check the values
-    /
-
+    public class Result{
+        public bool result;
+        public ListNode Node;
+        
+        public Result(ListNode n, bool r)
+        {
+            Node = n;
+            result = r;
+        }
+    }
     public bool IsPalindrome(ListNode head) {
-        Result p = this.IsPalindromeRecurse(rootNode, Listsize(rootNode));
+        Result p = this.IsPalindromeRecurse(head, Listsize(head));
         return p.result;
     }
 
-    internal Result IsPalindromeRecurse(Node head, int length)
+    internal Result IsPalindromeRecurse(ListNode head, int length)
         {
             if (head == null || length == 0)
             {
@@ -26,31 +35,31 @@ public class Solution {
             }
             else if(length == 1)
             {
-                return new Result(head.Next, true);
+                return new Result(head.next, true);
             }
             else if(length == 2)
             {
-                return new Result(head.Next.Next, head.Value == head.Next.Value);
+                return new Result(head.next.next, head.val == head.next.val);
             }
 
-            Result res = this.IsPalindromeRecurse(head.Next, length - 2);
+            Result res = this.IsPalindromeRecurse(head.next, length - 2);
             if (!res.result || res.Node == null)
             {
                 return res;
             }
             else
             {
-                res.result = head.Value == res.Node.Value;
-                res.Node = res.Node.Next;
+                res.result = head.val == res.Node.val;
+                res.Node = res.Node.next;
                 return res;
             }
         }
-    private int Listsize(Node rootNode)
+    private int Listsize(ListNode rootNode)
     {
         var count = 0;
         while (rootNode!= null)
         {
-            rootNode = rootNode.Next;
+            rootNode = rootNode.next;
             count++;
         }
 
@@ -58,7 +67,7 @@ public class Solution {
     }
     // reverse the half part of the linked list and then use two points, one from, another from mid, 
     // scan and compare to check it is palindrome or not.
-     public bool IsPalindrome(ListNode head) {
+     public bool IsPalindrome_2(ListNode head) {
         if (head == null) return true;
         var count = 0;
         var start = head;
