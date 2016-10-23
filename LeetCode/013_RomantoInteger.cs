@@ -7,7 +7,7 @@ Input is guaranteed to be within the range from 1 to 3999.
 */
 using System.Collections.Generic;
 
-public class Solution013 {
+public class Solution013  {
     //https://miafish.wordpress.com/2015/02/17/leetcode-oj-c-roman-to-integer/
     Dictionary<char, int> dict3 = new Dictionary<char, int>()
     {

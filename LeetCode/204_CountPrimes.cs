@@ -12,18 +12,19 @@ public class Solution204 {
     public int CountPrimes(int n) {
          var isNotPrime = new bool[n];
 
-            for (var i = 2; i < n; i++)
-            {
-                if(isNotPrime[i]) continue; 
-                var start = i + i;
-                while (start < n)
-                {                     
-                    isNotPrime[start] = true;                     
-                    start += i;                 
-                }             
+        for (var i = 2; i < n; i++)
+        {
+            // loop though 2 to n – 1, for each 1, times 2, 3..n would not be prime. 
+            if(isNotPrime[i]) continue; 
+            var start = i + i;
+            while (start < n)
+            {                     
+                isNotPrime[start] = true;                     
+                start += i;                 
             }             
-            // remove 0 and 1
-            return isNotPrime.Skip(2).Count(x => x == false);
+        }             
+        // remove 0 and 1
+        return isNotPrime.Skip(2).Count(x => x == false);
     }
 
     public int CountPrimes_Easy(int n) {

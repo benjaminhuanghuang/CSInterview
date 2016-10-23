@@ -16,7 +16,7 @@ public class Solution007 {
         bool positive = x > 0;
         if (!positive)
         {
-            // note!  -2147483648 = -(-2147483648)
+            // note!  -2147483648 = -(-2147483648)                         
             x = -x;
         }
         //long result = x %10;

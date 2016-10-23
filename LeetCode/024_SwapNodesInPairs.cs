@@ -58,7 +58,7 @@ public class Solution024 {
             start = start.next.next;
         }
 
-        return fakeHead.next;
+        return fakeHead.next; 
     }
 
     public ListNode SwapPairs_Recursively(ListNode head)

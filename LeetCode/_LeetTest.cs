@@ -7,8 +7,8 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var s = new Solution125();
-        var result = s.IsPalindrome("a.");
+        var s = new Solution374();
+        var result = s.GuessNumber(2);
         Console.WriteLine(result);   
     }
 }
