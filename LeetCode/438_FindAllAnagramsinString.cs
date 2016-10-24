@@ -31,9 +31,29 @@ The substring with start index = 0 is "ab", which is an anagram of "ab".
 The substring with start index = 1 is "ba", which is an anagram of "ab".
 The substring with start index = 2 is "ab", which is an anagram of "ab".
 */
+using System.Collections.Generic;
 
-public class Solution {
+public class Solution438 {
+    //http://bookshadow.com/weblog/2016/10/23/leetcode-find-all-anagrams-in-a-string/
     public IList<int> FindAnagrams(string s, string p) {
-        
+        int ls = s.Length;
+        int lp = p.Length;
+        var dicP = new Dictionary<char, int>();
+        foreach (char c in p)
+        {
+            if(!dicP.Contains(c))
+                dicP.Add(c, 1);
+            else
+                dicP[c]++;
+        }
+        List<int> ans = new List<int>();
+
+        for(int i =0 ; i<ls; i++)
+        {
+            if(dicP.Contains(s[i]))
+        }
+
+
+        return ans;
     }
 }
