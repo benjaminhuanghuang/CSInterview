@@ -29,8 +29,8 @@ Return 3. The paths that sum to 8 are:
 3. -3 -> 11
 */
 
-public class Solution {
-    public int PathSum437(TreeNode root, int sum) {
+public class Solution437 {
+    public int PathSum(TreeNode root, int sum) {
         if (root == null)
             return 0;
         int res = PathTraverse(root, sum);

@@ -7,8 +7,13 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var s = new Solution374();
-        var result = s.GuessNumber(2);
-        Console.WriteLine(result);   
+        var s = new Solution438();
+        //var result = s.FindAnagrams("abab", "ab");
+        var result = s.FindAnagrams_2("cbaebabacd", "abc");  // [0,6]
+        foreach (var i in result)
+        {
+            Console.WriteLine(i);   
+        }
+
     }
 }
