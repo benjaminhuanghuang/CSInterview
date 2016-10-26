@@ -33,17 +33,17 @@ public class Solution149 {
                     continue;
                 }
                 // Count points has same slop
-                var k = (point.y - anotherPoint.y) * 1.0 / (point.x - anotherPoint.x);
-                if (hashtable.ContainsKey(k))
+                var slop = (point.y - anotherPoint.y) * 1.0 / (point.x - anotherPoint.x);
+                if (hashtable.ContainsKey(slop))
                 {
-                    hashtable[k]++;
+                    hashtable[slop]++;
                 }
                 else
                 {
-                    hashtable.Add(k, 1);
+                    hashtable.Add(slop, 1);
                 }
             }
-
+            //max = Math.Max(max, Math.Max(hashtable.values()) + samePointNumber)
             max = Math.Max(max, samePointNumber);
             max = hashtable.Values.Select(value => value + samePointNumber).Concat(new[] { max }).Max();
         }

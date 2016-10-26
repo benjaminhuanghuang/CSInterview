@@ -26,6 +26,7 @@ public class Solution003 {
             if (lastCharPos.ContainsKey(s[i]))
             {
                 // test case: "abba"
+                // sub string starts from left. left is the next index of repeating char.
                 left = Math.Max(left, lastCharPos[s[i]] +1);
                 lastCharPos[s[i]] = i;
             }
