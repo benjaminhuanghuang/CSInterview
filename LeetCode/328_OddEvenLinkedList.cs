@@ -16,9 +16,31 @@ The first node is considered odd, the second node even and so on ...
 
 
 */
-
-public class Solution {
+／／
+// http://www.programcreek.com/2015/03/leetcode-odd-even-linked-list-java/
+public class Solution328 {
     public ListNode OddEvenList(ListNode head) {
-        
+        if(head == null) 
+            return head;
+ 
+        ListNode p1 = head;
+        ListNode p2 = head.next;
+        ListNode connectNode = head.next;
+    
+        while(p1 != null && p2 != null)
+        {
+            if(p2.next == null)
+                break;
+ 
+            p1.next = p2.next;
+            p1 = p1.next;
+ 
+            p2.next = p1.next;
+            p2 = p2.next;
+        }
+    
+        p1.next = connectNode;
+    
+        return head;
     }
 }

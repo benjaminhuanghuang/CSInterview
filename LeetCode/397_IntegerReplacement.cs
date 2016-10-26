@@ -71,7 +71,7 @@ public class Solution397 {
         if( n < 3 ) 
             return n - 1;
         if(n%2 ==0) return longReplacement(n/2) + 1;
-        else return Math.min(longReplacement(n-1),longReplacement(n+1)) + 1;
+        else return Math.Min(longReplacement(n-1),longReplacement(n+1)) + 1;
     }
 
 }
