@@ -25,4 +25,8 @@ public class LinqToy
     {
         Array.Sort(nums, (i, j) => String.Compare(j.ToString() + i.ToString(), i.ToString() + j.ToString(), StringComparison.Ordinal));
     }
+
+    static long TotalAllEvenNumbers(int[] intArray) {
+        return intArray.Where(i => i % 2 == 0).Sum(i => (long)i);
+    }
 }
