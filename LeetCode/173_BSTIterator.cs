@@ -14,6 +14,8 @@ using System.Collections.Generic;
 public class BSTIterator {
     private readonly Stack<TreeNode> _mystack = new Stack<TreeNode>(); 
     public BSTIterator(TreeNode root) {
+        // initialize BST Tree, put its left node into stack until the node does not have 
+        // left node. So the top one in stack is smallest node in the tree.
         findMostLeftNode(root, _mystack);
     }
 

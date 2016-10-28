@@ -19,21 +19,22 @@ Given target = 3, return true.
 
 public class Solution074 {
     public bool SearchMatrix(int[,] matrix, int target) {
-        var lenColumn = matrix.GetLength(1);
+        var rows = matrix.GetLength(1);
 
         var low = 0;
         var high = matrix.Length - 1;
 
         while (low <= high)             
         {                 
-            var mid = (high - low)/2 + low;                 
-            var column = mid/lenColumn;                 
-            var row = mid%lenColumn;                 
-            if (matrix[column, row] == target)
+            var mid = (high - low)/2 + low;     
+            // Key point:            
+            var col = mid % rows;                 
+            var row = mid / rows;                 
+            if (matrix[row, col] == target)
             {                     
                 return true;                 
             }                 
-            else if (matrix[column, row] > target)
+            else if (matrix[row, col] > target)
             {
                 high = mid - 1;
             }

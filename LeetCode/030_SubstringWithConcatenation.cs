@@ -48,16 +48,18 @@ public class Solution030 {
         {
             if (hashtable.ContainsKey(s.Substring(i, wordLen))) // if find any word in words
             {
+                // copy hashtable
                 var newHashTable = new Dictionary<string, int>(hashtable);
                 for (int j = i; j < i + subStrLen; j += wordLen)
-                {                         
+                {   // check char from i to i + subStrLen                    
                     var str = s.Substring(j, wordLen); // pick one word
                     if (!newHashTable.ContainsKey(str))
                     {                             
                         break;                         
                     }                         
                     newHashTable[str]--;                     
-                }                     
+                }           
+                // All newHashTable[word] == 0           
                 if (newHashTable.Values.All(value => value == 0))
                 {
                     res.Add(i);

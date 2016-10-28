@@ -1,5 +1,5 @@
 /*
-65. Valid Number
+65. Valid Number [Hard]
 
 Validate if a given string is numeric.
 

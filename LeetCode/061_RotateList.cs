@@ -26,7 +26,7 @@ public class Solution061 {
             p = p.next;
             length ++;
         }
-        p.next = head;
+        p.next = head;  // make a cycle
         int step = length - (k % length);
         //new p.next points to head;
         for (int i = 0; i < step; i++)

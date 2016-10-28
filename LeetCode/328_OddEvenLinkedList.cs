@@ -16,7 +16,7 @@ The first node is considered odd, the second node even and so on ...
 
 
 */
-／／
+
 // http://www.programcreek.com/2015/03/leetcode-odd-even-linked-list-java/
 public class Solution328 {
     public ListNode OddEvenList(ListNode head) {
