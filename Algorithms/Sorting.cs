@@ -262,4 +262,90 @@ public class Sorting{
         else temp = maxIndex;
         return temp;
     }
+
+    static void Sort(int[] arr)  
+    {  
+        int i, j;  
+        int[] tmp = new int[arr.Length];  
+        for (int shift = 31; shift > -1; --shift)  
+        {  
+            j = 0;  
+            for (i = 0; i < arr.Length; ++i)  
+            {  
+                bool move = (arr[i] << shift) >= 0;  
+                if (shift == 0 ? !move : move)     
+                    arr[i-j] = arr[i];  
+                else                               
+                    tmp[j++] = arr[i];  
+            }  
+            Array.Copy(tmp, 0, arr, arr.Length-j, j);  
+        }  
+    }  
+
+
+    public static int[] RadixSort(int[] ArrayToSort, int digit)
+    {
+        //low to high digit
+        for (int k = 1; k <= digit; k++)
+        {
+            //temp array to store the sort result inside digit
+            int[] tmpArray = new int[ArrayToSort.Length];
+    
+            //temp array for countingsort
+            int[] tmpCountingSortArray = new int[10]{0,0,0,0,0,0,0,0,0,0};
+    
+            //CountingSort
+            for (int i = 0; i < ArrayToSort.Length; i++)
+            {
+                //split the specified digit from the element
+                int tmpSplitDigit = ArrayToSort[i]/(int)Math.Pow(10,k-1) - (ArrayToSort[i]/(int)Math.Pow(10,k))*10;
+                tmpCountingSortArray[tmpSplitDigit] += 1; 
+            }
+    
+            for (int m = 1; m < 10; m++)
+            {
+                tmpCountingSortArray[m] += tmpCountingSortArray[m - 1];
+            }
+    
+            //output the value to result
+            for (int n = ArrayToSort.Length - 1; n >= 0; n--)
+            {
+                int tmpSplitDigit = ArrayToSort[n] / (int)Math.Pow(10,k - 1) - (ArrayToSort[n]/(int)Math.Pow(10,k)) * 10;
+                tmpArray[tmpCountingSortArray[tmpSplitDigit]-1] = ArrayToSort[n];
+                tmpCountingSortArray[tmpSplitDigit] -= 1;
+            }
+    
+            //copy the digit-inside sort result to source array
+            for (int p = 0; p < ArrayToSort.Length; p++)
+            {
+                ArrayToSort[p] = tmpArray[p];
+            }
+        }
+    
+        return ArrayToSort;
+    }
+
+    static int[] RadixSortAux(int[] array, int digit)
+    {
+        bool Empty = true;
+        KVEntry[] digits = new KVEntry[array.Length];//array that holds the digits;
+        int[] SortedArray = new int[array.Length];//Hold the sorted array
+        for (int i = 0; i < array.Length; i++)
+        {
+            digits[i] = new KVEntry();
+            digits[i].Key = i;
+            digits[i].Value = (array[i] / digit) % 10;
+            if (array[i]/digit!=0)
+                Empty = false;
+        }
+
+        if (Empty)
+            return array;
+
+        KVEntry[] SortedDigits = CountingSort(digits);
+        for (int i = 0; i < SortedArray.Length; i++)
+            SortedArray[i] = array[SortedDigits[i].Key];
+        return RadixSortAux(SortedArray, digit * 10);
+    } 
+
 }
