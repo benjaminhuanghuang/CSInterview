@@ -32,6 +32,7 @@ using System.Collections.Generic;
 
 public class Solution120 {
 
+    // https://shenjie1993.gitbooks.io/leetcode-python/content/120%20Triangle.html
     // dp[j] = min(dp[j+1], dp[j]) + triangle[i][j].
     public int MinimumTotal(IList<IList<int>> triangle) 
     {   
@@ -41,7 +42,7 @@ public class Solution120 {
         }
         var dp = triangle[triangle.Count-1].ToArray();
         
-        for (int row = triangle.Count - 2; row >0 ; row--)
+        for (int row = triangle.Count - 2; row >=0 ; row--)
         {   for (int col = 0; col <= row; col++)
             {
                 dp[col] = Math.Min(dp[col], dp[col+1]) + triangle[row][col];

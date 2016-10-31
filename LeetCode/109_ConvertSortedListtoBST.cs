@@ -6,18 +6,18 @@
 public class Solution109 {
     public TreeNode SortedListToBST(ListNode head) 
     {
-         if (head == null)
-            {
-                return null;
-            }
+        if (head == null)
+        {
+            return null;
+        }
 
-            var tail = head;
-            while (tail.next != null)
-            {
-                tail = tail.next;
-            }
+        var tail = head;
+        while (tail.next != null)
+        {
+            tail = tail.next;
+        }
 
-            return sortedListToBSTRecursion(head, tail);
+        return sortedListToBSTRecursion(head, tail);
     }
 
     private TreeNode sortedListToBSTRecursion(ListNode head, ListNode tail)
