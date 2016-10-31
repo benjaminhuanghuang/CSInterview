@@ -24,7 +24,7 @@ using System.Collections.Generic;
 
 
 public class Solution039 {
-    // Time Limit Exceeded
+    
     public IList<IList<int>> CombinationSum(int[] candidates, int target) {
         Array.Sort(candidates);
         var res = new List<IList<int>>();

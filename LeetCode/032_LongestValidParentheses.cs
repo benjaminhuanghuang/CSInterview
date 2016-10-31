@@ -50,7 +50,8 @@ public class Solution032 {
 
         for (int i = 1; i < s.Length; i++)             
         {                 
-            if (s[i] == '(') dp[i] = 0;                 
+            if (s[i] == '(') 
+                dp[i] = 0;                 
             else                 
             {                     
                 var pre = i - dp[i - 1] - 1;                     

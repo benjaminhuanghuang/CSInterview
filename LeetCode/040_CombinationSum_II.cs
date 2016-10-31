@@ -51,7 +51,7 @@ public class Solution040 {
             Console.WriteLine(string.Join(",", combination));
             if (j > index && candidates[j] == candidates[j - 1]) 
             {
-                Console.WriteLine(string.Join(",", combination));
+                //Console.WriteLine(string.Join(",", combination));
             
                 continue;
             }

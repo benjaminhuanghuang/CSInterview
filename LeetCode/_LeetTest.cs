@@ -7,13 +7,11 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var s = new Solution438();
+        var s = new Solution098();
         //var result = s.FindAnagrams("abab", "ab");
-        var result = s.FindAnagrams_2("cbaebabacd", "abc");  // [0,6]
-        foreach (var i in result)
-        {
-            Console.WriteLine(i);   
-        }
+        var result = s.IsValidBST(new TreeNode(-2147483648));  // [0,6]
+
+        Console.WriteLine(result);
 
     }
 }

@@ -14,7 +14,7 @@ Given n = 3, there are a total of 5 unique BST's.
 */
 
 public class Solution096 {
-    // http://fisherlei.blogspot.com/2013/03/leetcode-unique-binary-search-trees.html
+    // http://www.programcreek.com/2014/05/leetcode-unique-binary-search-trees-java/
     // set random x as root, then left side has x – 1 nodes, right side has n – x nodes. 
     // that is f(x – 1) * f(n – x) 
     // so n nodes have sum of cases x from 1 to n.

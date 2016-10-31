@@ -27,10 +27,11 @@ public class Solution077 {
         
         return res;
     }
+    
     // pick item i and find k – 1 items in the rest of the numbers(>= i).
     private void Combine_Recursion(int n, int k, int cur, List<int> combination, IList<IList<int>> res)
     {
-        if (k == 0)
+        if (0 == k)
         {
             res.Add(new List<int>(combination));
             return;
@@ -39,8 +40,7 @@ public class Solution077 {
         for (int i = cur; i <= n; i++)
         {
             combination.Add(i);
-            Console.WriteLine(String.Join(", ", combination)); 
-            Combine_Recursion(n, k - 1, cur + 1, combination, res);
+            Combine_Recursion(n, k - 1, i + 1, combination, res);
             combination.RemoveAt(combination.Count - 1);
         }
     }
