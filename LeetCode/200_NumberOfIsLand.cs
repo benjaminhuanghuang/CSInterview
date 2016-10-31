@@ -24,7 +24,7 @@ Answer: 3
 
 public class Solution200 {
     // 一个只包含字符0和1的二维数组，找出里面不相邻的只包含1的块的个数。
-    // 碰到一个1，就把它周围所有相连的1都标记为非1，
+    // 碰到一个1，就把它周围所有相连的1都标记为 visited，
     private int count = 0;
     private bool[,] visited;
     
