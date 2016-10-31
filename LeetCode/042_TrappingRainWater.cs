@@ -53,7 +53,10 @@ public class Solution042 {
         var res = 0;
         var max = 0;
         var maxindex = -1;
-
+        
+        if(height.Length <=1)
+            return 0;
+        
         for (int i = 0; i < height.Length; i++)             
         {                 
             if (height[i] > max)

@@ -50,10 +50,10 @@ public class Solution098 {
     }
 
     public bool IsValidBST_2(TreeNode root) {
-        return CheckBST(root, Int32.MinValue, Int32.MaxValue);
+        return CheckBST(root, long.MinValue, long.MaxValue);
     }
 
-    private bool CheckBST(TreeNode n, int min, int max)
+    private bool CheckBST(TreeNode n, long min, long max)
     {
         if (n == null)
             return true;
