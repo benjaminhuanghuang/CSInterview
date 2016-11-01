@@ -84,6 +84,7 @@ LeetCode C# Implementation
 - 094. Binary Tree Inorder Traversal            : Iteratively or recursively or Morris
 - 095. Unique Binary Search Trees II
 - 096. Unique Binary Search Trees
+- 173. Binary Search Tree Iterator
 - 230. Kth Smallest Element in a BST
 
 
