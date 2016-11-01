@@ -18,7 +18,7 @@ For example, the lowest common ancestor (LCA) of nodes 5 and 1 is 3. Another exa
 nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.
 */
 
-public class Solution {
+public class Solution236 {
     public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q)
             return root;

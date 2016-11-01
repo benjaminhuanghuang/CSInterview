@@ -16,23 +16,27 @@ Input:
 
 Output:
 [5,6]
+
+# 268
 */
+using System;
 using System.Collections.Generic;
 
 public class Solution448 {
+    //遍历数组nums，记当前元素为n，令nums[abs(n) - 1] = -abs(nums[abs(n) - 1])
+    //再次遍历nums，将正数对应的下标+1返回即为答案，因为正数对应的元素没有被上一步骤标记过。
     public IList<int> FindDisappearedNumbers(int[] nums) {
         var res = new List<int>();
-        for(int i=0; i< nums.Length; i++)
+        foreach (int n in nums)
         {
-
+            nums[Math.Abs(n) - 1] = -Math.Abs(nums[Math.Abs(n) - 1]);
         }
 
+        for(int i=0; i< nums.Length; i++)
+        {
+            if(nums[i] > 0)
+                res.Add(i + 1);
+        }
         return res;
-    }
-    private void Swap(int[] nums, int i, int j)
-    {
-        int tmp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tmp;
     }
 }

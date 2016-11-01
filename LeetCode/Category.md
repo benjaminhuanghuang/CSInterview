@@ -10,7 +10,7 @@ LeetCode C# Implementation
 - 139. Word Break II
 
 
-**Bitwise Operation**
+**Bitwise**
 - 136. Single Number
 - 137. Single Number II
 - 190. Reverse Bits
@@ -19,7 +19,7 @@ LeetCode C# Implementation
 **String**:
 - 058. Length of Last Word                      : 
 
-**Array Operation**:
+**Array**:
 - 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
 - 189. Rotate Array 
 
@@ -72,14 +72,23 @@ LeetCode C# Implementation
 - 160. Intersection of Two Linked Lists
 
 **Tree Operation**:
-- 094. Binary Tree Inorder Traversal            : Iteratively or recursively or Morris
-- 095. Unique Binary Search Trees II
-- 096. Unique Binary Search Trees
 - 105. Construct Binary Tree from Preorder and Inorder Traversal
 - 106. Construct Binary Tree from Inorder and Postorder Traversal  
 - 144. Binary Tree Preorder Traversal           : Iteratively or recursively or Morris
 - 145. Binary Tree Postorder Traversal
 - 156. Binary Tree Upside Down                  : Iteratively or recursively
+- 222. Count Complete Tree Nodes
+
+
+**BST**:
+- 094. Binary Tree Inorder Traversal            : Iteratively or recursively or Morris
+- 095. Unique Binary Search Trees II
+- 096. Unique Binary Search Trees
+- 230. Kth Smallest Element in a BST
+
+
+
+
 
 
 **Recursion and back tracing**:
