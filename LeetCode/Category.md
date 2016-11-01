@@ -113,6 +113,7 @@ LeetCode C# Implementation
 - 155. Min Stack
 - 208. Implement Trie (Prefix Tree)
 - 211. Add and Search Word - Data structure design  
+- 224. Basic Calculator
 
 **Graph**
 - 207. Course Schedule

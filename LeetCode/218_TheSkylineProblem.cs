@@ -31,8 +31,9 @@ There must be no consecutive horizontal lines of equal height in the output skyl
 [...[2 3], [4 5], [12 7], ...]
 
 */
+using System.Collections.Generic;
 
-public class Solution {
+public class Solution218 {
     //http://www.voidcn.com/blog/wangjianyu0115/article/p-5754688.html
     public IList<int[]> GetSkyline(int[,] buildings) {
         return null;
