@@ -26,6 +26,11 @@ public class LinqToy
         Array.Sort(nums, (i, j) => String.Compare(j.ToString() + i.ToString(), i.ToString() + j.ToString(), StringComparison.Ordinal));
     }
 
+    private void SortSort(){
+        //sort the numbers first by height and then by the position. height in descending order and position in ascending order.
+        temp.Sort((x, y) => { int result = y.Item1.CompareTo(x.Item1); return result == 0 ? x.Item2.CompareTo(y.Item2) : result; });
+    }
+    
     static long TotalAllEvenNumbers(int[] intArray) {
         return intArray.Where(i => i % 2 == 0).Sum(i => (long)i);
     }
