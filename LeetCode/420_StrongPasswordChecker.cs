@@ -12,9 +12,15 @@ required to make s a strong password. If s is already strong, return 0.
 
 Insertion, deletion and replace of any one character are all considered as one change.
 */
+using System.Linq;
 
 public class Solution420 {
+    //http://bookshadow.com/weblog/2016/10/21/leetcode-strong-password-checker/
     public int StrongPasswordChecker(string s) {
+        int totalCount = s.Length;
+        int lowers = s.Select(i=>char.IsLower(i)).Count();
+        int uppers = s.Select(i=>char.IsUpper(i)).Count();
+        int digits = s.Select(i=>char.IsDigit(i)).Count();
         
         return 0;
     }

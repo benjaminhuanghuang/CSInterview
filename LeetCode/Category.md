@@ -109,6 +109,7 @@ LeetCode C# Implementation
 - 120. Triangle
 - 139. Word Break
 - 152. Maximum Product Subarray
+- 416. Partition Equal Subset Sum
 
 **Hashtable**:
 - 030. Substring with Concatenation of All Words      : 

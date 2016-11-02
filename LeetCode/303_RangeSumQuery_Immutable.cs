@@ -1,6 +1,8 @@
 /*
 303. Range Sum Query - Immutable
 
+# 307. Range Sum Query - Mutable
+
 Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
 
 Example:
@@ -13,6 +15,8 @@ sumRange(0, 5) -> -3
 Note:
     You may assume that the array does not change.
     There are many calls to sumRange function.
+
+
 */
 
 using System.Collections.Generic;
