@@ -24,6 +24,8 @@ public class LinqToy
     private void Sort(int[] nums)
     {
         Array.Sort(nums, (i, j) => String.Compare(j.ToString() + i.ToString(), i.ToString() + j.ToString(), StringComparison.Ordinal));
+
+        Array.Sort(intervals, (a, b) => a.start.CompareTo(b.start));
     }
 
     private void SortSort(){
