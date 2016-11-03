@@ -52,6 +52,8 @@ LeetCode C# Implementation
 - 153. Find Minimum in Rotated Sorted Array
 - 154. Find Minimum in Rotated Sorted Array II  : Duplicates are allowed.
 - 162. Find Peak Element
+- 275. H-Index II
+- 378. Kth Smallest Element in a Sorted Matrix 
 
 **Divide and Conquer**:
 - 095. Unique Binary Search Trees II

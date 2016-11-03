@@ -25,6 +25,7 @@ Given n = 3, your program should return all 5 unique BST's shown below.
 using System.Collections.Generic;
 
 public class Solution095 {
+    //http://www.programcreek.com/2014/05/leetcode-unique-binary-search-trees-ii-java/
     // Use dp[n] indicates the list of BST store values from 1 to i.
     public IList<TreeNode> GenerateTrees(int n) {
         if (n ==0)
@@ -37,8 +38,11 @@ public class Solution095 {
     {
         var result = new List<TreeNode>();
         if (start > end)
+        {
+            result.Add(null);   // Important
             return result;
-        for (int rootValue = start; rootValue<=end; rootValue++)
+        }
+        for (int rootValue = start; rootValue <= end; rootValue++)
         {
             List<TreeNode> leftTrees = this.BuildTree(start, rootValue - 1);
             List<TreeNode> rightTrees = this.BuildTree(rootValue + 1, end);

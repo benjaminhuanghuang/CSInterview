@@ -12,6 +12,9 @@ You may assume all input has valid answer.
 
 Follow Up:
 Can you do it in O(n) time and/or in-place with O(1) extra space?
+
+https://www.hrwhisper.me/leetcode-wiggle-sort-ii/
+
 */
 using System;
 
@@ -21,7 +24,7 @@ public class Solution324 {
         int[] temp = new int[nums.Length];
         int s = (nums.Length + 1) >> 1;
         int t = nums.Length;
-        
+
         for (int i = 0; i < nums.Length; i++) {
             temp[i] = (i & 1) == 0 ?  nums[--s] : nums[--t] ;
         }

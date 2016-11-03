@@ -7,9 +7,9 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var s = new Solution098();
+        var s = new Solution095();
         //var result = s.FindAnagrams("abab", "ab");
-        var result = s.IsValidBST(new TreeNode(-2147483648));  // [0,6]
+        var result = s.GenerateTrees(3);  // [0,6]
 
         Console.WriteLine(result);
 
