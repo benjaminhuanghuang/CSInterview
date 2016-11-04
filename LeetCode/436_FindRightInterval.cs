@@ -73,9 +73,9 @@ public class Solution436 {
                     left = mid + 1;
             }
             if (intervals[left].start >= intervals[i].end && left != i)
-                res[i] = original[intervals[left].start];
+                res[original[intervals[i].start]] = original[intervals[left].start];
             else
-                res[i] = -1;
+                res[original[intervals[i].start]] = -1;
         }
 
         return res;
