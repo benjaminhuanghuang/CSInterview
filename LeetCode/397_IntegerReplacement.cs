@@ -57,8 +57,8 @@ public class Solution397 {
         return c;
     }
 
-    // n = 2147483647
-    public int IntegerReplacement(int n) {
+    // n = 2147483647, n+1 overflow
+    public int IntegerReplacement_Error(int n) {
         if (n == 1)
             return 0;
         
@@ -67,6 +67,16 @@ public class Solution397 {
         return Math.Min(IntegerReplacement(n + 1), IntegerReplacement(n - 1)) + 1;
     }
 
+    public int IntegerReplacement(int n) {
+        if (n == 1)
+            return 0;
+        
+        if ((n & 1) == 0) // even number 
+            return (int)longReplacement((long)n / 2) + 1;
+        // n +1 will overflow when n = 2147483647
+        return (int)Math.Min(longReplacement((long)n + 1), longReplacement((long)n - 1)) + 1;
+    }
+    
     public long longReplacement(long n) {
         if( n < 3 ) 
             return n - 1;
