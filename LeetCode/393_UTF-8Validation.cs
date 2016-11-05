@@ -35,3 +35,34 @@ The next byte is a continuation byte which starts with 10 and that's correct.
 But the second continuation byte does not start with 10, so it is invalid.
 */
 
+public class Solution393 {
+    public bool ValidUtf8(int[] data) {
+        int bytesToBeCheck = 0;
+        int mask = 0x80; //0b10000000;
+        for (int i = 0; i < data.Length; ++i) 
+        {
+            if (bytesToBeCheck > 0)
+            {
+                if ((data[i] & mask) == mask )
+                    bytesToBeCheck -= 1;
+                else
+                    return false;
+            }
+            else
+            {
+                bytesToBeCheck = GetUTFType(data[i]);
+                if (bytesToBeCheck < 0)
+                    return false;
+            }
+        }
+        return bytesToBeCheck == 0;
+    }
+
+    private int GetUTFType(int num){
+        if ((num & 0xF0) == 0xF0) return 3; //0b11110000
+        if ((num & 0xE0) == 0xE0) return 2;   // 0b11100000
+        if ((num & 0xC0) == 0xC0) return 1;   // 0b11000000
+        if ((num & 0x80) == 0x80) return -1;  // 0b10000000
+        return 0;
+    }
+}

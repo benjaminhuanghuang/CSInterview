@@ -7,9 +7,9 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var s = new Solution372();
+        var s = new Solution385();
         //var result = s.FindAnagrams("abab", "ab");
-        var result = s.SuperPow(2147483647, new int[]{2,0,0});  // [0,6]
+        var result = s.Deserialize("[-1,-2]");  // [0,6]
 
         Console.WriteLine(result);
 

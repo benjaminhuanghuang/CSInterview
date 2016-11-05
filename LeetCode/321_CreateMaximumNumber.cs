@@ -27,6 +27,6 @@ return [9, 8, 9]
 
 public class Solution321 {
     public int[] MaxNumber(int[] nums1, int[] nums2, int k) {
-        
+        return null;
     }
 }

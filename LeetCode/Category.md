@@ -15,6 +15,7 @@ LeetCode C# Implementation
 - 137. Single Number II
 - 190. Reverse Bits
 - 201. Bitwise AND of Numbers Range             : 
+- 393. UTF-8 Validation
 
 **String**:
 - 058. Length of Last Word                      : 

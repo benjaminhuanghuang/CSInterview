@@ -49,9 +49,9 @@ public class Solution035 {
 		if (A[mid] == target) 
             return mid;
 		else if (A[mid] < target)		                         
-            return searchInsert(A, target, mid + 1, high);                 
+            return searchInsert_Recursion(A, target, mid + 1, high);                 
         else //if (A[mid] > target)
-			return searchInsert(A, target, low, mid - 1);
+			return searchInsert_Recursion(A, target, low, mid - 1);
 	}
 
     public int SearchInsert_2(int[] nums, int target) {
