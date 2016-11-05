@@ -42,7 +42,7 @@ public class Solution417 {
         if(n==0) return res;
         int m = matrix.GetLength(1);
 
-        bool[,]  PV= new bool[n,m];
+        bool[,] PV= new bool[n,m];
         bool[,] AV = new bool[n,m];
         // 这里从所有临海的地方到这回去判断某个节点是否能流到对应的地方
         for(int i=0;i<n;i++){
