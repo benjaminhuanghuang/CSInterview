@@ -80,7 +80,7 @@ LeetCode C# Implementation
 - 145. Binary Tree Postorder Traversal
 - 156. Binary Tree Upside Down                  : Iteratively or recursively
 - 222. Count Complete Tree Nodes
-
+- 226. Invert Binary Tree
 
 **BST**:
 - 094. Binary Tree Inorder Traversal            : Iteratively or recursively or Morris
