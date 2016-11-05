@@ -35,20 +35,18 @@ public class Solution033 {
             if (nums[mid] == target)
                 return mid;
 
-            if (nums[mid] > nums[left])
+            if (nums[mid] > nums[left]) // mid located in left part, which is increasing
             {
-                // mid located in left part, which is increasing
-                if (nums[left] < target && target < nums[mid])
+                if (nums[left] < target && target < nums[mid]) //  targe located between left and mid
                     right = mid -1;
-                else
+                else   //  targe is bigger than mid
                     left = mid + 1;
             }
-            else
+            else                       // mid located in right part, which is increasing
             {
-                // mid located in right part, which is increasing
-                if (nums[mid] < target && target < nums[right])
+                if (nums[mid] < target && target < nums[right])   //targe located between mid and right
                     left = mid + 1;
-                else
+                else   // target is less then mid
                     right = mid - 1;
             }
         }

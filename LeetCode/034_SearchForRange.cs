@@ -27,8 +27,8 @@ public class Solution034 {
                 right = mid - 1;
             else if (nums[mid] < target)
                 left = mid +1;
-            else
-            {
+            else  // mid == target, expand the range
+            {    
                 result[0] = mid;
                 result[1] = mid;
                 int i = mid -1;

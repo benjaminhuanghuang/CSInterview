@@ -1,7 +1,7 @@
 /*
 35. Search Insert Position
 
-Given a sorted array and a target value, return the index if the target is found. 
+Given a "sorted" array and a target value, return the index if the target is found. 
 If not, return the index where it would be if it were inserted in order.
 
 You may assume no duplicates in the array.
@@ -20,7 +20,7 @@ public class Solution035 {
         int start = 0;
         int end = nums.Length-1;
 
-        while (start + 1 < end)
+        while (start + 1 < end)  //Note!
         {
             int mid = start + (end - start) / 2;
             if (nums[mid] > target)
@@ -37,10 +37,10 @@ public class Solution035 {
     //  Let us consider when the binary search will stop, it will only stop in this two cases.
     // low > high: then we could not find anything, return low.
     // low == high: then we compare target with A[low] to decide where to insert
-    private int searchInsert(int[] A, int target, int low, int high)
+    private int searchInsert_Recursion(int[] A, int target, int low, int high)
 	{
 		if (high < low) return low; 		
-        if (low == high) 		
+        if (low == high)  // there is only one element
         { 			
             return A[low] <= target ? low + 1 : low;
 		}
