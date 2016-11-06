@@ -13,3 +13,34 @@ Follow up: Could you improve it to O(n log n) time complexity?
 */
 
 //http://www.cnblogs.com/grandyang/p/4938187.html
+using System;
+using System.Collections.Generic;
+
+public class Solution300 {
+    // dp[x] = max(dp[x], dp[y] + 1) y < x and nums[x] > nums[y]
+    public int LengthOfLIS_N2(int[] nums) {
+        int[] dp = new int[nums.Length];
+        for (int i = 0 ; i< nums.Length; i++)
+            dp[i] = 1;
+
+        int res = 0;
+        for (int i = 0; i < nums.Length; ++i) {
+            for (int j = 0; j < i; ++j) {
+                if (nums[i] > nums[j]) {
+                    dp[i] = Math.Max(dp[i], dp[j] + 1);
+                }
+            }
+            res = Math.Max(res, dp[i]);
+        }
+        return res;
+    }
+
+    public int LengthOfLIS_NLogN(int[] nums) {
+        int len = nums.Length;
+
+
+
+        return 0;
+
+    }
+}

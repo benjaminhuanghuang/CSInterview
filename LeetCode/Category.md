@@ -54,6 +54,7 @@ LeetCode C# Implementation
 - 154. Find Minimum in Rotated Sorted Array II  : Duplicates are allowed.
 - 162. Find Peak Element
 - 275. H-Index II
+- 367. Valid Perfect Square
 - 378. Kth Smallest Element in a Sorted Matrix 
 
 **Divide and Conquer**:
@@ -82,6 +83,8 @@ LeetCode C# Implementation
 - 156. Binary Tree Upside Down                  : Iteratively or recursively
 - 222. Count Complete Tree Nodes
 - 226. Invert Binary Tree
+- 331. Verify Preorder Serialization of a Binary Tree
+
 
 **BST**:
 - 094. Binary Tree Inorder Traversal            : Iteratively or recursively or Morris
@@ -114,6 +117,11 @@ LeetCode C# Implementation
 - 139. Word Break
 - 152. Maximum Product Subarray
 - 416. Partition Equal Subset Sum
+
+
+**Cache**:
+- 304. Range Sum Query 2D - Immutable
+
 
 **Hashtable**:
 - 030. Substring with Concatenation of All Words      : 
