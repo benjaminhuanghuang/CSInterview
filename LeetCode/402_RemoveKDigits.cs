@@ -22,32 +22,30 @@ Output: "0"
 Explanation: Remove all the digits from the number and it is left with nothing which is 0.
 */
 
-/*
-其基本思想是利用栈尽量维持一个递增的序列，也就是说将字符串中字符依次入栈，如果当前字符串比栈顶元素小，
-并且还可以继续删除元素，那么就将栈顶元素删掉，这样可以保证将当前元素加进去一定可以得到一个较小的序列．
-也可以算是一个贪心思想．最后我们只取前len-k个元素构成一个序列即可，如果这样得到的是一个空串那就手动返回０．
-还有一个需要注意的是字符串首字符不为０
-*/
-
+using System.Text;
 using System.Collections.Generic;
 
 public class Solution402 {
+
+    // 使得string builder 中的数字尽可能保持递增顺序。
+    // 需要注意的是字符串首字符不为０
     public string RemoveKdigits(string num, int k) {
-        var stack = new Stack<int>();
-
-        if (num.Length == 0 || num.Length <= k)
+        if (k >= num.Length)
             return "0";
-
-        for(int i=0; i < num.Length; i++)
-        {
-            int curr = num[i] - '0';
-            while(stack.Count > 0 && curr < stack.Peek() && 
-                num.Length - i - 1 >= (num.Length - k) - stack.Count)
-                stack.Pop();
-
-            if(stack.Count < num.Length - k)
-                stack.Push(curr);
-        }
-        return "";
+        StringBuilder sb = new StringBuilder(num);
+        int i, j;
+		for (i = 0; i < k; i++) {
+			j = 0;
+            while(j < sb.Length - 1)
+            {
+                if ( sb[j] > sb[j + 1])
+                    break;
+                j++;
+            }
+            sb.Remove(j, 1); // remove string at j, length = j + 1;
+		}
+        while (sb.Length > 1 && sb[0]=='0')
+            sb.Remove(0,1);
+        return sb.ToString();
     }
 }

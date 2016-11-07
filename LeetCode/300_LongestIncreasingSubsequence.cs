@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 
 public class Solution300 {
+    // https://xuanwo.org/2015/07/31/dp-lis/
     // dp[x] = max(dp[x], dp[y] + 1) y < x and nums[x] > nums[y]
     public int LengthOfLIS_N2(int[] nums) {
         int[] dp = new int[nums.Length];
