@@ -14,11 +14,12 @@ Return [[0, 1], [1, 0], [3, 2], [2, 4]]
 The palindromes are ["dcbaabcd", "abcddcba", "slls", "llssssll"]
 
 */
+using System.Collections.Generic;
 
 public class Solution336 {
     public IList<IList<int>> PalindromePairs(string[] words) {
-        
-    }
+        return null;
+    }   
 
     bool IsPalindrome(string t, int left, int right) {
         while (left < right) {

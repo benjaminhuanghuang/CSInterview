@@ -16,6 +16,7 @@ Return the array [2, 1, 1, 0].
 
 
 */
+using System.Collections.Generic;
 
 public class Solution315 {
     public IList<int> CountSmaller(int[] nums) {
