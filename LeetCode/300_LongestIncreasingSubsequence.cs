@@ -13,6 +13,7 @@ Follow up: Could you improve it to O(n log n) time complexity?
 */
 
 //http://www.cnblogs.com/grandyang/p/4938187.html
+// https://www.zhihu.com/question/23995189
 using System;
 using System.Collections.Generic;
 
@@ -28,6 +29,7 @@ public class Solution300 {
         for (int i = 0; i < nums.Length; ++i) {
             for (int j = 0; j < i; ++j) {
                 if (nums[i] > nums[j]) {
+                    //只有当a[i]>a[j]的时候，我们需要进行判断，是否将a[i]加入到dp[j]当中。
                     dp[i] = Math.Max(dp[i], dp[j] + 1);
                 }
             }

@@ -14,8 +14,8 @@ public class Solution105 {
     public TreeNode BuildTree(int[] preorder, int[] inorder) {
         if (inorder.Length == 0 || preorder.Length == 0) 
             return null;
+            
         return BuildTreeRecursion(inorder, 0, inorder.Length - 1, preorder, 0, preorder.Length - 1);
-   
     }
 
     // The first element in the preorder traversal is the root, 

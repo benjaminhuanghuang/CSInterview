@@ -17,9 +17,6 @@ LeetCode C# Implementation
 - 201. Bitwise AND of Numbers Range             : 
 - 393. UTF-8 Validation
 
-**String**:
-- 058. Length of Last Word                      : 
-
 **Array**:
 - 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
 - 189. Rotate Array 
@@ -76,8 +73,11 @@ LeetCode C# Implementation
 - 160. Intersection of Two Linked Lists
 
 **Tree Operation**:
+- 100. Same Tree [Recursion]
+- 101. Symmetric Tree                            
 - 105. Construct Binary Tree from Preorder and Inorder Traversal
 - 106. Construct Binary Tree from Inorder and Postorder Traversal  
+- 111. Minimum Depth of Binary Tree
 - 144. Binary Tree Preorder Traversal           : Iteratively or recursively or Morris
 - 145. Binary Tree Postorder Traversal
 - 156. Binary Tree Upside Down                  : Iteratively or recursively
@@ -116,6 +116,7 @@ LeetCode C# Implementation
 - 120. Triangle
 - 139. Word Break
 - 152. Maximum Product Subarray
+- 300. Longest Increasing Subsequence   [LIS]
 - 416. Partition Equal Subset Sum
 
 

@@ -7,7 +7,7 @@ should be made by splicing together the nodes of the first two lists.
 
 public class Solution021 {
     public ListNode MergeTwoLists(ListNode l1, ListNode l2) {
-        var dummyheader = new ListNode(-1);
+        var dummyheader = new ListNode(-1);  // Importent
         var curr = dummyheader;
         while (l1!=null && l2!= null)
         {
