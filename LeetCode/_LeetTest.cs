@@ -7,12 +7,11 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var s = new Solution264();
-        int[,] input = new int[,] { { 5, 4 }, { 6, 4 }, { 6, 7 }, { 2, 3 } };
-        //var result = s.FindAnagrams("abab", "ab");
-        var result = s.NthUglyNumber(4);  // [0,6]
+        string input = "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext";
+        input = "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext";
+        var s = new Solution388();
+        var result = s.LengthLongestPath(input);  
 
         Console.WriteLine(result);
-
     }
 }

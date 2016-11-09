@@ -34,8 +34,57 @@ Time complexity required: O(n) where n is the size of the input string.
 Notice that a/aa/aaa/file1.txt is not the longest file path, if there is another path aaaaaaaaaaaaaaaaaaaaa/sth.png.
 */
 
+using System;
+using System.Collections.Generic;
+
 public class Solution388 {
     public int LengthLongestPath(string input) {
-        return 0;
+        int maxlen = 0;
+        // hold length of each depth in one line
+        Dictionary<int, int> pathlen = new Dictionary<int, int>();
+        pathlen.Add(0,0);
+        foreach( string line in input.Split('\n'))
+        {
+            //  Remove all '\t' from line, python: name = line.lstrip('\t')
+            string name = line.Replace("\t", "");
+            int depth = line.Length - name.Length;
+            if (name.IndexOf('.')>=0)
+                maxlen = Math.Max(maxlen, pathlen[depth] + name.Length);
+            else
+                pathlen[depth + 1] = pathlen[depth] + name.Length + 1;
+        }
+        return maxlen;
     }
+
+    // def lengthLongestPath_2(self, input):
+    //     """
+    //     :type input: str
+    //     :rtype: int
+    //     """
+    //     ans = lengthSum = 0
+    //     stack = [(-1, 0)]
+    //     for p in input.split('\n'):
+    //         depth = p.count('\t')
+    //         name = p.replace('\t', '')
+    //         topDepth, topLength = stack[-1]
+    //         while depth <= topDepth:
+    //             stack.pop()
+    //             lengthSum -= topLength
+    //             topDepth, topLength = stack[-1]
+    //         length = len(name) + (depth > 0)
+    //         lengthSum += length
+    //         stack.append((depth, length))
+    //         if name.count('.'):
+    //             ans = max(ans, lengthSum)
+    //     return ans
 }
+
+/*
+string input = "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext";
+input = "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext";
+var s = new Solution388();
+var result = s.LengthLongestPath(input);  
+
+Console.WriteLine(result);
+
+*/
