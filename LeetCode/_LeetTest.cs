@@ -7,11 +7,15 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        string input = "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext";
-        input = "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext";
-        var s = new Solution388();
-        var result = s.LengthLongestPath(input);  
+        var input = new int[,]{  {1,1,3,3},
+  {3,1,4,2},
+  {3,2,4,4},
+  {1,3,2,4},
+  {2,3,3,4}};
 
-        Console.WriteLine(result);
+            var s = new Solution391();
+            var result = s.IsRectangleCover(input);  
+
+            Console.WriteLine(result);
     }
 }
