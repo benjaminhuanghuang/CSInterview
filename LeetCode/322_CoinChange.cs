@@ -19,7 +19,7 @@ You may assume that you have an infinite number of each kind of coin.
 
 */
 using System;
-public class Solution332 {
+public class Solution322 {
     //dp，设dp[i] 为兑换目标i最少的硬币数。
     // 则有：dp[i + coins[j] ] = min(dp[i + coins[j] ] , dp[i] + 1）
     public int CoinChange(int[] coins, int amount) {

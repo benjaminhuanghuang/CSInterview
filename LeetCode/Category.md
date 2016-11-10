@@ -142,3 +142,5 @@ LeetCode C# Implementation
 
 **Graph**
 - 207. Course Schedule
+- 310. Minimum Height Trees
+- 332. Reconstruct Itinerary
