@@ -29,13 +29,13 @@ public class Solution_IsSubTree {
         // data as node
         if (rootNode.data.Equals(node.data))
         {
-            if (this.CompareTreesWithValue(rootNode, node)) return true;
+            if (this.IsEqualTree(rootNode, node)) return true;
         }
 
         return this.IsSubTree(rootNode.leftNode, node) || this.IsSubTree(rootNode.rightNode, node);
     }
 
-    private bool CompareTreesWithValue(TreeNode node1, TreeNode node2)
+    private bool IsEqualTree(TreeNode node1, TreeNode node2)
     {
         if (node2 == null)
         {
@@ -52,6 +52,6 @@ public class Solution_IsSubTree {
             return false;
         }
 
-        return this.CompareTreesWithValue(node1.leftNode, node2.leftNode)
-            && this.CompareTreesWithValue(node1.rightNode, node2.rightNode);
+        return this.IsEqualTree(node1.leftNode, node2.leftNode)
+            && this.IsEqualTree(node1.rightNode, node2.rightNode);
     }
