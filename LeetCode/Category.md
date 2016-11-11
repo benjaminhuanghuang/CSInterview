@@ -16,6 +16,7 @@ LeetCode C# Implementation
 - 190. Reverse Bits
 - 201. Bitwise AND of Numbers Range             : 
 - 393. UTF-8 Validation
+- 421. Maximum XOR of Two Numbers in an Array  [Goolge]
 
 **Array**:
 - 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
