@@ -138,7 +138,9 @@ LeetCode C# Implementation
 - 208. Implement Trie (Prefix Tree)
 - 211. Add and Search Word - Data structure design  
 - 224. Basic Calculator
+- 239. Sliding Window Maximum
 - 353. Design Snake Game
+
 
 **Graph**
 - 207. Course Schedule

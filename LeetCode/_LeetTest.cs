@@ -7,11 +7,12 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-       var input = new string[,]{{"JFK","KUL"},{"JFK","NRT"},{"NRT","JFK"}};
+        var input = "[1,2]";
 
-        var s = new Solution332();
-        var result = s.FindItinerary(input);  
-
+        var s = new Codec();
+        var root = s.deserialize(input);  
+        var result = s.serialize(root);
+        root = s.deserialize(result);  
         Console.WriteLine(result);
     }
 }
