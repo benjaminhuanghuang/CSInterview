@@ -25,13 +25,13 @@ public class Solution043 {
             }
         }
 
-        var result = new StringBuilder();
+        var sb = new StringBuilder();
         for (int i = 0; i < res.Length; i++)         
         {             
             // Skip the first 0 at res[0]
-            if(result.Length == 0 && res[i] == 0) continue;             
-            result.Append(res[i]);         
+            if(sb.Length == 0 && res[i] == 0) continue;             
+            sb.Append(res[i]);         
         }         
-        return result.Length > 0 ? result.ToString() :"0";
+        return sb.Length > 0 ? sb.ToString() :"0";
     }
 }

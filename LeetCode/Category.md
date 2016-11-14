@@ -28,6 +28,7 @@ LeetCode C# Implementation
 - 173. Binary Search Tree Iterator
 
 **Permutation**
+- 017. Letter Combinations of a Phone Number
 - 031. Next Permutation
 - 046. Permutations
 - 047. Permutations II
@@ -59,9 +60,9 @@ LeetCode C# Implementation
 - 095. Unique Binary Search Trees II
 
 **LinkedList**:
-- 024. Swap Node in Pairs                       : Iteratively or recursively
 - 019. Remove Nth Node From End of List         : Linked list dummy header
 - 023. Merge k Sorted Lists                     : Min heap and Divide and conquer!
+- 024. Swap Node in Pairs                       : Iteratively or recursively
 - 061. Rotate List
 - 083. Remove Duplicates from Sorted List
 - 082. Remove Duplicates from Sorted List II
@@ -147,3 +148,8 @@ LeetCode C# Implementation
 - 207. Course Schedule
 - 310. Minimum Height Trees
 - 332. Reconstruct Itinerary
+
+**Stack**
+- 020. Valid Parentheses
+- 032. Longest Valid Parentheses
+- 394. Decode String

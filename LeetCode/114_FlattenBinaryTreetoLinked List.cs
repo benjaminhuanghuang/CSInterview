@@ -30,26 +30,26 @@ using System.Collections.Generic;
 
 public class Solution114 {
     public void Flatten(TreeNode root) {
-        var previous = new List<TreeNode>();
-        this.FlattenHelper(root, previous);
+        var nodes = new List<TreeNode>();
+        this.FlattenHelper(root, nodes);
 
         var start = root;
-        for (int i = 1; i < previous.Count; i++)
+        for (int i = 1; i < nodes.Count; i++)
         {
-            start.right = previous[i];
+            start.right = nodes[i];
             start.left = null;
 
             start = start.right;
         }
     }
     // pre-order
-    private void FlattenHelper(TreeNode root, List<TreeNode> previous)
+    private void FlattenHelper(TreeNode root, List<TreeNode> nodes)
     {
         if (root == null) return;
         // visited root
-        previous.Add(root);
+        nodes.Add(root);
 
-        this.FlattenHelper(root.left, previous);
-        this.FlattenHelper(root.right, previous);
+        this.FlattenHelper(root.left, nodes);
+        this.FlattenHelper(root.right, nodes);
     }
 }
