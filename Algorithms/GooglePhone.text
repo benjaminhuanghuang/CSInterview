@@ -1,0 +1,84 @@
+Please use this Google doc to code during your interview. To free your hands for coding, we recommend that you use a headset or a phone with speaker option.
+
+
+public class solution{
+	public string GetNumsGaps_N1(int[] input){
+		if (input == null || input.Length == 0)
+			return “”;
+		int len = input.Length;
+		int gapStart = 0, gapEnd = 0;
+		
+		int i = 0;
+		int counter = input[0];
+		int gapStart = -1, gapEnd = -1;
+        List<string> res = new List<string>();
+		while(i< len)
+		{
+			int curr = input[i++];
+			if (curr > counter + 1)
+			{
+                gapStart = counter + 1;	
+                while(counter < curr)
+                {
+                counter ++;	
+                }
+                res.Add(gapStart.ToString()+”-”+counter.ToString());
+                }
+            }
+            return String.Join(“,”, res.ToArray());	
+	    }
+
+
+public string GetNumsGaps_NN(int[] input){
+		if (input == null || input.Length == 0)
+			return “”;
+		int len = input.Length;
+		int[] bucket = int[100];
+        for(int i=0 ;i < 100 ;i++)
+        {
+            bucket[i] = -1;
+        }
+        for(int i=0 ;i < input.Length ;i++)
+        {
+            bucket[input[i]] = 1;
+        }
+        bool gapStart = false;
+        int gapStart = 0, gapEnd = 0;
+        List<string> res = new List<string>();
+        for(int i=0 ;i < 100 ;i++)
+        {
+            if(bucket[i] = -1 && !gapStart)
+                {
+                    gapStart = i;
+                }
+                else if(gapStart && bucket[i] = 1)
+                {
+                    gapEnd = i -1;
+                    res.Add(gapStart.ToString()+”-”+gapEnd.ToString());
+                    gapStart = false;
+                }
+        }
+        return String.Join(“,”, res.ToArray());	
+        }
+
+
+
+
+
+
+public static void Main(string[] args)
+{
+
+
+}
+}
+
+
+
+
+1. Given a sorted array of distinct integers from 0 to 99, for instance [0, 1, 2, 50, 52, 75], output a string that describes numbers missing from the array.  In this case "3-49,51,53-74,76-99".  The items in the string should be sorted in increasing order and separated by commas.  When a gap has only one number, the item is the number itself.  When a gap has more than one number, the
+item consists of the start and the end of the gap, joined with a minus sign.
+
+
+
+6502146961
