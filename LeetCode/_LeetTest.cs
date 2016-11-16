@@ -7,8 +7,8 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-            var s = new Solution301();
-        var result = s.RemoveInvalidParentheses("()())()"); 
+        var s = new Solution459();
+        var result = s.RepeatedSubstringPattern("abab"); 
 
         Console.WriteLine(result);
     }

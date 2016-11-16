@@ -42,6 +42,6 @@ public class Solution124 {
         var currSum = Math.Max(Math.Max(left, right) + root.val, root.val);
         // case: 1,2,3,4
         res = Math.Max(res, Math.Max(currSum, left + right + root.val));
-        return pathThroughRoot;
+        return currSum;
     }
 }
