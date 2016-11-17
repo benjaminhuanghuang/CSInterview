@@ -54,7 +54,7 @@ public class Solution068 {
                     stringbuilder.Append(' ', spaceToAdd);
                 }
                 // string PadRight(int totalWidth)
-                res.Add(stringbuilder.ToString().PadRight(maxWidth));
+                res.Add(stringbuilder.ToString().PadRight(maxWidth)); 
 
                 charsCountInLine = 0;
                 oneline.Clear();
