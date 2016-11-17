@@ -45,8 +45,9 @@ public class Solution065 {
                 continue;
             }
 
-            if (!Char.IsNumber(ch))
+            if (!Char.IsNumber(ch))  
             {
+                //除了数字，只能接受以上字符：e . + -
                 return false;
             }
 

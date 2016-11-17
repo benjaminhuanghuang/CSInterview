@@ -48,6 +48,7 @@ public class Solution060 {
         var digits = Enumerable.Range(1, n).ToList();
         for (int i = 1; i <= n; i++)
         {
+            //5! * 5 + 1 = 601 =>  index = (k - 1)/factorial[n-1]  
             var index = (k - 1)/factorial[n - i];
             k -= index * factorial[n - i];
             res.Append(digits[index]);

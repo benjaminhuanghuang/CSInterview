@@ -22,6 +22,9 @@ LeetCode C# Implementation
 - 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
 - 189. Rotate Array 
 
+**String**:
+- 068. Text Justification : string.Join(" ", oneline).PadRight(maxWidth)
+
 **Sorting**
 - 147. Insertion Sort List                      :
 - 148. Sort List                                : Merge Sort O(n log n) and Merge List

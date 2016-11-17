@@ -36,6 +36,7 @@ public class Solution068 {
         var charsCountInLine = 0;
         for (int i = 0; i < words.Length; i++)             
         {                 
+            //oneline.Count = the count of the space
             if (charsCountInLine + oneline.Count + words[i].Length > maxWidth)
             {
                 var stringbuilder = new StringBuilder();
@@ -46,12 +47,13 @@ public class Solution068 {
                     if (j == oneline.Count - 1)                         
                     {                             
                         continue;                         
-                    }                         
+                    }    
+                    // ! how many spaces will be add.                     
                     var spaceToAdd = leftSpaces / (oneline.Count - 1) + 
                                         (leftSpaces % (oneline.Count - 1) > j ? 1 : 0);
                     stringbuilder.Append(' ', spaceToAdd);
                 }
-
+                // string PadRight(int totalWidth)
                 res.Add(stringbuilder.ToString().PadRight(maxWidth));
 
                 charsCountInLine = 0;

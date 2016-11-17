@@ -14,14 +14,14 @@ public class Solution064 {
         var dp = new int[grid.GetLength(0), grid.GetLength(1)];
 
         dp[0, 0] = grid[0,0];
-        // rows
         for (int i = 1; i < grid.GetLength(0); i++)
         {
+            // set first col
             dp[i, 0] = dp[i - 1, 0] + grid[i, 0];
         }
-        // cols
         for (int i = 1; i < grid.GetLength(1); i++)
         {
+            //set first row
             dp[0, i] = dp[0, i - 1] + grid[0, i];
         }
 
