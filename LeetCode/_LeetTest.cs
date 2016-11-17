@@ -7,9 +7,12 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var s = new Solution459();
-        var result = s.RepeatedSubstringPattern("abab"); 
+        string S = "ADOBECODEBANC";
+        string T = "ABC";
 
-        Console.WriteLine(result);
+        var s = new Solution076();
+        var res = s.MinWindow(S, T);
+
+        Console.WriteLine(res);
     }
 }
