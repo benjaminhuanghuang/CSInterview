@@ -24,7 +24,7 @@ public class Solution092 {
         {
             start = start.next;
             i++;
-        }
+        } 
 
         var count = m;
         var mNode = start.next;
