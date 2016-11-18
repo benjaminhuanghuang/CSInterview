@@ -1,10 +1,14 @@
 /*
 355. Design Twitter
 
-Design a simplified version of Twitter where users can post tweets, follow/unfollow another user and is able to see the 10 most recent tweets in the user's news feed. Your design should support the following methods:
+Design a simplified version of Twitter where users can post tweets, follow/unfollow another user 
+and is able to see the 10 most recent tweets in the user's news feed. Your design should support 
+the following methods:
 
 postTweet(userId, tweetId): Compose a new tweet.
-getNewsFeed(userId): Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent.
+getNewsFeed(userId): Retrieve the 10 most recent tweet ids in the user's news feed. Each item in 
+the news feed must be posted by users who the user followed or by the user herself. Tweets must 
+be ordered from most recent to least recent.
 follow(followerId, followeeId): Follower follows a followee.
 unfollow(followerId, followeeId): Follower unfollows a followee.
 Example:
@@ -36,3 +40,27 @@ twitter.getNewsFeed(1);
 */
 
 //http://bookshadow.com/weblog/2016/06/11/leetcode-design-twitter/
+// http://blog.csdn.net/mebiuw/article/details/51781415
+//# https://www.hrwhisper.me/leetcode-design-twitter/
+
+public class Twitter{
+    private int tweetCount = 0;
+    //self.tweets = collections.defaultdict(list)
+    //self.follower_ship = collections.defaultdict(set)
+    private Dictionary userTweets = new Dictionary();
+    private HashSet follower = new HastSet();
+    public Twitter()
+    {
+
+    }
+
+    public void PostTweet(int userId, int tweetId) {
+       // put tweet to userTweets
+    }
+
+
+
+
+
+
+}

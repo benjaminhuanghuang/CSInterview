@@ -47,7 +47,7 @@ LeetCode C# Implementation
 **Binary Search**:
 - 004. Median of Two Sorted Arrays              : Binary search, Kth number
 - 033. Search in Rotated Sorted Array
-- 081. Search in Rotated Sorted Array II
+- 081. Search in Rotated Sorted Array II    :   Duplicates are allowed
 - 034. Search for a Range
 - 035. Search Insert Position
 - 069. Sqrt(x)
@@ -145,7 +145,7 @@ LeetCode C# Implementation
 - 224. Basic Calculator
 - 239. Sliding Window Maximum
 - 353. Design Snake Game
-
+- 355. Design Twitter
 
 **Graph**
 - 207. Course Schedule

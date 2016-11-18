@@ -44,8 +44,10 @@ public class Solution079 {
 
     private bool ExistHelper(char[,] board, int i, int j, string word, int index, bool[,] visited)
     {
-        if (i < 0 || i >= board.GetLength(0) || j < 0 || j >= board.GetLength(1) 
-           || board[i, j] != word[index] || visited[i, j]) return false;
+        if (i < 0 || i >= board.GetLength(0) || 
+            j < 0 || j >= board.GetLength(1) || 
+            board[i, j] != word[index] || visited[i, j]) 
+           return false;
         if (index == word.Length - 1) return true;
 
         visited[i, j] = true;

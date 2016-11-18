@@ -40,7 +40,7 @@ public class Solution077 {
         for (int i = cur; i <= n; i++)
         {
             combination.Add(i);
-            // Combine_Recursion(n, k - 1, cur + 1, combination, res); causes error.
+            // Combine_Recursion(n, k - 1, cur + 1, combination, res); <=causes error.
             Combine_Recursion(n, k - 1, i + 1, combination, res);
             combination.RemoveAt(combination.Count - 1);
         }

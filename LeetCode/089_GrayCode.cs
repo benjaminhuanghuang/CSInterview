@@ -44,7 +44,7 @@ public class Solution089 {
             visited[start] = true;
             for (int i = 0; i < n; i++)
             {
-                var next = start ^ (1 << i);
+                var next = start ^ (1 << i);  //only one bit is different
                 if (visited[next]) 
                     continue;
                 start = next;
