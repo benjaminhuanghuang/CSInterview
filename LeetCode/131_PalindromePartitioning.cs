@@ -35,7 +35,7 @@ public class Solution131 {
         for (int i = index; i < s.Length; i++)
         {
             var str = s.Substring(index, i - index + 1);
-            if (isPartition(str))
+            if (isPalindrom(str))
             {
                 var restPartitions = PartitionRecursion(s, i + 1);
 
@@ -51,7 +51,7 @@ public class Solution131 {
         return res;
     }
 
-    private bool isPartition(string str)
+    private bool isPalindrom(string str)
     {
         for (int i = 0, j = str.Length - 1; i < j; i++, j--)
         {

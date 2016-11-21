@@ -43,12 +43,14 @@ twitter.getNewsFeed(1);
 // http://blog.csdn.net/mebiuw/article/details/51781415
 //# https://www.hrwhisper.me/leetcode-design-twitter/
 
+using System.Collections.Generic;
+
 public class Twitter{
     private int tweetCount = 0;
     //self.tweets = collections.defaultdict(list)
     //self.follower_ship = collections.defaultdict(set)
-    private Dictionary userTweets = new Dictionary();
-    private HashSet follower = new HastSet();
+    private Dictionary<int, List<int>> userTweets = new Dictionary<int, List<int>>();
+    private HashSet<int> follower = new HashSet<int>();
     public Twitter()
     {
 
