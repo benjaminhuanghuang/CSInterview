@@ -1,3 +1,12 @@
+public class TreeOperation
+{
+    public class TreeNode 
+{
+      public int val;
+      public TreeNode left;
+      public TreeNode right;
+      public TreeNode(int x) { val = x; }
+}
 public TreeNode DeleteNode(TreeNode root, int value)
 {
     if(root == null) return root;
@@ -30,4 +39,5 @@ public TreeNode DeleteNode(TreeNode root, int value)
     }
 
     return root;
+}
 }

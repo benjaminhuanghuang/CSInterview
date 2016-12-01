@@ -12,6 +12,13 @@ If inS[] is a subarray of inT[] and preS[] is a subarray preT[], then S is a sub
 */
 
 public class Solution_IsSubTree {
+    public class TreeNode 
+    {
+        public int data;
+        public TreeNode leftNode;
+        public TreeNode rightNode;
+        public TreeNode(int x) { data = x; }
+    }
     private bool IsSubTree(TreeNode rootNode, TreeNode node)
     {
         if (node == null)
@@ -55,3 +62,4 @@ public class Solution_IsSubTree {
         return this.IsEqualTree(node1.leftNode, node2.leftNode)
             && this.IsEqualTree(node1.rightNode, node2.rightNode);
     }
+}
