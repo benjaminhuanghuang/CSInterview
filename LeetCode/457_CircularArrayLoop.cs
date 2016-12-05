@@ -21,6 +21,6 @@ Can you do it in O(n) time complexity and O(1) space complexity?
 public class Solution457 {
     //http://blog.csdn.net/junchen1992/article/details/53142125
     public bool CircularArrayLoop(int[] nums) {
-        
+        return false;
     }
 }

@@ -7,12 +7,12 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        string S = "ADOBECODEBANC";
-        string T = "ABC";
-
-        var s = new Solution076();
-        var res = s.MinWindow(S, T);
-
-        Console.WriteLine(res);
+        var nums = new int[] {3, 5, 2, 1, 6, 4};
+        var s = new Solution324();
+        s.WiggleSort2(nums);
+        foreach (var i in nums)
+        {
+            Console.WriteLine(i);
+        }
     }
 }
