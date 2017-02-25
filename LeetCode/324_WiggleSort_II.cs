@@ -54,7 +54,7 @@ public class Solution324 {
             nums[i] = tmp;
         }
     }
-
+    /* 
     public void WiggleSort3(int[] nums) {
          int n = nums.Length;
          for (int i = 1; i < n; i++)
@@ -65,6 +65,7 @@ public class Solution324 {
                 nums[i] = tmp;
              }
     }
+    */
 }
 
 

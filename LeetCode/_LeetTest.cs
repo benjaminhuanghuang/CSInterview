@@ -7,10 +7,10 @@ using System.Collections.Generic;
 public class LeetTest {
     public static void Main(string[] args)
     {   
-        var nums = new int[] {3, 5, 2, 1, 6, 4};
-        var s = new Solution324();
-        s.WiggleSort2(nums);
-        foreach (var i in nums)
+        int[,] matrix = new int[,] { {1, 2,3}, {4,5, 6},{7,8,9} };
+        var s = new Solution498();
+        var array = s.FindDiagonalOrder(matrix);
+        foreach (var i in array)
         {
             Console.WriteLine(i);
         }
