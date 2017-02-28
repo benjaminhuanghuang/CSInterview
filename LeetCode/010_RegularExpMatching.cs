@@ -33,11 +33,11 @@ public class Solution010 {
     //      dp[i][j] = dp[i-1][j-1]
     // if p[j-1] == '*'
     //      match 0 chart,  dp[i][j] = dp[i][j-2]
-    public bool IsMatch(string s, string p) 
+    public bool IsMatch(string s, string pattern) 
     {
-        var dp = new bool[s.Length + 1, p.Length + 1];
+        var dp = new bool[s.Length + 1, pattern.Length + 1];
         dp[0, 0] = true;
-        for (int i = 1; i < p.Length; i++)
+        for (int i = 1; i < pattern.Length; i++)
         {
             if (p[i] == '*') 
                 dp[0, i + 1] = dp[0, i - 1];
@@ -47,15 +47,16 @@ public class Solution010 {
 
         for (int i = 0; i < s.Length; i++)
         {
-            for (int j = 0; j < p.Length; j++)
+            for (int j = 0; j < pattern.Length; j++)
             {
-                if (s[i] == p[j] || p[j] == '.')
+                if (s[i] == p[j] || pattern[j] == '.')
                 {
                     dp[i + 1, j + 1] = dp[i, j];
                 }
                 else if(p[j] == '*')
                 {
-                    dp[i + 1, j + 1] = dp[i + 1, j - 1] || (dp[i, j + 1] && (s[i] == p[j - 1] || p[j - 1] == '.'));
+                    dp[i + 1, j + 1] = dp[i + 1, j - 1] || 
+                        (dp[i, j + 1] && (s[i] == pattern[j - 1] || p[j - 1] == '.'));
                 }
             }
         }

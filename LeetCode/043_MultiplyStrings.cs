@@ -34,4 +34,25 @@ public class Solution043 {
         }         
         return sb.Length > 0 ? sb.ToString() :"0";
     }
+
+    public string Multiply_2(string num1, string num2) {
+        var res = new int[num1.Length + num2.Length];
+        for (int i = num1.Length - 1; i >= 0; i--)
+        {
+            for (var j = num2.Length - 1; j >= 0; j--)
+            {
+                res[i + j] += (num1[i]-'0') * (num2[j]-'0');
+            }
+        }
+        var sb = new StringBuilder();
+        for (int i = 0; i < res.Length; i++)         
+        { 
+            int digit  = res[i] % 10;
+            int carry = res[i] / 10;
+            if i < res.Length - 1:
+                res[i+1] += carry;
+            sb.Insert(0, digit.ToString());                
+        }         
+        return sb.Length > 0 ? sb.ToString() :"0";
+    }
 }

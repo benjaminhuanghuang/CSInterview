@@ -26,8 +26,29 @@ int len = arr.Length();
 int rows = board.GetLength(0);
 int cols = board.GetLength(1);
 
+
+// string
+subStr = s.Substring(left+1, right-left-1);   //index , COUNT
+
+char[] array = s.ToCharArray();     //reverse string
+Array.Reverse(array);
+
+string right = new string(array, i, s.Length - i);  // char[] to string
+if (s.StartsWith(right))      
+            
+        
 // List 
 var list= new List<int>{1};
 list.Add(2);
 
 int[] arr = list.ToArray();
+
+using System.Linq;
+intervals = intervals.OrderBy(x => x.start).ToList();
+
+// Dictionary
+Dictionary<char, char> dict = new Dictionary<char, char>();
+if (!dict.ContainsKey(s[i]))
+    dict.Add(s[i], t[i]);
+else
+    if (dict[s[i]] != t[i])
