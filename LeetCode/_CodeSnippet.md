@@ -17,6 +17,10 @@ string right = new string(array, 3, s.Length - 3);  // "6543210"
 if (s.StartsWith(right))
     Console.WriteLine(right);
 
+StringBuilder sb = new StringBuilder();
+sb.Insert(0, s[remainder]);     // Insert char into sb
+sb.Remove(1, 2);
+s = sb.ToString();
 
 // --------------------------------------------------------------------
 // Array and Matrix
