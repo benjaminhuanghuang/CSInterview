@@ -34,8 +34,7 @@ public class Codec535 {
     private int tinyUrlToInt(string shortUrl)
     {
         int val = 0;
-        int n = shortUrl.Length;
-        for(int i = 0; i< n; i++) {
+        for(int i = 0; i< shortUrl.Length; i++) {
             val = val * 62 + s.IndexOf(shortUrl[i]);
         }
         return val;
