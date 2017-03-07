@@ -21,27 +21,34 @@ This is not a valid board - as battleships will always have a cell separating be
 Your algorithm should not modify the value of the board.
 */
 
-public class Solution419 {
-    public int CountBattleships(char[,] board) {
+public class Solution419
+{
+    public int CountBattleships(char[,] board)
+    {
         int rows = board.GetLength(0);
         int cols = board.GetLength(1);
-        
-        if (rows == 0 || cols == 0) {
+
+        if (rows == 0 || cols == 0)
+        {
             return 0;
         }
 
         int ret = 0;
-        for (int i=0; i<rows; i++) {
-            for (int j=0; j<cols; j++) {
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
                 // if 'X' is adjacent with '.', it is battleship.
-                if (board[i,j] == 'X') {
-                    if ((i+1>=rows || board[i+1,j]=='.') &&
-                            (j+1>=cols || board[i,j+1]=='.')) {
+                if (board[i, j] == 'X')
+                {
+                    if ((i + 1 >= rows || board[i + 1, j] == '.') &&
+                            (j + 1 >= cols || board[i, j + 1] == '.'))
+                    {
                         ret++;
                     }
                 }
             }
         }
-        return ret;       
+        return ret;
     }
 }
