@@ -14,14 +14,17 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 
-public class Codec535 {
+public class Codec535
+{
     Dictionary<string, string> long_tiny = new Dictionary<string, string>();
     Dictionary<string, string> tiny_long = new Dictionary<string, string>();
-    String s="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    String s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
     // Encodes a URL to a shortened URL
-    public string encode(string longUrl) {
-        if(long_tiny.ContainsKey(longUrl)) {
+    public string encode(string longUrl)
+    {
+        if (long_tiny.ContainsKey(longUrl))
+        {
             return long_tiny[longUrl];
         }
         int val = long_tiny.Count + 1;
@@ -34,7 +37,8 @@ public class Codec535 {
     private int tinyUrlToInt(string shortUrl)
     {
         int val = 0;
-        for(int i = 0; i< shortUrl.Length; i++) {
+        for (int i = 0; i < shortUrl.Length; i++)
+        {
             val = val * 62 + s.IndexOf(shortUrl[i]);
         }
         return val;
@@ -43,7 +47,8 @@ public class Codec535 {
     private string IntToTinyUrl(int val)
     {
         StringBuilder sb = new StringBuilder();
-        while( val > 0) {
+        while (val > 0)
+        {
             int remainder = val % 62;
             val /= 62;
             sb.Insert(0, s[remainder]);
@@ -53,7 +58,8 @@ public class Codec535 {
 
 
     // Decodes a shortened URL to its original URL.
-    public string decode(string tinyUrl) {
+    public string decode(string tinyUrl)
+    {
         return tiny_long[tinyUrl];
     }
 }
