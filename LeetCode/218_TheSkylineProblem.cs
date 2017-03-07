@@ -44,7 +44,7 @@ public class Solution218 {
     // http://www.cnblogs.com/grandyang/p/4534586.html  multiset
     public IList<int[]> GetSkyline(int[,] buildings) {
         var res = new List<int[]>();
-        int i = 0, n = buildings.GetLength(0);
+        //int i = 0, n = buildings.GetLength(0);
         
 
 

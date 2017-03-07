@@ -39,7 +39,7 @@ public class Solution010 {
         dp[0, 0] = true;
         for (int i = 1; i < pattern.Length; i++)
         {
-            if (p[i] == '*') 
+            if (pattern[i] == '*') 
                 dp[0, i + 1] = dp[0, i - 1];
             else 
                 dp[0, i + 1] = false;
@@ -49,19 +49,18 @@ public class Solution010 {
         {
             for (int j = 0; j < pattern.Length; j++)
             {
-                if (s[i] == p[j] || pattern[j] == '.')
+                if (s[i] == pattern[j] || pattern[j] == '.')
                 {
                     dp[i + 1, j + 1] = dp[i, j];
                 }
-                else if(p[j] == '*')
+                else if(pattern[j] == '*')
                 {
                     dp[i + 1, j + 1] = dp[i + 1, j - 1] || 
-                        (dp[i, j + 1] && (s[i] == pattern[j - 1] || p[j - 1] == '.'));
+                        (dp[i, j + 1] && (s[i] == pattern[j - 1] || pattern[j - 1] == '.'));
                 }
             }
         }
-
-        return dp[s.Length, p.Length];
+        return dp[s.Length, pattern.Length];
     }
     // http://bangbingsyb.blogspot.com/2014/11/leetcode-regular-expression-matching.html
     // if p[j-1] != '.' and p[j-1] != '*'

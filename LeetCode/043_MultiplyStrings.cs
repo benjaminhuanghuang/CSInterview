@@ -49,7 +49,7 @@ public class Solution043 {
         { 
             int digit  = res[i] % 10;
             int carry = res[i] / 10;
-            if i < res.Length - 1:
+            if (i < res.Length - 1)
                 res[i+1] += carry;
             sb.Insert(0, digit.ToString());                
         }         

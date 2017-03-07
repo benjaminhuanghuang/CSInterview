@@ -27,12 +27,10 @@ Number at the 1st position (i=1) is 2, and 2 is divisible by i (i=1).
 Number at the 2nd position (i=2) is 1, and i (i=2) is divisible by 1.
 */
 using System;
-using System.Collection;
+using System.Collections;
 
 public class Solution562 {
     public int CountArrangement(int N) {
-        var cache = new 
+        return 0;
     }
-
-    private int 
 }
