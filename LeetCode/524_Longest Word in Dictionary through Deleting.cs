@@ -55,7 +55,6 @@ public class Solution524
                 result = word;
             }
         }
-
         return result;
     }
 }
