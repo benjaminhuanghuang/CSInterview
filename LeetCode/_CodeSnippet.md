@@ -71,6 +71,9 @@ int[] arr = list.ToArray();
 using System.Linq;
 intervals = intervals.OrderBy(x => x.start).ToList();
 
+List<string> dictionary = new List<string>();
+dictionary.Sort((s1, s2)=>s1.Length.CompareTo(s2.Length));
+
 // --------------------------------------------------------------------
 // Dictionary
 // --------------------------------------------------------------------

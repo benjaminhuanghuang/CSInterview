@@ -99,3 +99,13 @@ public class Solution529
         }
     }
 }
+
+/*
+
+ char[,] matrix = {{'E', 'E', 'E', 'E', 'E'},
+                        {'E', 'E', 'M', 'E', 'E'},
+                        {'E', 'E', 'E', 'E', 'E'},
+                        {'E', 'E', 'E', 'E', 'E'}};
+ var s = new Solution529();
+ var b = s.UpdateBoard(matrix, new int[]{3,0});
+*/
