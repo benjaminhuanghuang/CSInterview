@@ -37,10 +37,17 @@ It's impossible to make all the three washing machines have the same number of d
 Note:
 The range of n is [1, 10000].
 The range of dresses number in a super washing machine is [0, 1e5].
- */
+*/
 
+
+/*
+给定一个长度为n的整数数组nums，每一次选择m个数(1 ≤ m ≤ n)进行移动：将这m个数-1，同时令其相邻元素+1
+（这m个数同时可以是被加元素）
+求最少需要多少次移动，使得nums的所有元素均相等。如果不能，则返回-1。
+ */
  public class Solution517 {
     public int FindMinMoves(int[] machines) {
         
+        return 0;
     }
 }

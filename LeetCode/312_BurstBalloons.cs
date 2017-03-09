@@ -36,7 +36,7 @@ public class Solution312 {
                 nums2[n++] = x;
         nums2[0] = nums2[n++] = 1;
         
-         dp = new int[n][];
+        int[][] dp = new int[n][];
         for (int i=0; i< n; i++)
             dp[i] = new int[n];
 
