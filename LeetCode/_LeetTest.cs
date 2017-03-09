@@ -14,5 +14,6 @@ public class LeetTest {
         var s = new Solution529();
         var b = s.UpdateBoard(matrix, new int[]{3,0});
         
+        Console.WriteLine("test");
     }
 }

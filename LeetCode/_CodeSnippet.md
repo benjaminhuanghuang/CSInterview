@@ -74,6 +74,10 @@ intervals = intervals.OrderBy(x => x.start).ToList();
 List<string> dictionary = new List<string>();
 dictionary.Sort((s1, s2)=>s1.Length.CompareTo(s2.Length));
 
+using System.Linq;                   // List summary with LINQ
+int sum = nums.Sum();
+intArray.Where(i => i % 2 == 0).Sum(i => (long)i);
+
 // --------------------------------------------------------------------
 // Dictionary
 // --------------------------------------------------------------------
