@@ -18,6 +18,8 @@ Note:
 Return 0 if there is no such transformation sequence.
 All words have the same length.
 All words contain only lowercase alphabetic characters.
+You may assume no duplicates in the word list.
+You may assume beginWord and endWord are non-empty and are not the same.
 
 */
 using System.Collections;
@@ -36,6 +38,7 @@ public class Solution127
      */
     public int LadderLength(string beginWord, string endWord, IList<string> wordList)
     {
+        // You may assume no duplicates in the word list.
         if (!wordList.Contains(endWord))
             return 0;
         var preVisitedStr = new List<string> { beginWord };
@@ -68,6 +71,11 @@ public class Solution127
         }
 
         return 0;
+    }
+    private static bool IsOnlyOneCharDifferent(string str1, string str2)
+    {
+        // all string have same length
+        return str1.Where((t, i) => !t.Equals(str2[i])).Count() == 1;
     }
 
     /*
@@ -177,11 +185,7 @@ public class Solution127
         }
         return nextStarts;
     }
-    private static bool IsOnlyOneCharDifferent(string str1, string str2)
-    {
-        // all string have same length
-        return str1.Where((t, i) => !t.Equals(str2[i])).Count() == 1;
-    }
+
     public int LadderLength_New(string beginWord, string endWord, IList<string> wordList)
     {
         if (!wordList.Contains(endWord))
@@ -251,3 +255,16 @@ public class Solution127
         return distance;
     }
 }
+
+
+/*
+
+var s = new Solution127();
+var begin = "hit";
+var end ="cog";
+var wordList = new List<string> {"hot","dot","dog","lot","log"};
+
+var res= s.LadderLength(begin, end, wordList);
+Console.WriteLine(res);
+
+ */
