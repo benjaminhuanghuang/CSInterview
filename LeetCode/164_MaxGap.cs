@@ -65,3 +65,10 @@ public class Solution164
 }
 
 
+/*
+
+var s = new Solution164();
+var res = s.MaximumGap(new int[]{1, 10000000});
+
+*/
+

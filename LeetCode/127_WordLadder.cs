@@ -28,7 +28,50 @@ using System.Linq;
 
 public class Solution127
 {
+    // If I use wordSet instead of wordList, it will be TLE
+    // The REASON is HashSet.Contain is MUCH more faster than HashSet.Contain!!!
+    public int LadderLength_9(string beginWord, string endWord, IList<string> wordList)
+    {
+        if (!wordList.Contains(endWord))
+            return 0;
+        var wordSet = new HashSet<string>(wordList);
+        var preVisitedStr = new List<string> { beginWord };
+        var level = 1;
+        var wordLength = beginWord.Length;
 
+        while (preVisitedStr.Count > 0)
+        {
+            var nextVisitedStr = new List<string>();
+            foreach (var word in preVisitedStr)
+            {
+                if (word == endWord)
+                    return level;
+
+                for (char c = 'a'; c <= 'z'; c++)
+                {
+                    for (int i = 0; i < wordLength; i++)
+                    {
+                        if (c != word[i])
+                        {
+                            char[] chars = word.ToCharArray();
+                            chars[i] = c;
+                            string nextWord = new string(chars);
+                            //if (wordSet.Contains(nextWord))
+                            if (wordList.Contains(nextWord))
+                            {
+                                nextVisitedStr.Add(nextWord);
+                                wordSet.Remove(nextWord);
+                                wordList.Remove(nextWord);
+                            }
+                        }
+                    }
+                }
+            }
+            preVisitedStr = nextVisitedStr;
+            level++;  
+        }
+        return 0;
+    }
     /*
     Solution: Use the graph BFS search. preVisitedStr stores all the up level strings(with same 
     step transformation from start). loop up level strings and find all string only one char 
@@ -80,7 +123,7 @@ public class Solution127
 
     /*
         derived from LadderLength_1
-    
+
     */
     public int LadderLength_2(string beginWord, string endWord, IList<string> wordList)
     {
@@ -140,7 +183,7 @@ public class Solution127
     }
     /*
         derived from LadderLength_2
-    
+
     */
     public int LadderLength_3(string beginWord, string endWord, IList<string> wordList)
     {

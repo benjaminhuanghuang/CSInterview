@@ -34,16 +34,17 @@ public class Solution126
 
     public IList<IList<string>> FindLadders(string beginWord, string endWord, IList<string> wordList)
     {
-        BFS(beginWord, endWord, new List<string> { beginWord }, wordList);
+        var wordSet = new HashSet<string>(wordList);
+        BFS(beginWord, endWord, new List<string> { beginWord }, wordSet);
 
         res = res.OrderBy(s => s.Count).ToList();
         res = res.Where(s => s.Count == res[0].Count).ToList();
         return res;
     }
 
-    private void BFS(string currWord, string endWord, IList<string> ladder, IList<string> wordList)
+    private void BFS(string currWord, string endWord, IList<string> ladder, HashSet<string> wordSet)
     {
-        Dictionary<string, List<string>> nextWords = GetNextWords(currWord, wordList);
+        Dictionary<string, HashSet<string>> nextWords = GetNextWords(currWord, wordSet);
         // Console.WriteLine("Ladder: "+ String.Join(" ", ladder));
         // Console.WriteLine("NextWords: "+ String.Join(" ", nextWords));
         if (nextWords.Count == 0)
@@ -53,12 +54,12 @@ public class Solution126
 
         foreach (var nextWord in nextWords.Keys)
         {
-            Console.WriteLine("next words: " + nextWord + " :" + String.Join(" ", nextWords[nextWord]));
             var newladder = new List<string>(ladder);
             newladder.Add(nextWord);
             if (nextWord == endWord)
             {
                 res.Add(newladder);
+                return;
             }
             else
             {
@@ -66,26 +67,35 @@ public class Solution126
             }
         }
     }
-    private Dictionary<string, List<string>> GetNextWords(string word, IList<string> wordList)
+    private Dictionary<string, HashSet<string>> GetNextWords(string word, HashSet<string> wordSet)
     {
-        var nextWords = new Dictionary<string, List<string>>();
+        var nextWords = new Dictionary<string, HashSet<string>>();
 
         for (int i = 0; i < word.Length; i++)
         {
-            var charArr = word.ToCharArray();
             for (char c = 'a'; c <= 'z'; c++)
             {
                 //Console.WriteLine(string.Format("{0}  charArr[{1}]: {2}   {3}",word, i, charArr[i], c));
-                charArr[i] = c;  //change hot to aot, next time, h change aot back to hot
-                string nextWord = new string(charArr);
-                if (wordList.Contains(nextWord))
+                if (c != word[i])
                 {
-                    // for case hot ->  aot -> hat -> hmt -> hot
-                    if (!nextWords.ContainsKey(nextWord))
-                        nextWords.Add(nextWord, wordList.Where(w => w != nextWord).ToList());
+                    var charArr = word.ToCharArray();
+                    string nextWord = new string(charArr);
+                    if (wordSet.Contains(nextWord))
+                    {
+                        // for case hot ->  aot -> hat -> hmt -> hot
+                        if (!nextWords.ContainsKey(nextWord))
+                        {   
+                            var newSet = new HashSet<string>(wordSet);
+                            newSet.Remove(nextWord);
+
+                            nextWords.Add(nextWord, newSet);
+                        }
+                    }
                 }
             }
+                    
         }
+        
         return nextWords;
     }
 }
