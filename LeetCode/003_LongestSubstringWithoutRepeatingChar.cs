@@ -19,14 +19,14 @@ public class Solution003 {
     // https://miafish.wordpress.com/2015/01/22/leetcode-oj-c-longest-substring-without-repeating-characters/
     public int LengthOfLongestSubstring(string s) {
         int answer = 0;
-        int left = 0;
+        int left = 0; // left is the next index of repeating char.
         Dictionary<char, int > lastCharPos = new Dictionary<char, int>();
         for(int i =0;i< s.Length; i ++)
         {
             if (lastCharPos.ContainsKey(s[i]))
             {
                 // test case: "abba"
-                // sub string starts from left. left is the next index of repeating char.
+                // sub string starts from left.  
                 left = Math.Max(left, lastCharPos[s[i]] +1);
                 lastCharPos[s[i]] = i;
             }

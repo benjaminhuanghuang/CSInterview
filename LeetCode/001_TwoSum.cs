@@ -30,7 +30,7 @@ public class Solution001 {
         return null;           
     }
     // # O(n) runtime, O(n) space
-    // 查找另一半
+    // Use dictionary and search the difference
     public int[] TwoSum(int[] nums, int target)
     {
         var dict = new Dictionary<int, int>();
