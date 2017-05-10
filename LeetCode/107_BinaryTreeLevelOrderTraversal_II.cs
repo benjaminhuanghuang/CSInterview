@@ -35,12 +35,12 @@ public class Solution107 {
 
         while (curlevel.Any())
         {
-            var level = new List<int>();
+            var values = new List<int>();
             while (curlevel.Any())
             {
                 var cur = curlevel.Dequeue();
 
-                level.Add(cur.val);
+                values.Add(cur.val);
                 if (cur.left != null)
                 {
                     nextLevel.Enqueue(cur.left);
@@ -51,7 +51,7 @@ public class Solution107 {
                 }
             }
 
-            res.Add(level);
+            res.Add(values);
             while (nextLevel.Any())
             {
                 curlevel.Enqueue(nextLevel.Dequeue());
