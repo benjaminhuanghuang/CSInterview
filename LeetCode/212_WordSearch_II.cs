@@ -107,7 +107,7 @@ public class Solution212 {
         }
         if (i + 1 < board.GetLength(0))
         {                 
-                this.FindWordsHelper(board, i + 1, j, visited, root.Neighbors[board[i,j]], res, words);             
+            this.FindWordsHelper(board, i + 1, j, visited, root.Neighbors[board[i,j]], res, words);             
         }             
         if (j > 0)
         {

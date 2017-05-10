@@ -30,7 +30,7 @@ public class Solution121 {
             {
                 maxProfit = profit;
             }
-            if (profit < 0)
+            if (prices[i] < lowestPrice)
             {
                 lowestPrice = prices[i];
             }

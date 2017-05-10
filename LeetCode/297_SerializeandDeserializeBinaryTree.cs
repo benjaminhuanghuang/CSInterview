@@ -25,7 +25,7 @@ should be stateless.
 using System.Text;
 using System.Collections.Generic;
 
-// 先序遍历+递归
+//  pre-order traversal + recursion
 public class Codec {
 
     // Encodes a tree to a single string.

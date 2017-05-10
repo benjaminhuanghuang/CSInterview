@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 public class Solution103 {
     public IList<IList<int>> ZigzagLevelOrder(TreeNode root) {
-        var values = new List<IList<int>>();
+        var res = new List<IList<int>>();
         var currentQueue = new Queue<TreeNode>();
         var nextQueue = new Queue<TreeNode>();
 
@@ -35,11 +35,11 @@ public class Solution103 {
         var leftToRight = true;
         while (currentQueue.Count > 0)
         {
-            var value = new List<int>();
+            var values = new List<int>();
             while (currentQueue.Count > 0)
             {
                 var node = currentQueue.Dequeue();
-                value.Add(node.val);
+                values.Add(node.val);
 
                 if (node.left != null)
                 {
@@ -59,13 +59,13 @@ public class Solution103 {
 
             if (!leftToRight)
             {
-                value.Reverse();
+                values.Reverse();
             }
 
-            values.Add(value);
+            res.Add(values);
             leftToRight = !leftToRight;
         }
 
-        return values;
+        return res;
     }
 }
