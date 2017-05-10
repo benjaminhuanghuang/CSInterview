@@ -59,6 +59,9 @@ int cols = board.GetLength(1);
 
 // Sort
 Array.Sort(nums);
+
+// Filter the element has index i
+nums.Where((t, j) => j != i).ToArray()
             
 // --------------------------------------------------------------------        
 // List 

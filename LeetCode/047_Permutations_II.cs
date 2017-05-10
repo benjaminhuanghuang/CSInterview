@@ -15,41 +15,32 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-public class Solution047 {
-    public IList<IList<int>> PermuteUnique(int[] nums) {
+public class Solution047
+{
+    public IList<IList<int>> PermuteUnique(int[] nums)
+    {
         Array.Sort(nums);
         var res = new List<IList<int>>();
-
-        this.Permute_Recursion(nums, 0, res);
-
+        this.PermuteRecursion(res, new List<int>(), nums);
         return res;
     }
 
-    public void Permute_Recursion(int[] nums, int index, IList<IList<int>> res) 
+    private void PermuteRecursion(List<IList<int>> res, List<int> combination, int[] nums)
     {
-        var used = new Dictionary<int, bool>();
-        if (index == nums.Length)
+        if (nums.Length == 0)
         {
-            res.Add(new List<int>(nums)); // back trace need copy the combination
+            res.Add(combination);
             return;
         }
-        for (int i = index ; i< nums.Length; i++)
+        for (int i = 0; i < nums.Length; i++)
         {
-            if (!used.ContainsKey(nums[i]))
+            if (i > 0 && nums[i] == nums[i - 1])
             {
-                this.Swap(nums, i, index);
-                this.Permute_Recursion(nums, index + 1, res);
-                this.Swap(nums, index, i);
-
-                used.Add(nums[i], true);
+                continue;
             }
+            var newCombination = new List<int>(combination);
+            newCombination.Add(nums[i]);
+            this.PermuteRecursion(res, newCombination, nums.Where((e, idx) => idx != i).ToArray());
         }
-    }
-
-    private void Swap(int[] nums, int i,int j)
-    {
-        int tmp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tmp;
     }
 }

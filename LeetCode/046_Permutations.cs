@@ -18,57 +18,28 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-public class Solution046 {
-    public IList<IList<int>> Permute(int[] nums) {
+public class Solution046
+{
+    public IList<IList<int>> Permute(int[] nums)
+    {
         Array.Sort(nums);
         var res = new List<IList<int>>();
-
-        this.Permute_Recursion(nums, new List<int>(), res);
-
+        this.PermuteRecursion(res, new List<int>(), nums);
         return res;
     }
-
-    public void Permute_Recursion(int[] nums, List<int> combination, IList<IList<int>> res) 
+    private void PermuteRecursion(List<IList<int>> res, IList<int> combination, int[] nums)
     {
         if (nums.Length == 0)
         {
-            res.Add(new List<int>(combination)); // back trace need copy the combination
+            res.Add(combination);
             return;
         }
-        for (int i = 0 ; i< nums.Length; i++)
-        {
-            combination.Add(nums[i]);
-            this.Permute_Recursion(nums.Where((t, j) => j != i).ToArray(), combination, res );
-            combination.RemoveAt(combination.Count - 1);
-        }
-    }
-
-    public IList<IList<int>> Permute_Iteration(int[] nums) {
-        var res = new List<IList<int>>() { nums };
 
         for (int i = 0; i < nums.Length; i++)
         {
-            var resnext = new List<IList<int>>();
-            foreach (var result in res)
-            {
-                for (int j = i; j < nums.Length; j++)
-                {
-                    this.Swap(result, i, j);
-                    resnext.Add(new List<int>(result));
-                }
-
-            }
-
-            res = resnext;
+            IList<int> newCombination = new List<int>(combination);
+            newCombination.Add(nums[i]);
+            this.PermuteRecursion(res, newCombination, nums.Where((e, idx) => idx != i).ToArray());
         }
-
-        return res;
-    }
-
-    private void Swap(IList<int> list, int i,int j)
-    {
-        int tmp = list[i];
-        list[i] = list[j];
-        list[j] = tmp;
     }
 }
