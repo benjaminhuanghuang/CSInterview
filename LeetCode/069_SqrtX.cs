@@ -21,9 +21,9 @@ public class Solution069 {
                 res = mid;
                 break;
             }
-            else if( mid < x / mid)
-            {
-                res = mid;
+            else if( mid < x / mid)  // mid * mid < x,  mid is too small
+            {   // Can not use (mid * mid < x) , when x is very big
+                res = mid;    // importent! for x = 2
                 low = mid + 1;
             }
             else
