@@ -156,3 +156,5 @@ LeetCode C# Implementation
 - 020. Valid Parentheses
 - 032. Longest Valid Parentheses
 - 394. Decode String
+- 225. Implement Stack using Queues
+- 232. Implement Queue using Stacks
