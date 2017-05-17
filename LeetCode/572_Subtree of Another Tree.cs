@@ -1,5 +1,5 @@
 /*
-572. Subtree of Another Tree
+572. Subtree of Another Tree    [#100]
 
 Given two non-empty binary trees s and t, check whether tree t has exactly the same structure and 
 node values with a subtree of s. A subtree of s is a tree consists of a node in s and all of this 
@@ -22,9 +22,9 @@ public class Solution572
         {
             return false;
         }
-        if (s.val == t.val)
+        if (this.IsSameTree(s, t))
         {
-            return this.IsSameTree(s, t);
+            return true;
         }
         return this.IsSubtree(s.left, t) || this.IsSubtree(s.right, t);
     }
@@ -48,14 +48,5 @@ public class Solution572
 
         return this.IsSameTree(s.left, t.left)
             && this.IsSameTree(s.right, t.right);
-    }
-
-
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int x) { val = x; }
     }
 }
