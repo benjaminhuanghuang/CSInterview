@@ -13,12 +13,12 @@ public class Solution572
 {
     public bool IsSubtree(TreeNode s, TreeNode t)
     {
-        if (s == null && t == null)
+        if (t == null)
         {
             return true;
         }
 
-        if (s == null || t == null)
+        if (s == null)
         {
             return false;
         }
@@ -31,12 +31,12 @@ public class Solution572
 
     private bool IsSameTree(TreeNode s, TreeNode t)
     {
-        if (t == null)
+        if (s == null && t == null)
         {
             return true;
         }
 
-        if (s == null)
+        if (s == null || t == null)
         {
             return false;
         }
