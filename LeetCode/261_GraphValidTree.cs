@@ -39,38 +39,38 @@ public class Solution261
         for (int i = 0; i < n; ++i)
             adjList.Add(new List<int>());
 
-        for (int[] edge: edges)
-        {
-            adjList.get(edge[0]).add(edge[1]);
-            adjList.get(edge[1]).add(edge[0]);
-        }
-        if (hasCycle(-1, 0, visited, adjList))  // has cycle?
-            return false;
-        if (visited.size() != n) // is all connected?
-            return false;
+        // for (int[] edge: edges)
+        // {
+        //     adjList.get(edge[0]).add(edge[1]);
+        //     adjList.get(edge[1]).add(edge[0]);
+        // }
+        // if (hasCycle(-1, 0, visited, adjList))  // has cycle?
+        //     return false;
+        // if (visited.size() != n) // is all connected?
+        //     return false;
         return true;
     }
 
     private bool hasCycle(int pred, int vertex, HashSet<int> visited, List<List<int>> adjList)
     {
-        visited.Add(vertex);  // current vertex is being visited
-        foreach (int succ in adjList[vertex])
-        {  // successors of current vertex
-            if (!succ.equals(pred))
-            {  // exclude current vertex's predecessor
-                if (visited.contains(succ))
-                {
-                    return true; // back edge/loop detected!
-                }
-                else
-                {
-                    if (hasCycle(vertex, succ, visited, adjList))
-                    {
-                        return true;
-                    }
-                }
-            }
-        }
+        // visited.Add(vertex);  // current vertex is being visited
+        // foreach (int succ in adjList[vertex])
+        // {  // successors of current vertex
+        //     if (!succ.equals(pred))
+        //     {  // exclude current vertex's predecessor
+        //         if (visited.contains(succ))
+        //         {
+        //             return true; // back edge/loop detected!
+        //         }
+        //         else
+        //         {
+        //             if (hasCycle(vertex, succ, visited, adjList))
+        //             {
+        //                 return true;
+        //             }
+        //         }
+        //     }
+        // }
         return false;
     }
 }
