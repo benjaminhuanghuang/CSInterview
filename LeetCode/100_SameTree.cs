@@ -28,7 +28,7 @@ public class Solution100 {
         {
             return true;
         }
-        else if (p == null || q == null)
+        if (p == null || q == null)
         {
             return false;
         }
