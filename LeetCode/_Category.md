@@ -78,7 +78,7 @@ LeetCode C# Implementation
 - 160. Intersection of Two Linked Lists
 
 **Tree Operation**:
-- 100. Same Tree [Recursion]
+- 100. Same Tree [Recursion]   # 572
 - 101. Symmetric Tree                            
 - 105. Construct Binary Tree from Preorder and Inorder Traversal
 - 106. Construct Binary Tree from Inorder and Postorder Traversal  
@@ -89,7 +89,7 @@ LeetCode C# Implementation
 - 222. Count Complete Tree Nodes
 - 226. Invert Binary Tree
 - 331. Verify Preorder Serialization of a Binary Tree
-
+- 572. Subtree of Another Tree     #100, #101
 
 **BST**:
 - 094. Binary Tree Inorder Traversal            : Iteratively or recursively or Morris
