@@ -89,7 +89,8 @@ LeetCode C# Implementation
 - 222. Count Complete Tree Nodes
 - 226. Invert Binary Tree
 - 331. Verify Preorder Serialization of a Binary Tree
-- 563. Binary Tree Tilt
+- 543. Diameter of Binary Tree     # traversal +  recursion sum
+- 563. Binary Tree Tilt            # traversal +  recursion sum
 - 572. Subtree of Another Tree     #100, #101
 
 **BST**:
