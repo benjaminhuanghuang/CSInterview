@@ -12,7 +12,7 @@ There is a more generic way of solving this problem.
 
 */
 
-public class Solution {
+public class Solution009 {
     public bool IsPalindrome(int x) {
         if (x < 0)
         {

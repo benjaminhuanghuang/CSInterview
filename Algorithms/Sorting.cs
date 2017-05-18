@@ -7,6 +7,9 @@
      Merge排序（o(nlogn)），
      Quick排序（o(nlogn)）
 */
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Sorting{
 

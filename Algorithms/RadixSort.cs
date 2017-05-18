@@ -1,7 +1,10 @@
- 
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
  // http://algorithmsandstuff.blogspot.com/2014/06/radix-sort-in-c-sharp.html
  
- public class RadixSort
+ public class RadixSortDemo
  {
     private void SortArrayWithRadixSort()
     {

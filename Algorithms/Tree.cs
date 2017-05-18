@@ -1,3 +1,7 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
 public class Solution {
     public IList<int> PreorderTraversal(TreeNode root) {
         var values = new List<int>();

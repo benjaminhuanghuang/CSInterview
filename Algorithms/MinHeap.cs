@@ -1,3 +1,7 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
 public class Heap< T> where T : IComparable
 {
     private List< T> elements = new List<T>(); 

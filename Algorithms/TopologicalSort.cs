@@ -1,5 +1,7 @@
 // http://blog.csdn.net/lgx040605112/article/details/5247775
-
+using System;
+using System.Collections;
+using System.Collections.Generic;
 public class GraphNode
 {
     public int InDegree;

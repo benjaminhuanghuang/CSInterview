@@ -1,5 +1,9 @@
 // https://dotblogs.com.tw/larrynung/2011/03/10/21774
+using System;
 
+public class Component{
+    
+}
 public class MyResource: IDisposable
 {
     // Pointer to an external unmanaged resource.
