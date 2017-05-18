@@ -29,6 +29,7 @@ http://www.cnblogs.com/grandyang/p/5875509.html
 using System;
 using System.Collections.Generic;
 
+//http://blog.csdn.net/mebiuw/article/details/52511992
 public class Solution398 {
     private List<int> nums; 
     public Solution398(List<int> nums) {

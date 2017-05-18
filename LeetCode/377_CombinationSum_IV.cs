@@ -32,16 +32,20 @@ http://www.cnblogs.com/grandyang/p/5705750.html
 开始想当然的一位还是用递归来解，结果写出来发现TLE了
 */
 
-public class Solution377 {
+public class Solution377
+{
     //dp[i] += dp[i-num]
     //or dp[i+num] += dp[i]
     // 状态转移方程：dp[x + y] += dp[x]
-    public int CombinationSum4(int[] nums, int target) {
-        int[] dp= new int[target+1];
+    public int CombinationSum4(int[] nums, int target)
+    {
+        int[] dp = new int[target + 1];
         dp[0] = 1;
-        for(int i = 1; i <= target;i++){
-            foreach(int num in nums){
-                if(i >= num) 
+        for (int i = 1; i <= target; i++)
+        {
+            foreach (int num in nums)
+            {
+                if (i >= num)
                     dp[i] += dp[i - num];
             }
         }
