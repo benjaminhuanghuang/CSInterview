@@ -37,18 +37,20 @@ Notice that a/aa/aaa/file1.txt is not the longest file path, if there is another
 using System;
 using System.Collections.Generic;
 
-public class Solution388 {
-    public int LengthLongestPath(string input) {
+public class Solution388
+{
+    public int LengthLongestPath(string input)
+    {
         int maxlen = 0;
         // hold length of each depth in one line
         Dictionary<int, int> pathlen = new Dictionary<int, int>();
-        pathlen.Add(0,0);
-        foreach( string line in input.Split('\n'))
+        pathlen.Add(0, 0);
+        foreach (string line in input.Split('\n'))
         {
             //  Remove all '\t' from line, python: name = line.lstrip('\t')
             string name = line.Replace("\t", "");
             int depth = line.Length - name.Length;
-            if (name.IndexOf('.')>=0)
+            if (name.IndexOf('.') >= 0)
                 maxlen = Math.Max(maxlen, pathlen[depth] + name.Length);
             else
                 pathlen[depth + 1] = pathlen[depth] + name.Length + 1;
