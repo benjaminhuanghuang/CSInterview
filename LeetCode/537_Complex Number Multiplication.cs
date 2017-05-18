@@ -36,8 +36,8 @@ public class Solution537
         int realB = int.Parse(b.Split('+')[0]);
         int virtualB = int.Parse(b.Split('+')[1].Substring(0, b.Split('+')[1].Length - 1));
 
-        int r = realA * virtualA - realB * virtualB;
-        int v = realA * virtualB + realB * virtualA;
+        int r = realA * realB - virtualA * virtualB;
+        int v = realA * virtualB + virtualA * realB;
 
         return $"{r}+{v}i";
     }

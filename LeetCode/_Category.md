@@ -154,6 +154,7 @@ LeetCode C# Implementation
 - 207. Course Schedule
 - 310. Minimum Height Trees
 - 332. Reconstruct Itinerary
+- 547. Friend Circles
 
 **Stack**
 - 020. Valid Parentheses
