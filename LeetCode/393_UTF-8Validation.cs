@@ -35,41 +35,44 @@ The next byte is a continuation byte which starts with 10 and that's correct.
 But the second continuation byte does not start with 10, so it is invalid.
 */
 
-public class Solution393 {
-    public bool ValidUtf8(int[] data) {
-        int bytesToBeCheck = 0;
-        int mask = 0x80; //0b10000000;
-        for (int i = 0; i < data.Length; ++i) 
-        {
-            if (bytesToBeCheck > 0)
-            {
-                if ((data[i] & mask) == mask )
-                    bytesToBeCheck -= 1;
-                else
-                    return false;
-            }
-            else
-            {
-                bytesToBeCheck = GetUTFType(data[i]);
-                if (bytesToBeCheck < 0)
-                    return false;
-            }
-        }
-        return bytesToBeCheck == 0;
-    }
+public class Solution393
+{
+    public bool ValidUtf8(int[] data)
+    {
+        // 0, 10000000, 11100000, 11110000, 11111000
+        var masks = new int[] { 0x0, 0x80, 0xE0, 0xF0, 0xF8 };
+        //  0 ,  0  ,  11000000, 11100000, 11110000
+        var bits = new int[] { 0x0, 0x0, 0xC0, 0xE0, 0xF0 };
 
-    private int GetUTFType(int num){
-        if ((num & 0xF0) == 0xF0) return 3; //0b11110000
-        if ((num & 0xE0) == 0xE0) return 2;   // 0b11100000
-        if ((num & 0xC0) == 0xC0) return 1;   // 0b11000000
-        if ((num & 0x80) == 0x80) return -1;  // 0b10000000
-        return 0;
+        int index = 0;
+        int len = data.Length;
+
+        while (index < data.Length)
+        {
+            int codeLength = 4;
+            while (codeLength >= 0)
+            {
+                if ((data[index] & masks[codeLength]) == bits[codeLength])
+                    break;
+                codeLength--;
+            }
+            if (codeLength == 0 || codeLength + index > len)
+                return false;
+
+            for (int i = 1; i < codeLength; ++i)
+            {
+                if ((data[i + index] & 0xC0) != 0x80)   // 11000000  10000000
+                    return false;
+            }
+            index += codeLength;
+        }
+        return true;
     }
 }
 
 /*
 var s = new Solution393();
-var data = new int[] {248, 130, 130, 130};
+var data = new int[] {248, 130, 130, 130};  //11111000, 10000010, 10000010, 10000010
 Console.WriteLine(s.ValidUtf8(data));
 
  */
