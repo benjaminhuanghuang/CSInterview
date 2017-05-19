@@ -39,7 +39,7 @@ Example 2:
 using System;
 
 public class Solution397 {
-    public int integerReplacement(int n) {
+    public int integerReplacement_TLE(int n) {
         int c = 0;
         while (n != 1) {
             if ((n & 1) == 0) {

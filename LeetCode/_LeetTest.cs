@@ -8,9 +8,15 @@ public class LeetTest
 {
     public static void Main(string[] args)
     {
-        var s = new Solution393();
-        // var data = new int[] { 248, 130, 130, 130};
-        var data = new int[] { 197, 130, 1};
-        Console.WriteLine(s.ValidUtf8(data));
+        var s = new Solution399();
+        var equations = new string[,]{{"a", "b"}, {"b", "c"}};
+        var values = new double[]{2.0, 3.0};
+        var queries = new string[,]{{"a", "c"}, {"b", "a"}, {"a", "e"}, {"a", "a"}, {"x", "x"}};
+
+        var res = s.CalcEquation(equations, values, queries);
+        foreach (var item in res)
+        {
+            Console.WriteLine(item);
+        }
     }
 }

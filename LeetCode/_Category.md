@@ -154,6 +154,7 @@ LeetCode C# Implementation
 - 207. Course Schedule
 - 310. Minimum Height Trees
 - 332. Reconstruct Itinerary
+- 399. Evaluate Division
 - 547. Friend Circles
 
 **Stack**
@@ -162,3 +163,6 @@ LeetCode C# Implementation
 - 394. Decode String
 - 225. Implement Stack using Queues
 - 232. Implement Queue using Stacks
+
+**  Slid window 
+- 209. Minimum Size Subarray Sum
