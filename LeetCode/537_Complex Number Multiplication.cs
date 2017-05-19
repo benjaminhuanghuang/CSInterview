@@ -42,3 +42,12 @@ public class Solution537
         return $"{r}+{v}i";
     }
 }
+
+
+/*
+
+    var s = new Solution537();
+    var res = s.ComplexNumberMultiply("1+-1i", "1+-1i");
+    Console.WriteLine(res);
+
+ */

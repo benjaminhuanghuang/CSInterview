@@ -12,6 +12,7 @@ last level are as far left as possible. It can have between 1 and 2h nodes inclu
 */
 
 public class Solution222 {
+    // Time Limit Exceeded
     public int CountNodes(TreeNode root) {
         if(root == null)
             return 0;

@@ -66,3 +66,10 @@ public class Solution393 {
         return 0;
     }
 }
+
+/*
+var s = new Solution393();
+var data = new int[] {248, 130, 130, 130};
+Console.WriteLine(s.ValidUtf8(data));
+
+ */
