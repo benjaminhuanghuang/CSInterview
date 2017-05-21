@@ -26,23 +26,42 @@ Explanation: There are six substrings "z", "a", "b", "za", "ab", "zab" of string
 string s.
  */
 
-/*
-    字符串s是小写字母"abcdefghijklmnopqrstuvwxyz"的无限循环
-    用字典cmap记录以某字母开始的子串的最大长度
-    遍历字符串p，维护区间[start, end]，p[start ... end]是无限循环字符串s的一部分
-    更新p[start], p[start + 1], ... p[end]在cmap中的长度值
-    最终结果为cmap中value的和
-*/
- public class Solution467 {
-    public int FindSubstringInWraproundString(string p) {
-        string pattern = "abcdefghijklmnopqrstuvwxyz";
-        int clen = 0;
+/**
+     * 其实就是找出P中有多少个子串，子串能够在abcdedf...zabcdefg...zab...这样的一个子串里面找到
+     * 也就是递增的过程
+     * 考虑为一个26进制的数的序列
+     * 使用dp的方式，找到以某个字符结尾的最长的有多少种可能
+     * */
+using System;
+
+public class Solution467
+{
+    public int FindSubstringInWraproundString(string p)
+    {
+        int[] p_int = new int[p.Length];
+        int[] count = new int[26];
         for (int i = 0; i < p.Length; i++)
         {
-
+            p_int[i] = p[i] - 'a';
         }
-        int sum =0 ;
 
-        return sum;
+        int res = 0;
+        int maxLen = 0;
+        for (int i = 0; i < p.Length; i++)
+        {
+            if (i > 0 && (p_int[i - 1] + 1) % 26 == p_int[i])
+            {
+                maxLen++;
+            }
+            else
+            {
+                maxLen = 1;
+            }
+            count[p_int[i]] = Math.Max(count[p_int[i]], maxLen);
+        }
+        for (int i = 0; i < 26; i++)
+            res += count[i];
+        return res;
+
     }
 }
