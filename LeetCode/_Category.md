@@ -103,13 +103,10 @@ LeetCode C# Implementation
 - 255. Verify Preorder Sequence in Binary Search Tree
 
 
-
-
-
-
-**Recursion and back tracing**:
+**Recursion,  Back tracing ,  DFS**:
 - 017. Letter Combination                       : Backtracking
 - 037. Sudoku Solver
+- 200. Number of Islands
 
 **DP**:
 - 010. Regular Expression Matching              : DP and Recursion  
@@ -166,3 +163,5 @@ LeetCode C# Implementation
 
 **  Slid window 
 - 209. Minimum Size Subarray Sum
+
+

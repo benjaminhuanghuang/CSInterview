@@ -36,7 +36,7 @@ public class Solution395 {
     public int LongestSubstring(string s, int k) {
         int res = 0, i = 0, n = s.Length;
         
-        while (i + k < n) {
+        while (i + k <= n) {
             int[] m = new int[26];
             int mask = 0, max_idx = i;
             for (int j = i; j < n; ++j) {
@@ -56,3 +56,11 @@ public class Solution395 {
         return res;
     }
 }
+
+/*
+var input = "a";
+var s= Solution395();
+Console.WriteLine(s.LongestSubstring(input, 1));
+
+
+ */
