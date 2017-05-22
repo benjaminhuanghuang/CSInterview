@@ -47,14 +47,4 @@ public class Solution491
             }
         }
     }
-
-    private bool HasSameList(HashSet<List<int>> res, List<int> subList)
-    {
-        foreach( List<int> list in res)
-        {
-            if(list.SequenceEqual(subList))
-                return true;
-        }
-        return false;
-    }
 }
