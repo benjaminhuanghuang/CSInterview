@@ -38,7 +38,7 @@ namespace CSInterview.Algorithms
             return HasPathDFS(s, d, visited);
         }
 
-        public bool HasPathDFS(Node source, Node distination, HashSet<int> visited)
+        private bool HasPathDFS(Node source, Node distination, HashSet<int> visited)
         {
             if (visited.Contains(source.id))
             {
@@ -59,7 +59,11 @@ namespace CSInterview.Algorithms
             return false;
         }
 
-        public bool HasPathBFS(Node source, Node distination)
+        public bool HasPathBFS(int source, int distination)
+        {
+            return HasPathBFS(GetNode(source), GetNode(distination));
+        }
+        private bool HasPathBFS(Node source, Node distination)
         {
             Queue<Node> nextToVisit = new Queue<Node>();
             HashSet<int> visited = new HashSet<int>();
