@@ -57,7 +57,7 @@ public class CoinChangeSolution
         }
         int amountWithCoin = 0;
         int ways = 0;
-        while (amountWithCoin < money)
+        while (amountWithCoin <= money)
         {
             int remaining = money - amountWithCoin;
             ways += MakeChange_DP(coins, remaining, index + 1, memo);
