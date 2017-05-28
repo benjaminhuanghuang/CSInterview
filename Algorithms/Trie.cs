@@ -4,7 +4,7 @@ namespace CSInterview.Algorithms
     {
         private static int CHARTS = 26;
         private Node[] children = new Node[CHARTS];
-
+        private int size = 0;
         private int GetCharIndex(char c)
         {
             return (int)c - 'a';
@@ -24,8 +24,11 @@ namespace CSInterview.Algorithms
         {
             Add(s, 0);
         }
+
+        // Core function !!!
         private void Add(string s, int index)
         {
+            size++;
             if (index == s.Length)
                 return;
 
