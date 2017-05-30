@@ -130,13 +130,17 @@ LeetCode C# Implementation
 - 304. Range Sum Query 2D - Immutable
 
 
+**Matrix**
+- 048. Rotate Image
+- 054. Spiral Matrix
+
+
 **Hashtable**:
 - 030. Substring with Concatenation of All Words      : 
 
 **Basic**:
 - 006. ZigZag Conversion
 - 048. Rotate Image
-- 054. Spiral Matrix
 
 **Function Design**
 - 146. LRU Cache
@@ -162,7 +166,7 @@ LeetCode C# Implementation
 - 225. Implement Stack using Queues
 - 232. Implement Queue using Stacks
 
-**  Slid window 
+**Slid window** 
 - 209. Minimum Size Subarray Sum
 
 

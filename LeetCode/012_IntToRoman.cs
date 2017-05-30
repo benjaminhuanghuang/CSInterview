@@ -9,6 +9,7 @@ Input is guaranteed to be within the range from 1 to 3999.
 
 public class Solution012 {
     public string IntToRoman(int num) {
+        // 3999 : MMM CM XC IX
         string[] ch = new string[] { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
         // 1, 4, 5, 9
         int[] value = new int[] { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
