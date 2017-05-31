@@ -5,7 +5,8 @@ Suppose Andy and Doris want to choose a restaurant for dinner, and they both hav
 restaurants represented by strings.
 
 You need to help them find out their common interest with the least list index sum. If there is a 
-choice tie between answers, output all of them with no order requirement. You could assume there always exists an answer.
+choice tie between answers, output all of them with no order requirement. You could assume there 
+always exists an answer.
 
 Example 1:
 Input:
@@ -36,16 +37,16 @@ public class Solution599
     {
         Dictionary<string, int> map = new Dictionary<string, int>();
 
-        for (int l = 0; l < list1.Length; l++)
+        for (int i = 0; i < list1.Length; i++)
         {
-            map.Add(list1[l], l);
+            map.Add(list1[i], i);
         }
 
         HashSet<string> set = new HashSet<string>();
         int min = int.MaxValue;
         for (int j = 0; j < list2.Length; j++)
         {
-            if (map[list2[j]] != null)
+            if (map.ContainsKey(list2[j]))
             {
                 int i = map[list2[j]];
                 map[list2[j]] = i + j;
