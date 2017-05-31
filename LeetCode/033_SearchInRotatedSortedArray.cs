@@ -37,14 +37,14 @@ public class Solution033 {
 
             if (nums[mid] > nums[left]) // mid located in left part, which is increasing
             {
-                if (nums[left] < target && target < nums[mid]) //  targe located between left and mid
+                if (nums[left] < target && target < nums[mid]) //  target located between left and mid
                     right = mid -1;
-                else   //  targe is bigger than mid
+                else   //  target is bigger than mid
                     left = mid + 1;
             }
             else                       // mid located in right part, which is increasing
             {
-                if (nums[mid] < target && target < nums[right])   //targe located between mid and right
+                if (nums[mid] < target && target < nums[right])   //target located between mid and right
                     left = mid + 1;
                 else   // target is less then mid
                     right = mid - 1;

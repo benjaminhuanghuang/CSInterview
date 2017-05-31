@@ -21,6 +21,8 @@ LeetCode C# Implementation
 **Array**:
 - 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
 - 189. Rotate Array 
+- 283. Move Zeroes
+
 
 **String**:
 - 068. Text Justification : string.Join(" ", oneline).PadRight(maxWidth)
@@ -170,3 +172,9 @@ LeetCode C# Implementation
 - 209. Minimum Size Subarray Sum
 
 
+
+**C# List Sort**
+- 354. Russian Doll Envelopes
+
+**Fast-slow points**
+- 283. Move Zeroes
