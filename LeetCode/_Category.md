@@ -175,6 +175,7 @@ LeetCode C# Implementation
 
 **C# List Sort**
 - 354. Russian Doll Envelopes
+- 355. Design Twitter
 
 **Fast-slow points**
 - 283. Move Zeroes
