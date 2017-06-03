@@ -36,8 +36,8 @@ still operational?
 
 https://segmentfault.com/a/1190000006140476
 62^6=570
-sixty to the sixth power. 
-The sixth power of sixty.
+sixty two to the sixth power. 
+The sixth power of sixty two.
 
 */
 
