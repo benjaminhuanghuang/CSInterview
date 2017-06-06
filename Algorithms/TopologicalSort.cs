@@ -47,7 +47,7 @@ public class GraphDirecTopoSorted
     /// 是否有环路，有则返回NULL，否则返回入度为零的节点
     private GraphNode HaveCycle()
     {
-        GraphNode tempNode = new GraphNode();
+        GraphNode tempNode = null;
         NodeInOutDegree();
         foreach (GraphNode node in nodeList)
         {
@@ -75,7 +75,12 @@ public class GraphDirecTopoSorted
         }
     }
 
-    /// 有向图的排序
+    /*有向图的排序
+        记录每个点的入度。
+        将入度为0的顶点加入队列。
+        依次对入度为0的点进行删边操作，同时将新得到的入度为零的点加入队列。
+        重复上述操作，直至队列为空。
+    */
     public List<GraphNode> TopoSorted()
     {
         List<GraphNode> sortResult = new List<GraphNode>();
