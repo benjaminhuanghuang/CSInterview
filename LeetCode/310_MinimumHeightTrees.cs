@@ -1,16 +1,17 @@
 /*
 310. Minimum Height Trees
 
-For a undirected graph with tree characteristics, we can choose any node as the root. The result graph is then a rooted tree. 
-Among all possible rooted trees, those with minimum height are called minimum height trees (MHTs). Given such a graph, 
-write a function to find all the MHTs and return a list of their root labels.
+For a undirected graph with tree characteristics, we can choose any node as the root. The result 
+graph is then a rooted tree. 
+Among all possible rooted trees, those with minimum height are called minimum height trees (MHTs). 
+Given such a graph, write a function to find all the MHTs and return a list of their root labels.
 
 Format
-The graph contains n nodes which are labeled from 0 to n - 1. You will be given the number n and a list of undirected edges 
-(each edge is a pair of labels).
+The graph contains n nodes which are labeled from 0 to n - 1. You will be given the number n and a 
+list of undirected edges (each edge is a pair of labels).
 
-You can assume that no duplicate edges will appear in edges. Since all edges are undirected, [0, 1] is the same as [1, 0] 
-and thus will not appear together in edges.
+You can assume that no duplicate edges will appear in edges. Since all edges are undirected, [0, 1] 
+is the same as [1, 0] and thus will not appear together in edges.
 
 Example 1:
 
@@ -55,16 +56,19 @@ public class Solution310 {
         }
 
         List<int> leaves = new List<int>();
+        // List[i] contains all nodes connected to node i 
 		List<HashSet<int>> graph = new List<HashSet<int>>();
         for (int i = 0; i < n; i++) 
             graph.Add(new HashSet<int>());
 
+        // Build the braphi
         for (int i = 0; i < edges.GetLength(0); i++) {
 		//for (int i = 0; i < n; i++) {    // Error!
  			graph[edges[i,0]].Add(edges[i,1]);
             graph[edges[i,1]].Add(edges[i,0]);
 		}
 
+        // Find all leaves 
 		for (int i = 0; i < n; i++) 
             if (graph[i].Count == 1) 
                 leaves.Add(i);
@@ -73,9 +77,9 @@ public class Solution310 {
 		while (n > 2) {
 			List<int> newLeaves = new List<int>();
 			foreach (var leaf in leaves)
-				foreach (int j in graph[leaf]) {
-					graph[j].Remove(leaf);//移除叶子节点
-					if (graph[j].Count == 1) {//找到下个叶子节点
+				foreach (int j in graph[leaf]) { // node j connected to leaf
+					graph[j].Remove(leaf);  // cut leaf from node j 
+					if (graph[j].Count == 1) { //找到下个叶子节点
 						newLeaves.Add(j);
 					}
 				}

@@ -156,7 +156,7 @@ LeetCode C# Implementation
 
 **Graph**
 - 207. Course Schedule
-- 310. Minimum Height Trees
+- 310. Minimum Height Trees    # var graph = new List<HashSet<int>>();
 - 332. Reconstruct Itinerary
 - 399. Evaluate Division
 - 547. Friend Circles
