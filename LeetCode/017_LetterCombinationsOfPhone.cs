@@ -34,20 +34,20 @@ public class Solution017 {
             return ansList;
 
         string ans = "";
-        calc(digits, 0, digits.Length, ans, ansList);
+        calc(digits, 0, ans, ansList);
         return ansList;
     }
 
-    private void calc(string digit, int pos, int length, string ans, IList<string> ansList) 
+    private void calc(string digits, int pos, string ans, IList<string> ansList) 
     {
-        if (pos == length)
+        if (pos == digits.Length)
         {
             ansList.Add(ans);
             return;
         }
-        foreach (char c in this.keyboard[digit[pos]])
+        foreach (char c in this.keyboard[digits[pos]])
         {
-            calc(digit, pos + 1, length, ans + c, ansList);
+            calc(digits, pos + 1, ans + c, ansList);
         }
     }
 }
