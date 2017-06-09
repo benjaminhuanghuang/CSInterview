@@ -61,7 +61,7 @@ public class Solution310 {
         for (int i = 0; i < n; i++) 
             graph.Add(new HashSet<int>());
 
-        // Build the braphi
+        // Build the Graph
         for (int i = 0; i < edges.GetLength(0); i++) {
 		//for (int i = 0; i < n; i++) {    // Error!
  			graph[edges[i,0]].Add(edges[i,1]);

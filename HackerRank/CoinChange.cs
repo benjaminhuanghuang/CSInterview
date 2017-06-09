@@ -1,4 +1,7 @@
 /*
+find and print the number of different ways you can make change for  dollars if each coin is 
+available in an infinite quantity.
+
 https://www.hackerrank.com/challenges/ctci-coin-change
 https://www.youtube.com/watch?v=sn0DWI-JdNA
 

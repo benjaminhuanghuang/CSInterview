@@ -1,21 +1,21 @@
 namespace CSInterview.Algorithms
 {
-    public class Node
+    public class TrieNode
     {
         private static int CHARTS = 26;
-        private Node[] children = new Node[CHARTS];
+        private TrieNode[] children = new TrieNode[CHARTS];
         private int size = 0;
         private int GetCharIndex(char c)
         {
             return (int)c - 'a';
         }
 
-        private Node GetNode(char c)
+        private TrieNode GetNode(char c)
         {
             return children[GetCharIndex(c)];
         }
 
-        private void SetNode(char c, Node node)
+        private void SetNode(char c, TrieNode node)
         {
             children[GetCharIndex(c)] = node;
         }
@@ -34,10 +34,10 @@ namespace CSInterview.Algorithms
 
             char current = s[index];
             int charCode = GetCharIndex(current);
-            Node child = GetNode(current);
+            TrieNode child = GetNode(current);
             if (child == null)
             {
-                child = new Node();
+                child = new TrieNode();
                 SetNode(current, child);
             }
             child.Add(s, index + 1);
@@ -50,7 +50,7 @@ namespace CSInterview.Algorithms
                 return size;
             }
 
-            Node child = GetNode(s[index]);
+            TrieNode child = GetNode(s[index]);
             if (child == null)
             {
                 return 0;
