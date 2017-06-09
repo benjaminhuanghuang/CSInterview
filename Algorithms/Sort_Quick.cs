@@ -1,3 +1,4 @@
+//https://www.youtube.com/watch?v=SLauY6PpjW4
 namespace CSInterview.Algorithms
 {
     public class QuickSortSolution

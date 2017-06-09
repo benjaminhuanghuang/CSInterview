@@ -109,7 +109,7 @@ LeetCode C# Implementation
 - 017. Letter Combination                       : Backtracking
 - 037. Sudoku Solver
 - 200. Number of Islands
-- 491. Increasing Subsequences    : used nums
+- 491. Increasing Subsequences    : Use HashSet to filter used nums
 
 **DP**:
 - 010. Regular Expression Matching              : DP and Recursion  

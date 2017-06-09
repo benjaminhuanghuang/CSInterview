@@ -23,7 +23,7 @@ namespace CSInterview.Algorithms
 
             int middle = leftStart + (rightEnd - leftStart) / 2;
             MergeSort(array, temp, leftStart, middle);
-            MergeSort(array, temp, middle, rightEnd);
+            MergeSort(array, temp, middle + 1, rightEnd);
             MergeHalves(array, temp, leftStart, rightEnd);
         }
 
@@ -51,7 +51,7 @@ namespace CSInterview.Algorithms
                 }
                 index++;
             }
-            // Copy rest part of left half to temp
+            // Copy rest part of left half [left] to temp[index]
             Array.Copy(array, left, temp, index, leftEnd - left + 1);
             // Copy rest part of right half to temp
             Array.Copy(array, right, temp, index, rightEnd - right + 1);
