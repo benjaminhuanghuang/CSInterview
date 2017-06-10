@@ -32,12 +32,12 @@ public class Solution131 {
             return res;
         }
 
-        for (int i = index; i < s.Length; i++)
+        for (int endOfSubString = index; endOfSubString < s.Length; endOfSubString++)
         {
-            var str = s.Substring(index, i - index + 1);
+            var str = s.Substring(index, endOfSubString - index + 1); // index to the end
             if (isPalindrom(str))
             {
-                var restPartitions = PartitionRecursion(s, i + 1);
+                var restPartitions = PartitionRecursion(s, endOfSubString + 1);
 
                 foreach (var restPartition in restPartitions)
                 {

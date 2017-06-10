@@ -23,8 +23,8 @@ public class Solution029 {
 
         while (dividendlong >= divisorlong)
         {
-            long cur = 1;
-            long start = divisorlong;
+            long cur = 1;       // 商
+            long start = divisorlong;    // 除数
             while ((start << 1) <= dividendlong)
             {
                 start <<= 1;

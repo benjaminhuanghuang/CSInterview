@@ -1,13 +1,11 @@
 LeetCode C# Implementation
 =====================================
 
-**To be review**:
+**To be review**
 - 011. Container With Most Water                : Smart
 - 012. Integer to Roman                         : Roman Number
 - 029. Divide Two Integers                      : Time optimize , data type.
-- 030. Substring with Concatenation of All Words
-- 131. Palindrome Partitioning
-- 139. Word Break II
+
 
 
 **Bitwise**
@@ -18,19 +16,27 @@ LeetCode C# Implementation
 - 393. UTF-8 Validation
 - 421. Maximum XOR of Two Numbers in an Array  [Goolge]
 
+
+
 **Array**:
 - 026. Remove Duplicates from Sorted Array      : Smart, Compare with #27
 - 189. Rotate Array 
 - 283. Move Zeroes
 
 
+
 **String**:
+- 030. Substring with Concatenation of All Words
 - 068. Text Justification : string.Join(" ", oneline).PadRight(maxWidth)
+- 131. Palindrome Partitioning
+
 
 **Sorting**
 - 147. Insertion Sort List                      :
 - 148. Sort List                                : Merge Sort O(n log n) and Merge List
 - 173. Binary Search Tree Iterator
+
+
 
 **Permutation**
 - 017. Letter Combinations of a Phone Number
@@ -105,7 +111,7 @@ LeetCode C# Implementation
 - 255. Verify Preorder Sequence in Binary Search Tree
 
 
-**Recursion,  Back tracing ,  DFS**:
+**Recursion,  Back tracing, DFS**:
 - 017. Letter Combination                       : Backtracking
 - 037. Sudoku Solver
 - 200. Number of Islands
@@ -122,7 +128,7 @@ LeetCode C# Implementation
 - 096. Unique Binary Search Trees
 - 097. Interleaving String
 - 120. Triangle
-- 139. Word Break
+- 139. Word Break      # 140
 - 152. Maximum Product Subarray
 - 300. Longest Increasing Subsequence   [LIS]
 - 416. Partition Equal Subset Sum
@@ -168,7 +174,7 @@ LeetCode C# Implementation
 - 225. Implement Stack using Queues
 - 232. Implement Queue using Stacks
 
-**Slid window** 
+**Slid Window** 
 - 209. Minimum Size Subarray Sum
 
 

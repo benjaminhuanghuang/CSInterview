@@ -32,23 +32,23 @@ public class Solution012 {
         string[] roman = {"M", "D", "C", "L", "X", "V", "I"};
         int[] value = {1000, 500, 100, 50, 10, 5, 1};
         
-        for (int n = 0; n < 7; n += 2) {
+        for (int n = 0; n < 7; n += 2) {   // 1000, 100, 10
             int x = num / value[n];
             if (x < 4) 
             {
-                for (int i = 1; i <= x; ++i) 
+                for (int i = 1; i <= x; ++i)            // III
                     res += roman[n];
             } 
             else if (x == 4) 
-                res = res + roman[n] + roman[n - 1];
+                res = res + roman[n] + roman[n - 1];    // IV
             else if (x > 4 && x < 9) 
             {
-                res += roman[n - 1];
+                res += roman[n - 1];                    // VIII
                 for (int i = 6; i <= x; ++i) 
                     res += roman[n];
             }
             else if (x == 9) 
-                res = res + roman[n] + roman[n - 2];
+                res = res + roman[n] + roman[n - 2];    // IX
             num %= value[n];            
         }
         return res;

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 public class Solution013  {
     //https://miafish.wordpress.com/2015/02/17/leetcode-oj-c-roman-to-integer/
-    Dictionary<char, int> dict3 = new Dictionary<char, int>()
+    Dictionary<char, int> map = new Dictionary<char, int>()
     {
         {'I', 1},
         {'V', 5},
@@ -25,8 +25,8 @@ public class Solution013  {
         var pre = 0;
         for (int i = s.Length - 1; i >= 0; i--)
         {
-            var cur = dict3[s[i]];
-            res += pre > cur ? -cur : cur;
+            var cur = map[s[i]];   // get number 
+            res += pre > cur ? -cur : cur;   //IV or VI
             pre = cur;
         }
 
