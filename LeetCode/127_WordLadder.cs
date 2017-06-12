@@ -28,21 +28,21 @@ using System.Linq;
 
 public class Solution127
 {
-    // If I use wordSet instead of wordList, it will be TLE
-    // The REASON is HashSet.Contain is MUCH more faster than HashSet.Contain!!!
+    // If I use wordList instead of wordSet, it will be TLE
+    // The REASON is HashSet.Contain is MUCH more faster than List.Contain!!!
     public int LadderLength_9(string beginWord, string endWord, IList<string> wordList)
     {
         if (!wordList.Contains(endWord))
             return 0;
         var wordSet = new HashSet<string>(wordList);
-        var preVisitedStr = new List<string> { beginWord };
+        var preVisitedWords = new List<string> { beginWord };
         var level = 1;
         var wordLength = beginWord.Length;
 
-        while (preVisitedStr.Count > 0)
+        while (preVisitedWords.Count > 0)
         {
-            var nextVisitedStr = new List<string>();
-            foreach (var word in preVisitedStr)
+            var nextVisitedWords = new List<string>();
+            foreach (var word in preVisitedWords)
             {
                 if (word == endWord)
                     return level;
@@ -59,7 +59,7 @@ public class Solution127
                             //if (wordSet.Contains(nextWord))
                             if (wordList.Contains(nextWord))
                             {
-                                nextVisitedStr.Add(nextWord);
+                                nextVisitedWords.Add(nextWord);
                                 wordSet.Remove(nextWord);
                                 wordList.Remove(nextWord);
                             }
@@ -67,7 +67,7 @@ public class Solution127
                     }
                 }
             }
-            preVisitedStr = nextVisitedStr;
+            preVisitedWords = nextVisitedWords;
             level++;  
         }
         return 0;

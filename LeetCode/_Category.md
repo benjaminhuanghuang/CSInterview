@@ -6,7 +6,10 @@ LeetCode C# Implementation
 - 012. Integer to Roman                         : Roman Number
 - 029. Divide Two Integers                      : Time optimize , data type.
 
-
+** + - * ／ **
+- 002. Add Two Numbers
+- 029. Divide Two Integers
+- 043. Multiply Strings
 
 **Bitwise**
 - 136. Single Number

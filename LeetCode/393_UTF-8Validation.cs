@@ -63,7 +63,7 @@ public class Solution393
 
             for (int i = 1; i < codeLength; ++i)
             {
-                if ((data[i + index] & 0xC0) != 0x80)   // 11000000  10000000
+                if ((data[i + index] & 0xC0) != 0x80)   // 0xC0=11000000  0x80=10000000
                     return false;
             }
             index += codeLength;

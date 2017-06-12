@@ -12,6 +12,9 @@ You should NOT use internal library such as BigInteger.
 using System.Text;
 
 public class Solution043 {
+    /*
+        注意方向：两个数字从右向左，result从左向右
+    */
     public string Multiply(string num1, string num2) {
         var res = new int[num1.Length + num2.Length];
         for (int i = num1.Length - 1; i >= 0; i--)

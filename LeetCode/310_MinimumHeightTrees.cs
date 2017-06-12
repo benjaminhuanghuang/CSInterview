@@ -68,7 +68,7 @@ public class Solution310 {
             graph[edges[i,1]].Add(edges[i,0]);
 		}
 
-        // Find all leaves 
+        // Find all leaves, leaf node has only one neighbor
 		for (int i = 0; i < n; i++) 
             if (graph[i].Count == 1) 
                 leaves.Add(i);

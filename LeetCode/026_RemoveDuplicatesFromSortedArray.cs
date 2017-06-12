@@ -1,5 +1,5 @@
 /*
-26. Remove Duplicates from Sorted Array
+26. Remove Duplicates from Sorted Array   # 283
 
 Given a sorted array, remove the duplicates in place such that each element appear only 
 once and return the new length.
@@ -54,15 +54,16 @@ public class Solution026 {
         int len = nums.Length;
         if (len < 2)
             return len;
-        int size = 0;
+        int curr = 0;
         for (int i =0 ;i < len ; i++)
         {
-            if (nums[size] != nums[i])
+            if (nums[curr] != nums[i])
             {
-                size ++;
-                nums[size] = nums[i];
+                curr ++;
+                nums[curr] = nums[i];
             }
+            // nums[curr] == nums[i],  i++
         }
-        return size + 1;
+        return curr + 1;
     }
 }

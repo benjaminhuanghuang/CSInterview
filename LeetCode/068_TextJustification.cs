@@ -32,7 +32,7 @@ using System.Collections.Generic;
 public class Solution068 {
     public IList<string> FullJustify(string[] words, int maxWidth) {
         var res = new List< string>();
-        var oneline = new List< string>();
+        var oneline = new List< string>();   // words in current line
         var charsCountInLine = 0;
         for (int i = 0; i < words.Length; i++)             
         {                 
@@ -66,7 +66,7 @@ public class Solution068 {
 
         if (oneline.Any())
         {
-            res.Add(string.Join(" ", oneline).PadRight(maxWidth));
+            res.Add(string.Join(" ", oneline).PadRight(maxWidth)); 
         }
 
         return res;
