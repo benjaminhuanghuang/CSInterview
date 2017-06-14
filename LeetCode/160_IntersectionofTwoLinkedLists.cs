@@ -29,6 +29,7 @@ public class Solution160 {
 
         if (lenA < lenB)
             return GetIntersectionNode(headB, headA);
+            
         for(int i = 0; i < (lenA - lenB); i++)
             headA = headA.next;
         

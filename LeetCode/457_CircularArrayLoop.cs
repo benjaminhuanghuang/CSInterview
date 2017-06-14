@@ -18,9 +18,32 @@ appear in the array.
 Can you do it in O(n) time complexity and O(1) space complexity?
 */
 
-public class Solution457 {
+public class Solution457
+{
     //http://blog.csdn.net/junchen1992/article/details/53142125
-    public bool CircularArrayLoop(int[] nums) {
-        return false;
+    //http://bookshadow.com/weblog/2016/11/09/leetcode-circular-array-loop/
+    public bool CircularArrayLoop(int[] nums)
+    {
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == 0 || nums[i] == nums.Length)
+            {
+                nums[i] = 0;
+                continue;
+            }
+            int start = i;
+            while (0 < start)
+            {
+                int k = start % nums.Length;
+                if (nums[k] == 0 || nums[k] == '0')
+                    break
+                int b = start;
+                nums[k]
+            }
+        }
+    }
+    private int Next(int value, int index, int length)
+    {
+        return (value + index + length) % length;
     }
 }

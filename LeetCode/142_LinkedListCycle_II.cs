@@ -10,7 +10,7 @@ Can you solve it without using extra space?
 */
 
 //https://miafish.wordpress.com/2014/12/03/detect-and-find-beginning-of-the-loop-in-a-linked-list/
-//https://shenjie1993.gitbooks.io/leetcode-python/content/142%20Linked%20List%20Cycle%20II.html
+//http://blog.csdn.net/kenden23/article/details/13871699
 public class Solution142 {
     public ListNode DetectCycle(ListNode head) {
         var fast = head;
