@@ -33,21 +33,20 @@ public class Solution017 {
         if (digits == "") 
             return ansList;
 
-        string ans = "";
-        calc(digits, 0, ans, ansList);
+        calc(digits, 0, "", ansList);
         return ansList;
     }
 
-    private void calc(string digits, int pos, string ans, IList<string> ansList) 
+    private void calc(string digits, int pos, string combination, IList<string> ansList) 
     {
         if (pos == digits.Length)
         {
-            ansList.Add(ans);
+            ansList.Add(combination);
             return;
         }
         foreach (char c in this.keyboard[digits[pos]])
         {
-            calc(digits, pos + 1, ans + c, ansList);
+            calc(digits, pos + 1, combination + c, ansList);
         }
     }
 }

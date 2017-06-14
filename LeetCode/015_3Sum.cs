@@ -30,7 +30,7 @@ public class Solution015 {
 
         for (int i = 0; i < nums.Length; i++)
         {
-            if(i != 0 && nums[i - 1] == nums[i])
+            if(i != 0 && nums[i - 1] == nums[i])   // skip the numbers equals
             {
                 continue;
             }

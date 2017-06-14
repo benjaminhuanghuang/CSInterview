@@ -81,7 +81,8 @@ public class Solution042 {
 
         return res;
     }
-    //http://www.lxway.net/898969464.html
+    // https://www.hrwhisper.me/leetcode-trapping-rain-water/
+    // http://www.lxway.net/898969464.html
     public int Trap_MaxHeight_2(int[] height)
     {
         var res = 0;

@@ -89,6 +89,12 @@ if (!dict.ContainsKey(s[i]))
     dict.Add(s[i], t[i]);
 else
     if (dict[s[i]] != t[i])
+ 
+foreach( KeyValuePair<string, string> kvp in dict )
+{
+    Console.WriteLine("Key = {0}, Value = {1}", 
+        kvp.Key, kvp.Value);
+}
 
 // --------------------------------------------------------------------
 // HashSet

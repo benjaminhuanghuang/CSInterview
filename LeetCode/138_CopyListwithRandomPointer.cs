@@ -22,7 +22,7 @@ public class Solution138 {
             return null;
         var dict = new Dictionary<RandomListNode, RandomListNode>();
         var start = head;
-        // put <origianl, copied> pair into dict
+        // put <original, copied> pair into dict
         while (start != null)
         {
             dict.Add(start, new RandomListNode(start.label));
