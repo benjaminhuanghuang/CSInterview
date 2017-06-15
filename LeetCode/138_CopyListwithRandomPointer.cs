@@ -21,25 +21,25 @@ public class Solution138 {
         if (head == null) 
             return null;
         var dict = new Dictionary<RandomListNode, RandomListNode>();
-        var start = head;
+        var currNode = head;
         // put <original, copied> pair into dict
-        while (start != null)
+        while (currNode != null)
         {
-            dict.Add(start, new RandomListNode(start.label));
-            start = start.next;
+            dict.Add(currNode, new RandomListNode(currNode.label));
+            currNode = currNode.next;
         }
 
-        start = head;
-        var res = dict[start];
-        while (start != null)
+        currNode = head;
+        var copiedHead = dict[currNode];
+        while (currNode != null)
         {
-            var newstart = dict[start];
-            newstart.next = start.next != null ? dict[start.next] : null;
-            newstart.random = start.random != null ? dict[start.random] : null;
+            var copiedNode = dict[currNode];
+            copiedNode.next = currNode.next != null ? dict[currNode.next] : null;
+            copiedNode.random = currNode.random != null ? dict[currNode.random] : null;
 
-            start = start.next;
+            currNode = currNode.next;
         }
 
-        return res;
+        return copiedHead;
     }
 }
