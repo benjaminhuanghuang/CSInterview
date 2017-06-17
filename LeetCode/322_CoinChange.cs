@@ -1,5 +1,6 @@
 /*
 322. Coin Change
+    # 518
 
 You are given coins of different denominations and a total amount of money amount. 
 Write a function to compute the fewest number of coins that you need to make up 
@@ -20,7 +21,8 @@ You may assume that you have an infinite number of each kind of coin.
 */
 using System;
 public class Solution322 {
-    //dp，设dp[i] 为兑换目标i最少的硬币数。
+    // dp[i] 表示凑齐钱数 i 需要的最少硬币数，那么凑齐钱数 amount 最少硬币数为：固定钱数为 coins[j] 一枚硬币，
+    // 另外的钱数为 amount - coins[j] 它的数量为dp[amount - coins[j]]
     // 则有：dp[i + coins[j] ] = min(dp[i + coins[j] ] , dp[i] + 1）
     public int CoinChange(int[] coins, int amount) {
         int[] dp = new int[amount + 1];  

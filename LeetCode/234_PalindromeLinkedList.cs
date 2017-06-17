@@ -1,5 +1,5 @@
 /*
-234. Palindrome Linked List   QuestionEditorial Solution  My Submissions
+234. Palindrome Linked List
 
 Given a singly linked list, determine if it is a palindrome.
 
@@ -69,18 +69,18 @@ public class Solution234 {
     // scan and compare to check it is palindrome or not.
      public bool IsPalindrome_2(ListNode head) {
         if (head == null) return true;
-        var count = 0;
+        var length = 0;
         var start = head;
         while (start != null)
         {
             start = start.next;
-            count++;
+            length++;
         }
-        head = ReverseBetween(head, (int)Math.Ceiling(count/2.0) + 1, count);
+        head = ReverseBetween(head, (int)Math.Ceiling(length/2.0) + 1, length);
 
         var index = 1;
         var end = head;
-        while (index < Math.Ceiling(count/2.0) + 1)
+        while (index < Math.Ceiling(length/2.0) + 1)
         {
             end = end.next;
             index++;
