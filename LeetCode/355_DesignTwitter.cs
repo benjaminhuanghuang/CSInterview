@@ -70,8 +70,8 @@ public class Twitter
             this.tweetId = tweetId;
         }
     }
-    private Dictionary<int, HashSet<int>> relationship;
-    private Dictionary<int, List<Tweet>> timeline;
+    private Dictionary<int, HashSet<int>> relationship; //userid : followers
+    private Dictionary<int, List<Tweet>> timeline;      //userid : tweets
     private int timestamp;
     /** Initialize your data structure here. */
     public Twitter()
@@ -98,7 +98,7 @@ public class Twitter
         HashSet<int> followees = relationship[userId];
         List<Tweet> ownerTweets = timeline[userId];
         List<Tweet> tweetsList = new List<Tweet>();
-        // add owner's own laest 10 tweets to tweetsList
+        // add owner's own least 10 tweets to tweetsList
         if (ownerTweets != null)
         {
             for (int i = ownerTweets.Count - 1; i >= Math.Max(0, ownerTweets.Count - 10); i--)

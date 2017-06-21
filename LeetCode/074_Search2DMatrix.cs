@@ -20,17 +20,17 @@ Given target = 3, return true.
 
 public class Solution074 {
     public bool SearchMatrix(int[,] matrix, int target) {
-        var rows = matrix.GetLength(1);
+        var cols = matrix.GetLength(1);
 
         var low = 0;
-        var high = matrix.Length - 1;
+        var high = matrix.Length - 1;     // matrix.Length = col * row
 
         while (low <= high)             
         {                 
             var mid = (high - low)/2 + low;     
             // Key point:            
-            var col = mid % rows;                 
-            var row = mid / rows;                 
+            var col = mid % cols;                 
+            var row = mid / cols;                 
             if (matrix[row, col] == target)
             {                     
                 return true;                 

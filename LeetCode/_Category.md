@@ -187,4 +187,5 @@ LeetCode C# Implementation
 - 355. Design Twitter
 
 **Fast-slow points**
+- 026. Remove Duplicates from Sorted Array   # 283
 - 283. Move Zeroes

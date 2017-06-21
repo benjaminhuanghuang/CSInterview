@@ -21,7 +21,7 @@ public class Solution020 {
             {
                 stack.Push(c);
             }
-            else
+            else  // ), } , ]
             {
                 if (stack.Count == 0)
                     return false;

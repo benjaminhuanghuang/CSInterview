@@ -1,6 +1,7 @@
 /*
 147. Insertion Sort List
 
+Sort a linked list using insertion sort.
 */
 
 public class Solution147 {

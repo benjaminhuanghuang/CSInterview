@@ -16,38 +16,6 @@ respectively. "It doesn't matter what you leave beyond the new length."
 using System;
 
 public class Solution026 {
-    public int RemoveDuplicates_Wrong(int[] nums) {
-        if (nums == null)
-            return 0;
-        int len = nums.Length;
-        if (len < 2)
-            return len;
-
-        int i = 1;
-        int right = len - 1;
-        int prev = nums[0];
-        while (i < right)
-        {   
-            int curr = nums[i]; 
-            if (prev == curr)
-            {
-                this.SwapArrayElements(nums, i, right);
-                right --;    
-            }
-            else
-            {
-                i ++;
-            }
-        }
-        return right - (i - 1) + 1;
-    }
-    public void SwapArrayElements(int[] nums, int i, int j)
-    {
-        int tmp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tmp; 
-    }
-
     public int RemoveDuplicates(int[] nums) {
         if (nums == null)
             return 0;

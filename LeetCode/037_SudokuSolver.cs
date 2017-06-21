@@ -25,7 +25,7 @@ public class Solution037 {
         if (board[i, j] != '.')
             return this.Slove(curr +1, board);
         
-        for (int k = 1; k <=9 ; k++)  // try num 1 to 9
+        for (int k = 1; k <=9 ; k++)  // try num 1 to 9 at borad[i, j]
         {
             board[i, j] = (char)(k +'0');
             if (this.Check(board, i, j) && this.Slove(curr+1, board))
