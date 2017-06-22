@@ -14,17 +14,17 @@ Minimize the total number of operations.
 
 public class Solution283 {
     public void MoveZeroes(int[] nums) {
-        int current = 0;
+        int pivot = 0;
         for( int i =0 ; i < nums.Length; i++)
         {
             if(nums[i] != 0)
             {
-                nums[current] = nums[i];
-                current ++;
+                nums[pivot] = nums[i];
+                pivot ++;
             }
         }
 
-        for (int i = current; i< nums.Length; i++)
+        for (int i = pivot; i< nums.Length; i++)
         {
             nums[i] = 0;
         }

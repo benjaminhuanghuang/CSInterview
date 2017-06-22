@@ -15,8 +15,9 @@ public class Solution169 {
     }
 
     public int MajorityElement_2(int[] nums) {
-        int count = 1;
         int previous = nums[0];
+        int count = 1;
+        
         for (int i = 1; i < nums.Length; i++)
         {
             if (count == 0)

@@ -46,13 +46,14 @@ public class Solution093 {
         }         
     }         
 
-    private bool IsValid(string s, int i, int len)         
+    // is s[i,len] a valid ip section
+    private bool IsValid(string s, int pos, int len)         
     {             
-        if (i + len > s.Length) 
+        if (pos + len > s.Length) 
             return false;
-        if (len == 3 && int.Parse(s.Substring(i, len)) > 255) 
+        if (len == 3 && int.Parse(s.Substring(pos, len)) > 255) 
             return false;
-        if (len > 1 && s[i] == '0') 
+        if (len > 1 && s[pos] == '0') 
             return false;
 
         return true;
