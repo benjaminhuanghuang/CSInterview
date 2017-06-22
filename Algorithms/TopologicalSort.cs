@@ -15,14 +15,14 @@ public class GraphDirecTopoSorted
     private List<GraphNode> nodeList;   //节点链表
     private List<KeyValuePair<GraphNode, GraphNode>> edgeList;  //边链表
 
-    public GraphDirecTopoSorted(List<GraphNode> node, List<KeyValuePair<GraphNode, GraphNode>> edge)
+    public GraphDirecTopoSorted(List<GraphNode> nodes, List<KeyValuePair<GraphNode, GraphNode>> edges)
     {
-        this.nodeList = node;
-        this.edgeList = edge;
+        this.nodeList = nodes;
+        this.edgeList = edges;
     }
 
     /// 计算节点的入度出度
-    private void NodeInOutDegree()
+    private void CalculateNodesInOutDegree()
     {
         foreach (GraphNode node in nodeList)
         {
@@ -45,15 +45,16 @@ public class GraphDirecTopoSorted
     }
 
     /// 是否有环路，有则返回NULL，否则返回入度为零的节点
-    private GraphNode HaveCycle()
+    private GraphNode FindNodeInDegreeIsZero()
     {
         GraphNode tempNode = null;
-        NodeInOutDegree();
+        CalculateNodesInOutDegree();
         foreach (GraphNode node in nodeList)
         {
             if (node.InDegree == 0)
             {
                 tempNode = node;
+                break;
             }
         }
         return tempNode;
@@ -76,7 +77,7 @@ public class GraphDirecTopoSorted
     }
 
     /*有向图的排序
-        记录每个点的入度。
+        计算每个点的入度。
         将入度为0的顶点加入队列。
         依次对入度为0的点进行删边操作，同时将新得到的入度为零的点加入队列。
         重复上述操作，直至队列为空。
@@ -86,7 +87,7 @@ public class GraphDirecTopoSorted
         List<GraphNode> sortResult = new List<GraphNode>();
         while (nodeList.Count > 0)
         {
-            GraphNode tempNode = HaveCycle();
+            GraphNode tempNode = FindNodeInDegreeIsZero(); // re-calculate nodes in-out degree 
             if (tempNode != null)
             {
                 sortResult.Add(tempNode);

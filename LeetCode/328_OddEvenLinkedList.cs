@@ -25,7 +25,7 @@ public class Solution328 {
  
         ListNode p1 = head;
         ListNode p2 = head.next;
-        ListNode connectNode = head.next;
+        ListNode evenHeader = head.next;
     
         while(p1 != null && p2 != null)
         {
@@ -39,7 +39,7 @@ public class Solution328 {
             p2 = p2.next;
         }
     
-        p1.next = connectNode;
+        p1.next = evenHeader;
     
         return head;
     }

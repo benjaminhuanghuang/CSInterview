@@ -12,9 +12,12 @@ You may assume no duplicate exists in the array.
 
 */
 public class Solution153 {
-    // if the mid is greater than low and high, mid is in front of pivot, search from mid to high; o
-    //  therwise, search from low to mid; Special case is the array is sorted(1, 2, 3, 4,…), and 
-    //  mid point to the first element of the array(1), so recursively find left part should include mid itself.
+    /*  
+        if the mid is greater than low and high, mid is in front of pivot, search from mid to high; 
+        otherwise, search from low to mid; Special case is the array is sorted(1, 2, 3, 4,…), and 
+        mid point to the first element of the array(1), so recursively find left part should include 
+        mid itself.
+    */
     public int FindMin(int[] nums) {
         var low = 0;
         var high = nums.Length - 1;

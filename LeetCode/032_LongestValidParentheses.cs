@@ -16,7 +16,7 @@ using System.Linq;
 
 public class Solution032 {
     public int LongestValidParentheses_Stack(string s) {
-        var res = 0;
+        var maxLength = 0;
         var stack = new Stack<int>();
 
         for (int i = 0; i < s.Length; i++)
@@ -31,7 +31,7 @@ public class Solution032 {
                     stack.Pop();
                     // whenever stack pop, compare its length to the global max length.
                     int newLen = i - (stack.Any() ? stack.Peek() : -1);
-                    res = Math.Max(res, newLen);
+                    maxLength = Math.Max(maxLength, newLen);
                 }
                 else
                 {
@@ -39,7 +39,7 @@ public class Solution032 {
                 }
             }
         }
-        return res; 
+        return maxLength; 
     }
 
     public int LongestValidParentheses_DP(string s)
