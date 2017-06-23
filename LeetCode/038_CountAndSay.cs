@@ -23,7 +23,8 @@ public class Solution038 {
         {
             if (start[i] != start[pre])
             {
-                res.Append(i - pre).Append(start[pre]);
+                int count = i - pre;
+                res.Append(count).Append(start[pre]);
                 pre = i;
             }
         }
