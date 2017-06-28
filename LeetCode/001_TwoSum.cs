@@ -36,10 +36,10 @@ public class Solution001 {
         var dict = new Dictionary<int, int>();
         for (int i = 0; i < nums.Length; i++)
         {
-            var aim = target - nums[i];
-            if(dict.ContainsKey(aim))
+            var diff = target - nums[i];
+            if(dict.ContainsKey(diff))
             {
-                return new int[] { dict[aim], i };
+                return new int[] { dict[diff], i };
             }
             else
             {

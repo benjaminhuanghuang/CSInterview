@@ -1,4 +1,6 @@
 /*
+460. LFU Cache
+    # 146 LRU Cache
 Design and implement a data structure for Least Frequently Used (LFU) cache. It should support 
 the following operations: get and put.
 
@@ -11,6 +13,12 @@ frequency), the least recently used key would be evicted.
 
 Follow up:
 Could you do both operations in O(1) time complexity?
+ */
+
+ /*
+ http://www.cnblogs.com/grandyang/p/6258459.html
+ Double List
+ http://bookshadow.com/weblog/2016/11/22/leetcode-lfu-cache/
  */
 public class LFUCache {
 

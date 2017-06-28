@@ -8,6 +8,7 @@ You may assume the following rules:
 A move is guaranteed to be valid and is placed on an empty block.
 Once a winning condition is reached, no more moves is allowed.
 A player who succeeds in placing n of their marks in a horizontal, vertical, or diagonal row wins the game.
+
 Example:
 Given n = 3, assume that player 1 is "X" and player 2 is "O" in the board.
 
@@ -47,6 +48,7 @@ toe.move(2, 1, 1); -> Returns 1 (player 1 wins)
 |X| |O|
 |O|O| | // Player 1 makes a move at (2, 1).
 |X|X|X|
+
 Follow up:
 Could you do better than O(n2) per move() operation?
 

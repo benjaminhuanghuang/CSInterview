@@ -30,7 +30,7 @@ public class Solution347 {
         {
             if (bucket[kv.Value] == null)
                 bucket[kv.Value] = new List<int>();
-            bucket[kv.Value].Add(kv.Key);
+            bucket[kv.Value].Add(kv.Key); 
         } 
         List<int> res = new List<int>();
         for( int i = bucket.Length -1; i>=0; i--)
