@@ -21,7 +21,7 @@ The range of node's value is in the range of 32-bit signed integer.
 using System.Collections.Generic;
 using System.Linq;
 
-public class Solution
+public class Solution637
 {
     public IList<double> AverageOfLevels(TreeNode root)
     {
