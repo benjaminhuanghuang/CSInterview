@@ -20,39 +20,30 @@ public class Solution059 {
         int right = n-1;
         int bottom = n-1;
 
-        int direction = 0;
         int current = 0;
         while (current < n*n)
         {
-            if (direction == 0) //top
-            {
                 for (int i = left; i <= right ; i++)
                 {
                     current++;
                     matrix[top, i] = current;
                 }
                 top ++;
-            }
-            if (direction == 1) //right
-            {
+            
                 for (int i = top; i <= bottom ; i++)
                 {
                     current++;
                     matrix[i, right] = current;
                 }
                 right --;
-            }
-            if (direction == 2) //bottom
-            {
+            
                 for (int i = right; i >= left; i--)
                 {
                     current++;
                     matrix[bottom, i] = current;
                 }
                 bottom --;
-            }
-            if (direction == 3) //left
-            {
+            
                 for (int i = bottom; i >= top; i--)
                 {
                     current++;
@@ -60,8 +51,6 @@ public class Solution059 {
                 }
                 left ++;
             }
-            direction = (direction + 1)%4;
-        }
 
         return matrix;
     }
