@@ -25,7 +25,8 @@ using System;
 // 4 只有自己的路径。
 public class Solution124 {
     private long res = int.MinValue;
-    public int MaxPathSum(TreeNode root)
+    
+    public int maxPathSum(TreeNode root) {
     {
         MaxPathSumHelper(root);
         return (int)res;

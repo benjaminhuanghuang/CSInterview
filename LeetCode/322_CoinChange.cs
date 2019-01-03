@@ -21,7 +21,7 @@ You may assume that you have an infinite number of each kind of coin.
 */
 using System;
 public class Solution322 {
-    // dp[i] 表示凑齐钱数 i 需要的最少硬币数，那么凑齐钱数 amount 最少硬币数为：固定钱数为 coins[j] 一枚硬币，
+    // dp[i] 表示凑齐钱数 i 需要的最少硬币数，那么凑齐钱数 amount 最少硬币数为：钱数为 coins[j]的一枚硬币，
     // 另外的钱数为 amount - coins[j] 它的数量为dp[amount - coins[j]]
     // 则有：dp[i + coins[j] ] = min(dp[i + coins[j] ] , dp[i] + 1）
     public int CoinChange(int[] coins, int amount) {
